@@ -44,6 +44,30 @@ function shufyTheme_get_all_settings() {
 }
 
 function shufyTheme_save_settings($data) {
+    $action = $_GET['action'] ?? $_POST['action'] ?? '';
+
+    // If saving homepage options, set unchecked checkboxes to 'disabled'
+    if (strpos($action, 'homepage') !== false) {
+        $homepageCheckboxes = [
+            'themehomepagesettingmarketconnectbannaers',
+            'themehomepagesettingmarketconnectbannaersnav',
+            'themehomepagesettingannouncements',
+            'themehomepagesettinghomepagefeaturedsection',
+            'themehomepagesettingfeaturedfirst',
+            'themehomepagesettingfeaturedssecond',
+            'themehomepagesettingfeaturedthird',
+            'themehomepagesettingfeaturescolorsplansfirst',
+            'themehomepagesettingservicesfeatures',
+            'themehomepagesettingsavingbanner',
+            'themehomepagesettingsubscribingsection'
+        ];
+        foreach ($homepageCheckboxes as $cb) {
+            if (!isset($data[$cb])) {
+                $data[$cb] = 'disabled';
+            }
+        }
+    }
+
     foreach ($data as $key => $val) {
         if (in_array($key, ['token', 'action', 'itemid', 'submit'])) continue;
         $strVal = is_array($val) ? json_encode($val) : (string)$val;
@@ -109,6 +133,7 @@ function shufyTheme_output($vars) {
     $smarty->assign('breadcrumbs', 'ShufyTheme Control Panel');
     $smarty->assign('license_status', 'active');
     $smarty->assign('themesetting', $settings);
+    $smarty->assign('themehomepagesetting', $settings);
     $smarty->assign('coodivsettings', $settings);
     $smarty->assign('coodivcolorsettings', $settings);
     $smarty->assign('coodivsidebaroptions', $settings);

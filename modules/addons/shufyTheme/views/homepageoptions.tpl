@@ -105,7 +105,7 @@
 						<fieldset name="themehomepagesettingmarketconnectbannaers" id="themehomepagesettingmarketconnectbannaers">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="themehomepagesettingmarketconnectbannaers" id="themehomepagesettingmarketconnectbannaers" value="activated" {if $themehomepagesetting.themehomepagesettingmarketconnectbannaers|default:''=='activated' || $themehomepagesetting.id|default:'' != '1'}checked{/if}>
+								<input type="checkbox" name="themehomepagesettingmarketconnectbannaers" id="themehomepagesettingmarketconnectbannaers" value="activated" {if $themehomepagesetting.themehomepagesettingmarketconnectbannaers|default:''=='activated'}checked{/if}>
 								Display Marketconnect Bannaers
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>
@@ -117,7 +117,7 @@
 						<fieldset name="themehomepagesettingmarketconnectbannaersnav" id="themehomepagesettingmarketconnectbannaersnav">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="themehomepagesettingmarketconnectbannaersnav" id="themehomepagesettingmarketconnectbannaersnav" value="activated" {if $themehomepagesetting.themehomepagesettingmarketconnectbannaersnav|default:''=='activated' || $themehomepagesetting.id|default:'' != '1'}checked{/if}>
+								<input type="checkbox" name="themehomepagesettingmarketconnectbannaersnav" id="themehomepagesettingmarketconnectbannaersnav" value="activated" {if $themehomepagesetting.themehomepagesettingmarketconnectbannaersnav|default:''=='activated'}checked{/if}>
 								Display Marketconnect Bannaers nav
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>
@@ -130,7 +130,7 @@
 						<fieldset name="themehomepagesettingannouncements" id="themehomepagesettingannouncements">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="themehomepagesettingannouncements" id="themehomepagesettingannouncements" value="activated" {if $themehomepagesetting.themehomepagesettingannouncements|default:''=='activated' || $themehomepagesetting.id|default:'' != '1'}checked{/if}>
+								<input type="checkbox" name="themehomepagesettingannouncements" id="themehomepagesettingannouncements" value="activated" {if $themehomepagesetting.themehomepagesettingannouncements|default:''=='activated'}checked{/if}>
 								Display Announcements in homepage
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>
