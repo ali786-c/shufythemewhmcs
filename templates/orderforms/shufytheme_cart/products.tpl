@@ -262,29 +262,34 @@
 							</span>
 							{/if}
 							</span>
-							<span class="coodiv-text-12 font-weight-300 line-height-20 mt-3">
-								{if $product.pricing.minprice.cycleText}
-									/ {$product.pricing.minprice.cycleText}
-								{elseif $product.pricing.minprice.cycle eq "monthly" || $product.pricing.minprice.cycle eq "month"}
-									/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
+							<span class="coodiv-text-12 font-weight-300 line-height-20 align-self-end mb-2 ml-2">
+								{if $product.pricing.minprice.cycle eq "monthly" || $product.pricing.minprice.cycle eq "month"}
+									{$LANG.orderpaymenttermmonthly|default:'Monthly'}
 								{elseif $product.pricing.minprice.cycle eq "quarterly"}
-									/ {$LANG.orderpaymenttermquarterly|default:'Quarterly'}
+									{$LANG.orderpaymenttermquarterly|default:'Quarterly'}
 								{elseif $product.pricing.minprice.cycle eq "semiannually"}
-									/ {$LANG.orderpaymenttermsemiannually|default:'Semi-Annually'}
+									{$LANG.orderpaymenttermsemiannually|default:'Semi-Annually'}
 								{elseif $product.pricing.minprice.cycle eq "annually" || $product.pricing.minprice.cycle eq "year" || $product.pricing.minprice.cycle eq "yearly"}
-									/ {$LANG.orderpaymenttermannually|default:'Annually'}
+									{$LANG.orderpaymenttermannually|default:'Annually'}
 								{elseif $product.pricing.minprice.cycle eq "biennially"}
-									/ {$LANG.orderpaymenttermbiennially|default:'Biennially'}
+									{$LANG.orderpaymenttermbiennially|default:'Biennially'}
 								{elseif $product.pricing.minprice.cycle eq "triennially"}
-									/ {$LANG.orderpaymenttermtriennially|default:'Triennially'}
+									{$LANG.orderpaymenttermtriennially|default:'Triennially'}
 								{elseif $product.pricing.minprice.cycle eq "free"}
 									{$LANG.orderfree|default:'Free'}
 								{elseif $product.pricing.minprice.cycle eq "onetime"}
 									{$LANG.orderpaymenttermonetime|default:'One Time'}
 								{else}
-									{if $product.pricing.monthly}/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
-									{elseif $product.pricing.annually}/ {$LANG.orderpaymenttermannually|default:'Annually'}
-									{else}/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
+									{if $product.pricing.monthly}
+										{$LANG.orderpaymenttermmonthly|default:'Monthly'}
+									{elseif $product.pricing.annually}
+										{$LANG.orderpaymenttermannually|default:'Annually'}
+									{elseif $product.pricing.quarterly}
+										{$LANG.orderpaymenttermquarterly|default:'Quarterly'}
+									{elseif $product.pricing.semiannually}
+										{$LANG.orderpaymenttermsemiannually|default:'Semi-Annually'}
+									{else}
+										{$LANG.orderpaymenttermmonthly|default:'Monthly'}
 									{/if}
 								{/if}
 							</span>
