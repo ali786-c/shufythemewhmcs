@@ -17,26 +17,31 @@
 {if ($language == 'arabic' || $language == 'hebrew' || $language == 'farsi')}
 <link rel="stylesheet" media="all" href="{$WEB_ROOT}/templates/{$template}/assets/css/app.rtl.css?v={$shuffythemeversion}">
 {/if}
+{if file_exists("modules/addons/shufyTheme/css-values/default-style.css")}
+    {assign var="css_base" value="{$WEB_ROOT}/modules/addons/shufyTheme/css-values"}
+{else}
+    {assign var="css_base" value="{$WEB_ROOT}/templates/{$template}/assets/css-values"}
+{/if}
 {if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-one'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/default-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/default-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-two'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/green-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/green-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-three'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/purple-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/purple-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-four'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/red-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/red-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {/if}
 {if $coodivtypographiesettings.id|default:'' == '1'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/typographie.css">
+<link rel="stylesheet" media="all" href="{$css_base}/typographie.css">
 {/if}
 {assetExists file="custom.css"}
 <link href="{$__assetPath__}" rel="stylesheet">
 {/assetExists}
 {if $coodivsettings.customcsscode|default:'' != null}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/custom.css?v={$coodivsettings.customcss_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/custom.css?v={$coodivsettings.customcss_version|default:''}">
 {/if}
 {if $coodivhomepagesettings.id|default:'' == '1'}
-<link rel="stylesheet" media="all" href="{$WEB_ROOT}/modules/addons/shufyTheme/css-values/homepage-plans.css?v={$coodivsettings.customcss_version|default:''}">
+<link rel="stylesheet" media="all" href="{$css_base}/homepage-plans.css?v={$coodivsettings.customcss_version|default:''}">
 {/if}
 <script>
 	var csrfToken = '{$token}',

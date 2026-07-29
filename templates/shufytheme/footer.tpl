@@ -1,3 +1,4 @@
+{include file="$template/includes/theme-core/init-standalone.tpl"}
    {if $loginpage eq 0 and $templatefile ne "clientregister" and $templatefile ne "verify-email" and $templatefile ne "password-reset-container" and $templatefile ne "user-invite-accept"}
 					</div>
 				</div>

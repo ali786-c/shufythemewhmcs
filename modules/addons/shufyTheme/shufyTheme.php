@@ -1,8 +1,6 @@
 <?php
 /**
- * ShufyTheme WHMCS Addon Module
- * Standalone & Auto-Activated (License Verification Bypassed Engine)
- * Developed by Coodiv Team
+ * ShufyTheme Addon Module - Original Coodiv Control Panel Engine (Auto-Activated)
  */
 
 if (!defined("WHMCS")) {
@@ -13,27 +11,21 @@ use WHMCS\Database\Capsule;
 
 function shufyTheme_config() {
     return [
-        'name'        => 'shufyTheme',
-        'description' => 'Coodiv ShufyTheme Admin Control Panel (Standalone Engine)',
-        'version'     => '1.3.2',
-        'author'      => 'Coodiv Team',
-        'language'    => 'english',
-        'fields'      => []
+        'name' => 'ShufyTheme Control Panel',
+        'description' => 'Original ShufyTheme Management Addon (Active & Fully Unlocked)',
+        'author' => 'Coodiv',
+        'language' => 'english',
+        'version' => '1.1.8',
+        'fields' => []
     ];
 }
 
 function shufyTheme_activate() {
-    return [
-        'status'      => 'success',
-        'description' => 'ShufyTheme Control Panel activated successfully.'
-    ];
+    return ['status' => 'success', 'description' => 'ShufyTheme Control Panel activated successfully.'];
 }
 
 function shufyTheme_deactivate() {
-    return [
-        'status'      => 'success',
-        'description' => 'ShufyTheme Control Panel deactivated successfully.'
-    ];
+    return ['status' => 'success', 'description' => 'ShufyTheme Control Panel deactivated.'];
 }
 
 function shufyTheme_get_all_settings() {
@@ -67,9 +59,9 @@ function shufyTheme_save_settings($data) {
                     ->update(['value' => $strVal]);
             } else {
                 Capsule::table('tbladdonmodules')->insert([
-                    'module'  => 'shufyTheme',
+                    'module' => 'shufyTheme',
                     'setting' => $key,
-                    'value'   => $strVal
+                    'value' => $strVal
                 ]);
             }
         } catch (\Exception $e) {
@@ -79,57 +71,78 @@ function shufyTheme_save_settings($data) {
 }
 
 function shufyTheme_output($vars) {
-    $action = $_REQUEST['action'] ?? 'homepage';
+    $action = $_GET['action'] ?? 'themeoption';
+    $modurl = 'addonmodules.php?module=shufyTheme';
+    $isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
 
-    // Save settings if form submitted via POST
+    // Process POST submissions
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        check_token();
         shufyTheme_save_settings($_POST);
-        echo '<div class="alert alert-success" style="margin: 15px 0;">Settings saved successfully.</div>';
+
+        if ($isAjax) {
+            header('Content-Type: application/json');
+            echo json_encode([
+                'success' => true,
+                'message' => 'Shufytheme settings saved successfully.'
+            ]);
+            exit;
+        } else {
+            $redirectAction = str_replace('apply', '', $action);
+            if (empty($redirectAction)) $redirectAction = 'themeoption';
+            header("Location: {$modurl}&action={$redirectAction}&success=1");
+            exit;
+        }
     }
 
+    // Initialize WHMCS Smarty instance
+    $smarty = new \WHMCS\Smarty();
+
+    // Load saved settings
     $settings = shufyTheme_get_all_settings();
 
-    global $whmcs;
-    $smarty = new Smarty();
-    $smarty->caching = false;
-    $smarty->compile_dir = $GLOBALS['templates_compiledir'] ?? sys_get_temp_dir();
-    $smarty->template_dir = __DIR__ . '/views';
-
-    $smarty->assign('modulelink', $vars['modulelink'] ?? 'addonmodules.php?module=shufyTheme');
+    // Assign standard variables for Coodiv views
+    $smarty->assign('modurl', $modurl);
+    $smarty->assign('currentAddonVersion', '1.1.8');
+    $smarty->assign('needsUpdate', false);
+    $smarty->assign('csrfToken', generate_token('plain'));
+    $smarty->assign('breadcrumbs', 'ShufyTheme Control Panel');
     $smarty->assign('license_status', 'active');
-    $smarty->assign('licensestatus', 'Active');
-    $smarty->assign('coodivsettings', array_merge(['id' => '1'], $settings));
-    $smarty->assign('coodivcolorsettings', array_merge(['id' => '1'], $settings));
-    $smarty->assign('coodivlayoutssettings', array_merge(['id' => '1'], $settings));
-    $smarty->assign('vars', $vars);
-    $smarty->assign('settings', $settings);
+    $smarty->assign('themesetting', $settings);
+    $smarty->assign('coodivsettings', $settings);
+    $smarty->assign('coodivcolorsettings', $settings);
+    $smarty->assign('coodivsidebaroptions', $settings);
+    $smarty->assign('coodivlayoutssettings', $settings);
+    $smarty->assign('coodivhomepagesettings', $settings);
+    $smarty->assign('coodivtypographiesettings', $settings);
 
-    // Map requested view file safely
-    $validViews = [
-        'homepage'         => 'themeoption.tpl',
-        'styleoptions'     => 'styleoptions.tpl',
-        'layoutoptions'    => 'layoutoptions.tpl',
-        'headeroptions'    => 'header.tpl',
-        'footeroptions'    => 'footeroptions.tpl',
-        'sidebaroptions'   => 'sidebaroptions.tpl',
-        'homepageoptions'  => 'homepageoptions.tpl',
-        'typpoptions'      => 'typpoptions.tpl',
-        'menulist'         => 'menulist.tpl',
-        'addmenu'          => 'addmenu.tpl',
-        'editmenu'         => 'edit_menu.tpl',
-        'addgroup'         => 'addnewgroup.tpl',
-        'groups'           => 'groups.tpl',
-        'emailtemplates'   => 'emailtemplatesettings.tpl',
-        'backups'          => 'settingsbackups.tpl',
-        'extentions'       => 'extentions.tpl',
-        'themehealthcheck' => 'themehealthcheck.tpl'
-    ];
+    // Pass direct settings variables to Smarty
+    foreach ($settings as $k => $v) {
+        $smarty->assign($k, $v);
+    }
 
-    $templateFile = $validViews[$action] ?? 'themeoption.tpl';
+    $viewsDir = __DIR__ . '/views/';
 
-    if (file_exists(__DIR__ . '/views/' . $templateFile)) {
-        $smarty->display($templateFile);
+    // Render Coodiv Header View
+    if (file_exists($viewsDir . 'header.tpl')) {
+        echo $smarty->fetch($viewsDir . 'header.tpl');
+    }
+
+    // Render Coodiv Tab View
+    $targetView = $viewsDir . $action . '.tpl';
+    if (!file_exists($targetView)) {
+        if ($action === 'listgroup') $targetView = $viewsDir . 'menulist.tpl';
+        else $targetView = $viewsDir . 'themeoption.tpl';
+    }
+
+    if (file_exists($targetView)) {
+        echo $smarty->fetch($targetView);
     } else {
-        $smarty->display('themeoption.tpl');
+        echo '<div class="alert alert-info">View not found: ' . htmlspecialchars($action) . '</div>';
+    }
+
+    // Render Coodiv Footer View
+    if (file_exists($viewsDir . 'footer.tpl')) {
+        echo $smarty->fetch($viewsDir . 'footer.tpl');
     }
 }

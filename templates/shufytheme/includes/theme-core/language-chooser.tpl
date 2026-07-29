@@ -1,4 +1,4 @@
-{if $languagechangeenabled && count($locales) > 1}
+{if $languagechangeenabled && $locales && count($locales) > 1}
 	<div class="language__dropdown__select dropdown dropup language" data-language-select>
 		<a aria-label="language selector" class="dropdown__toggle" data-toggle="dropdown" href="#">
 			<span class="language__flag toggle__flag {$activeLocale.language|lower}"></span>

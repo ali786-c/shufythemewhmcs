@@ -1,3 +1,8 @@
+<link rel="stylesheet" type="text/css" href="../modules/addons/shufyTheme/assets/css/styles.css">
+<link rel="stylesheet" type="text/css" href="../modules/addons/shufyTheme/assets/apps/fontawesome-iconpicker.min.css">
+<script src="../modules/addons/shufyTheme/assets/js/jscolor.min.js"></script>
+<script src="../modules/addons/shufyTheme/assets/apps/fontawesome-iconpicker.min.js"></script>
+<script src="../modules/addons/shufyTheme/assets/js/scripts.js"></script>
 <div class="coodiv__whmcs__admin__panel">
 	<div class="coodiv__admin__navbar">
 		<div class="container-fluid">

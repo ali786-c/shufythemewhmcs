@@ -1,5 +1,5 @@
-{assign var="items" value=$CoodivMarketConnectServices|default:array()}
-{if is_array($items) && $items|count > 1}
+{assign var="items" value=$CoodivMarketConnectServices}
+{if $items && $items|count > 1}
 	<div class="homepage__promo__slider__nav__wrapper d-lg-block d-none items-{$items|count}">	
 		{foreach from=$items item=item key=k name=foo}
 			<div class="homepage__promo__slider__nav__box text-center coodiv-hover-y">

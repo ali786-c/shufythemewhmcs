@@ -1,3 +1,4 @@
+{include file="$template/includes/theme-core/init-standalone.tpl"}
 {if $shuffythemeversion}
 	<div class="main__page__content">		
 		{if $coodivhomepagesettings.themehomepagesettingmarketconnectbannaers|default:''=='activated' || $coodivhomepagesettings.id|default:'' != '1'}

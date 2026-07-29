@@ -1,7 +1,7 @@
 {if $loggedin}
 <div class="header__item header__icon__small header__item_messages">         
 	<button class="header__head">
-	  <i class="far fa-bell"></i> <span class="header__head__item___number">{count($clientAlerts)}</span>
+	  <i class="far fa-bell"></i> <span class="header__head__item___number">{if $clientAlerts}{count($clientAlerts)}{else}0{/if}</span>
 	</button>
 	<div class="header__body header__notifications">
 	  <div class="header__top">

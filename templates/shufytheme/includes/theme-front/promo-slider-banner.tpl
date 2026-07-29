@@ -1,4 +1,4 @@
-{if !empty($CoodivMarketConnectServices) && is_array($CoodivMarketConnectServices)}
+{if $CoodivMarketConnectServices}
 	{assign var="items" value=$CoodivMarketConnectServices}
 	<div class="main__homepage__promo__slider__banner">
 		<div class="banner-background" aria-hidden="true">
