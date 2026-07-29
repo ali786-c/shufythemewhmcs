@@ -119,6 +119,12 @@ function shufyTheme_save_settings($data) {
         $data['clientmarketconnect']   = $data['client-marketconnect'] ?? 'disabled';
         $data['servicemarketconnect']  = $data['services-marketconnect'] ?? 'disabled';
         $data['domainmarketconnect']   = $data['domains-marketconnect'] ?? 'disabled';
+        if (isset($data['login-style'])) {
+            $data['loginstyle'] = $data['login-style'];
+        }
+        if (isset($data['register-style'])) {
+            $data['registerstyle'] = $data['register-style'];
+        }
     }
 
     foreach ($data as $key => $val) {

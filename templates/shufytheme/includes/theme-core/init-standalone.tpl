@@ -68,7 +68,9 @@
         'cartdropdown' => 'activated',
         'notificationdropdown' => 'activated',
         'customersnotifications' => '',
-        'gravatar' => 'activated'
+        'gravatar' => 'activated',
+        'loginstyle' => 'loginstyleone',
+        'registerstyle' => 'registerstyleone'
     ] scope="global"}
 {/if}
 

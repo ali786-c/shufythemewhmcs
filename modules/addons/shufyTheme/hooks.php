@@ -68,7 +68,9 @@ add_hook('ClientAreaPage', 1, function($vars) {
             'cartdropdown' => 'activated',
             'notificationdropdown' => 'activated',
             'customersnotifications' => '',
-            'gravatar' => 'activated'
+            'gravatar' => 'activated',
+            'loginstyle' => 'loginstyleone',
+            'registerstyle' => 'registerstyleone'
         ], $dbSettings),
         'coodivcolorsettings' => array_merge([
             'id' => '1',
