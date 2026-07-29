@@ -113,10 +113,12 @@
 				<div class="login__register__sidebar__content__announcements__item">
 					<a class="login__register__sidebar__content__announcements__item__title" href="{routePath('announcement-view', $announcement.id, $announcement.urlfriendlytitle)}">{$announcement.title}</a>
 					<span class="login__register__sidebar__content__announcements__item__date">
-						{if $announcement.rawDate}
+						{if $carbon && $announcement.rawDate}
 							{$carbon->translatePassedToFormat($announcement.rawDate, 'M jS')}
-						{else}
+						{elseif $carbon && $announcement.timestamp}
 							{$carbon->createFromTimestamp($announcement.timestamp)->format('M jS')}
+						{else}
+							{$announcement.date|default:''}
 						{/if}
 					</span>
 					<div class="login__register__sidebar__content__announcements__item__desc">
