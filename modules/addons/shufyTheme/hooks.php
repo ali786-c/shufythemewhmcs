@@ -81,7 +81,25 @@ add_hook('ClientAreaPage', 1, function($vars) {
             'themehomepagesettingsavingbanner' => 'activated',
             'themehomepagesettingsubscribingsection' => 'activated'
         ], $dbSettings),
+        'coodivfootersettings' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
+        'coodivfooteroptions' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
+        'themefootersetting' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
+        'coodivheadersettings' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
+        'coodivheaderoptions' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
         'coodivtypographiesettings' => array_merge([
+            'id' => '1'
+        ], $dbSettings),
+        'coodivtypographieoptions' => array_merge([
             'id' => '1'
         ], $dbSettings),
         'CoodivMarketConnectServices' => [

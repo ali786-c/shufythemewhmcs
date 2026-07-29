@@ -139,7 +139,13 @@ function shufyTheme_output($vars) {
     $smarty->assign('coodivsidebaroptions', $settings);
     $smarty->assign('coodivlayoutssettings', $settings);
     $smarty->assign('coodivhomepagesettings', $settings);
+    $smarty->assign('coodivfootersettings', $settings);
+    $smarty->assign('coodivfooteroptions', $settings);
+    $smarty->assign('themefootersetting', $settings);
+    $smarty->assign('coodivheadersettings', $settings);
+    $smarty->assign('coodivheaderoptions', $settings);
     $smarty->assign('coodivtypographiesettings', $settings);
+    $smarty->assign('coodivtypographieoptions', $settings);
 
     // Pass direct settings variables to Smarty
     foreach ($settings as $k => $v) {
