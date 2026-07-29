@@ -296,7 +296,7 @@
 							</strong>
 						{/if}
 						<a href="{$product.productUrl}" class="btn btn-primary-outline d-block w-100 coodiv-text-12 text-uppercase btn-order-now" id="{$idPrefix}-order-button"{if $product.hasRecommendations} data-has-recommendations="1"{/if}>
-							{$LANG.ordernowbutton}
+							{$LANG.ordernowbutton|default:$LANG.orderForm.orderNow|default:'Order Now'}
 						</a>
 							
 						{if $product.featuresdesc}

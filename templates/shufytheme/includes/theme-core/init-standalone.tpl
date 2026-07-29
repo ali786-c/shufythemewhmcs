@@ -6,6 +6,7 @@
 {if !$LANG.shufytheme.trustedByThousands}
     {assign var="shufyLangDefaults" value=[
         'domainregisterregisiter' => 'Register',
+        'ordernowbutton' => 'Order Now',
         'checkdomainpricing' => 'Check Pricing',
         'registerdomain' => 'Register Domain',
         'trustedByThousands' => 'Trusted By Thousands',

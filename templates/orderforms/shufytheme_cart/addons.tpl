@@ -127,7 +127,7 @@
 								</div>
 								<div class="col-auto">
 									<button type="submit" class="btn btn-primary btn-sm">
-										{$LANG.ordernowbutton}
+										{$LANG.ordernowbutton|default:$LANG.orderForm.orderNow|default:'Order Now'}
 									</button>
 								</div>
 							</div>
