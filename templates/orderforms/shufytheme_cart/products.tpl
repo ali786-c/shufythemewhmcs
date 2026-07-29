@@ -195,7 +195,7 @@
 			{/if}  
 			<div class="pricing__plans__standard__item">
 				<div class="pricing__plans__standard rounded-8 pt-12 pb-8 px-9 white-bg h-100 d-flex flex-column mx-3 {if $product.isFeatured}featured__product position-relative{/if}">
-					{if $product.isFeatured}<span class="featured__product__tag">{$LANG.featuredProduct|upper}</span>{/if}
+					{if $product.isFeatured}<span class="featured__product__tag">{$LANG.featuredProduct|default:'MOST POPULAR'|upper}</span>{/if}
 					<div class="pricing-plans-special-header d-flex justify-content-between align-items-center flex-wrap">
 						<h5 class="coodiv-text-7 mb-0 font-weight-bold">{$product.name}</h5>
 						{if $product.stockControlEnabled}
