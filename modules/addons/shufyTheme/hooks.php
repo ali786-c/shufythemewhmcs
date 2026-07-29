@@ -43,11 +43,17 @@ add_hook('ClientAreaPage', 1, function($vars) {
     $dbSettings = shufyTheme_get_all_settings_db();
 
     // Load theme language strings
+    global $smarty;
     $userLang = $vars['language'] ?? 'english';
     $shufyLang = shufyTheme_load_lang_vars($userLang);
     $existingLang = $vars['LANG'] ?? [];
     $existingShufy = $existingLang['shufytheme'] ?? [];
     $existingLang['shufytheme'] = array_merge($shufyLang, $existingShufy);
+
+    if (isset($smarty) && is_object($smarty)) {
+        $smarty->assign('LANG', $existingLang);
+        $smarty->assign('shufythemeLang', $shufyLang);
+    }
 
     // Default configuration mapping
     $defaults = [
