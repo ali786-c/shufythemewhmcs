@@ -263,19 +263,30 @@
 							{/if}
 							</span>
 							<span class="coodiv-text-12 font-weight-300 line-height-20 mt-3">
-							{if $product.pricing.minprice.cycle eq "monthly"}
-									{$LANG.orderpaymenttermmonthly}
+								{if $product.pricing.minprice.cycleText}
+									/ {$product.pricing.minprice.cycleText}
+								{elseif $product.pricing.minprice.cycle eq "monthly" || $product.pricing.minprice.cycle eq "month"}
+									/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
 								{elseif $product.pricing.minprice.cycle eq "quarterly"}
-									{$LANG.orderpaymenttermquarterly}
+									/ {$LANG.orderpaymenttermquarterly|default:'Quarterly'}
 								{elseif $product.pricing.minprice.cycle eq "semiannually"}
-									{$LANG.orderpaymenttermsemiannually}
-								{elseif $product.pricing.minprice.cycle eq "annually"}
-									{$LANG.orderpaymenttermannually}
+									/ {$LANG.orderpaymenttermsemiannually|default:'Semi-Annually'}
+								{elseif $product.pricing.minprice.cycle eq "annually" || $product.pricing.minprice.cycle eq "year" || $product.pricing.minprice.cycle eq "yearly"}
+									/ {$LANG.orderpaymenttermannually|default:'Annually'}
 								{elseif $product.pricing.minprice.cycle eq "biennially"}
-									{$LANG.orderpaymenttermbiennially}
+									/ {$LANG.orderpaymenttermbiennially|default:'Biennially'}
 								{elseif $product.pricing.minprice.cycle eq "triennially"}
-									{$LANG.orderpaymenttermtriennially}
-							{/if}
+									/ {$LANG.orderpaymenttermtriennially|default:'Triennially'}
+								{elseif $product.pricing.minprice.cycle eq "free"}
+									{$LANG.orderfree|default:'Free'}
+								{elseif $product.pricing.minprice.cycle eq "onetime"}
+									{$LANG.orderpaymenttermonetime|default:'One Time'}
+								{else}
+									{if $product.pricing.monthly}/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
+									{elseif $product.pricing.annually}/ {$LANG.orderpaymenttermannually|default:'Annually'}
+									{else}/ {$LANG.orderpaymenttermmonthly|default:'Monthly'}
+									{/if}
+								{/if}
 							</span>
 						</div>
 						{if $show_discount}          
