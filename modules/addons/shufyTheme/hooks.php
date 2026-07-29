@@ -116,7 +116,13 @@ add_hook('ClientAreaPage', 1, function($vars) {
             'id' => '1',
             'allowdarkmode' => 'activated',
             'darkmodefault' => '',
-            'dafaultthemecolor' => 'default-color'
+            'dafaultthemecolor' => 'theme-style-one'
+        ], $dbSettings),
+        'themecolorsetting' => array_merge([
+            'id' => '1',
+            'allowdarkmode' => 'activated',
+            'darkmodefault' => '',
+            'dafaultthemecolor' => 'theme-style-one'
         ], $dbSettings),
         'coodivsidebaroptions' => array_merge([
             'id' => '1',

@@ -22,14 +22,14 @@
 {else}
     {assign var="css_base" value="{$WEB_ROOT}/templates/{$template}/assets/css-values"}
 {/if}
-{if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-one'}
-<link rel="stylesheet" media="all" href="{$css_base}/default-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
-{else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-two'}
+{if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-two'}
 <link rel="stylesheet" media="all" href="{$css_base}/green-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-three'}
 <link rel="stylesheet" media="all" href="{$css_base}/purple-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {else if $coodivcolorsettings.dafaultthemecolor|default:''=='theme-style-four'}
 <link rel="stylesheet" media="all" href="{$css_base}/red-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
+{else}
+<link rel="stylesheet" media="all" href="{$css_base}/default-style.css?v={$coodivcolorsettings.custom_colors_version|default:''}">
 {/if}
 {if $coodivtypographiesettings.id|default:'' == '1'}
 <link rel="stylesheet" media="all" href="{$css_base}/typographie.css">
