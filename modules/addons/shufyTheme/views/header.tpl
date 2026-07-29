@@ -37,9 +37,8 @@
 			</div>
 			{/if}
 			<script>
-			{literal}
 			$(document).ready(function() {
-				var csrfToken = '{/literal}{$csrfToken|default:''|escape:'javascript'}{literal}';
+				var csrfToken = '{$csrfToken|default:''|escape:'javascript'}';
 				if (csrfToken) {
 					$('.coodiv__whmcs__admin__panel form').filter(function() {
 						return String($(this).attr('method') || '').toLowerCase() === 'post';
@@ -152,8 +151,8 @@
 					var line = 1;
 					var errors = [];
 					function shufyThemeOpeningPair(char) {
-						if (char === '{') {
-							return '}';
+						if (char === String.fromCharCode(123)) {
+							return String.fromCharCode(125);
 						}
 						if (char === '[') {
 							return ']';
@@ -164,8 +163,8 @@
 						return '';
 					}
 					function shufyThemeClosingPair(char) {
-						if (char === '}') {
-							return '{';
+						if (char === String.fromCharCode(125)) {
+							return String.fromCharCode(123);
 						}
 						if (char === ']') {
 							return '[';
@@ -315,8 +314,8 @@
 							continue;
 						}
 
-						if (char === '{') {
-							result = result.replace(/[ \t]+$/g, '') + ' {\n';
+						if (char === String.fromCharCode(123)) {
+							result = result.replace(/[ \t]+$/g, '') + ' ' + String.fromCharCode(123) + '\n';
 							indent++;
 							addIndent();
 							continue;
@@ -519,5 +518,4 @@
 					});
 				});
 			});
-			{/literal}
 			</script>
