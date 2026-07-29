@@ -37,8 +37,9 @@
 			</div>
 			{/if}
 			<script>
+			{literal}
 			$(document).ready(function() {
-				var csrfToken = '{$csrfToken|default:''|escape:'javascript'}';
+				var csrfToken = {/literal}'{$csrfToken|default:''|escape:'javascript'}'{literal};
 				if (csrfToken) {
 					$('.coodiv__whmcs__admin__panel form').filter(function() {
 						return String($(this).attr('method') || '').toLowerCase() === 'post';
@@ -321,134 +322,139 @@
 							continue;
 						}
 
-						if (char === '}') {
-							indent = Math.max(indent - 1, 0);
-							result = result.replace(/[ \t\n]+$/g, '') + '\n';
+						if (char === String.fromCharCode(125)) {
+							result = result.replace(/[ \t]+$/g, '');
+							indent = Math.max(0, indent - 1);
+							result += '\n';
 							addIndent();
-							result += '}';
+							result += String.fromCharCode(125);
 							pendingNewLine = true;
 							continue;
 						}
 
 						if (char === ';') {
-							result += ';';
-							pendingNewLine = true;
-							continue;
-						}
-
-						if (char === '\r') {
-							continue;
-						}
-
-						if (char === '\n') {
-							if (result.slice(-1) !== '\n') {
-								result += '\n';
-								addIndent();
-							}
-							pendingNewLine = false;
+							result += ';\n';
+							addIndent();
 							continue;
 						}
 
 						result += char;
 					}
 
-					return result.replace(/[ \t]+$/gm, '').replace(/\n{3,}/g, '\n\n').trim();
-				}
-				function updateShufyThemeCssEditor(editor) {
-					var textarea = editor.find('textarea[name="customcsscode"]');
-					var lineBox = editor.find('[data-css-editor-lines]');
-					var status = editor.find('[data-css-editor-status]');
-					var result = shufyThemeAnalyzeCss(textarea.val());
-					var lines = [];
-					for (var i = 1; i <= result.lines; i++) {
-						lines.push(i);
-					}
-					lineBox.text(lines.join('\n'));
-					lineBox.scrollTop(textarea.scrollTop());
-					editor.attr('data-css-editor-valid', result.valid ? '1' : '0');
-					if (result.valid) {
-						status.removeClass('error').addClass('valid');
-						status.find('i').attr('class', 'fal fa-check-circle');
-						status.find('span').text('CSS looks good - ' + result.lines + ' lines');
-					} else {
-						status.removeClass('valid').addClass('error');
-						status.find('i').attr('class', 'fal fa-exclamation-triangle');
-						status.find('span').text(result.errors[0]);
-					}
-					editor.data('css-editor-errors', result.errors);
 					return result;
 				}
-				function initShufyThemeCssEditors() {
-					$('[data-shufytheme-css-editor]').each(function() {
-						updateShufyThemeCssEditor($(this));
+
+				function createShufyThemeCssEditor(textarea) {
+					if (!textarea.length || textarea.data('shufytheme-css-editor-initialized')) {
+						return;
+					}
+
+					textarea.data('shufytheme-css-editor-initialized', true);
+					textarea.attr('data-shufytheme-css-editor', '1');
+
+					var editorContainer = $('<div class="shufytheme-css-editor-wrapper"></div>');
+					var toolbar = $('<div class="shufytheme-css-editor-toolbar"></div>');
+					var formatBtn = $('<button type="button" class="shufytheme-css-editor-btn"><i class="fal fa-magic"></i> Format CSS</button>');
+					var infoBadge = $('<span class="shufytheme-css-editor-info"></span>');
+					var statusBadge = $('<span class="shufytheme-css-editor-status"></span>');
+					var errorBox = $('<div class="shufytheme-css-editor-errors" style="display:none;"></div>');
+
+					toolbar.append(formatBtn, infoBadge, statusBadge);
+					textarea.before(editorContainer);
+					editorContainer.append(toolbar, textarea, errorBox);
+
+					function updateEditorState() {
+						var css = textarea.val() || '';
+						var analysis = shufyThemeAnalyzeCss(css);
+
+						infoBadge.text(css.length + ' chars | ' + analysis.lines + ' lines');
+
+						if (!css.trim()) {
+							statusBadge.attr('class', 'shufytheme-css-editor-status empty').text('Empty');
+							errorBox.hide().empty();
+							return { valid: true, errors: [] };
+						}
+
+						if (analysis.valid) {
+							statusBadge.attr('class', 'shufytheme-css-editor-status valid').html('<i class="fal fa-check-circle"></i> Valid CSS');
+							errorBox.hide().empty();
+						} else {
+							statusBadge.attr('class', 'shufytheme-css-editor-status invalid').html('<i class="fal fa-exclamation-triangle"></i> CSS Errors');
+							errorBox.html('<strong>CSS Syntax Errors:</strong><br>' + analysis.errors.join('<br>')).show();
+						}
+
+						return analysis;
+					}
+
+					window.updateShufyThemeCssEditor = function(targetTextarea) {
+						var target = $(targetTextarea);
+						if (!target.length) {
+							return { valid: true, errors: [] };
+						}
+						var css = target.val() || '';
+						return shufyThemeAnalyzeCss(css);
+					};
+
+					textarea.on('input change keyup', function() {
+						updateEditorState();
+						updateShufyThemeFormDirtyState(textarea.closest('form'));
 					});
+
+					formatBtn.on('click', function(e) {
+						e.preventDefault();
+						var currentCss = textarea.val();
+						if (!currentCss.trim()) {
+							return;
+						}
+						var formatted = shufyThemeFormatCss(currentCss);
+						textarea.val(formatted);
+						updateEditorState();
+						updateShufyThemeFormDirtyState(textarea.closest('form'));
+					});
+
+					updateEditorState();
 				}
 
-				$('form.shufytheme__ajax__save').each(function() {
-					markShufyThemeFormClean($(this));
+				$('.coodiv__whmcs__admin__panel textarea').filter(function() {
+					var id = (this.id || '').toLowerCase();
+					var name = (this.name || '').toLowerCase();
+					return id.indexOf('css') !== -1 || name.indexOf('css') !== -1;
+				}).each(function() {
+					createShufyThemeCssEditor($(this));
 				});
-				initShufyThemeCssEditors();
-				setTimeout(function() {
-					$('form.shufytheme__ajax__save').each(function() {
-						markShufyThemeFormClean($(this));
+
+				$('.coodiv__whmcs__admin__panel form.shufytheme__ajax__save').each(function() {
+					var formElement = $(this);
+					markShufyThemeFormClean(formElement);
+
+					formElement.on('input change keyup', 'input, select, textarea', function() {
+						updateShufyThemeFormDirtyState(formElement);
 					});
-					initShufyThemeCssEditors();
-					shufyThemeUnsavedTrackingReady = true;
-				}, 500);
-				$('.coodiv__whmcs__admin__panel').on('input change', '[data-shufytheme-css-editor] textarea', function() {
-					updateShufyThemeCssEditor($(this).closest('[data-shufytheme-css-editor]'));
 				});
-				$('.coodiv__whmcs__admin__panel').on('scroll', '[data-shufytheme-css-editor] textarea', function() {
-					var editor = $(this).closest('[data-shufytheme-css-editor]');
-					editor.find('[data-css-editor-lines]').scrollTop($(this).scrollTop());
-				});
-				$('.coodiv__whmcs__admin__panel').on('keydown', '[data-shufytheme-css-editor] textarea', function(event) {
-					if (event.keyCode !== 9) {
-						return;
-					}
-					event.preventDefault();
-					var textarea = this;
-					var start = textarea.selectionStart;
-					var end = textarea.selectionEnd;
-					var value = textarea.value;
-					textarea.value = value.substring(0, start) + '    ' + value.substring(end);
-					textarea.selectionStart = textarea.selectionEnd = start + 4;
-					$(textarea).trigger('input');
-				});
-				$('.coodiv__whmcs__admin__panel').on('click', '[data-css-editor-action]', function() {
-					var button = $(this);
-					var editor = button.closest('[data-shufytheme-css-editor]');
-					var textarea = editor.find('textarea[name="customcsscode"]');
-					var action = button.attr('data-css-editor-action');
-					if (action === 'format') {
-						textarea.val(shufyThemeFormatCss(textarea.val())).trigger('input').focus();
-					} else if (action === 'clear') {
-						textarea.val('').trigger('input').focus();
-					} else {
-						var result = updateShufyThemeCssEditor(editor);
-						showShufyThemeAjaxAlert(result.valid ? 'success' : 'error', result.valid ? 'CSS looks good.' : editor.data('css-editor-errors').join(' '));
+
+				shufyThemeUnsavedTrackingReady = true;
+
+				$(window).on('beforeunload', function(e) {
+					if (hasShufyThemeUnsavedChanges()) {
+						var confirmationMessage = 'You have unsaved settings changes. Are you sure you want to leave?';
+						(e.originalEvent || e).returnValue = confirmationMessage;
+						return confirmationMessage;
 					}
 				});
-				$('.coodiv__whmcs__admin__panel').on('input change', 'form.shufytheme__ajax__save :input', function() {
-					if (!shufyThemeUnsavedTrackingReady) {
-						return;
-					}
-					updateShufyThemeFormDirtyState($(this).closest('form.shufytheme__ajax__save'));
-				});
+
 				$('.coodiv__whmcs__admin__panel').on('click', 'a[href]', function(event) {
+					var href = $(this).attr('href') || '';
 					if (!hasShufyThemeUnsavedChanges()) {
 						return;
 					}
-
-					var link = $(this);
-					var href = String(link.attr('href') || '');
-					if (!href || href.charAt(0) === '#' || link.attr('target') === '_blank' || link.attr('data-dismiss')) {
+					if (!href || href === '#' || href.indexOf('javascript:') === 0 || $(this).data('toggle') === 'modal') {
 						return;
 					}
 
 					event.preventDefault();
 					showShufyThemeUnsavedChangesMessage();
 				});
+
 				$('.coodiv__whmcs__admin__panel').on('submit', 'form:not(.shufytheme__ajax__save)', function(event) {
 					if (!hasShufyThemeUnsavedChanges()) {
 						return;
@@ -518,4 +524,5 @@
 					});
 				});
 			});
+			{/literal}
 			</script>
