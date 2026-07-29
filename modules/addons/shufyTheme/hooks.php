@@ -25,12 +25,33 @@ function shufyTheme_get_all_settings_db() {
     return $settings;
 }
 
+function shufyTheme_load_lang_vars($language = 'english') {
+    $langDir = __DIR__ . '/../../templates/shufytheme/lang/';
+    $langFile = $langDir . strtolower($language) . '.php';
+    if (!file_exists($langFile)) {
+        $langFile = $langDir . 'english.php';
+    }
+    $_LANG = [];
+    if (file_exists($langFile)) {
+        include $langFile;
+    }
+    return $_LANG['shufytheme'] ?? [];
+}
+
 add_hook('ClientAreaPage', 1, function($vars) {
     $template = $vars['template'] ?? 'shufytheme';
     $dbSettings = shufyTheme_get_all_settings_db();
 
+    // Load theme language strings
+    $userLang = $vars['language'] ?? 'english';
+    $shufyLang = shufyTheme_load_lang_vars($userLang);
+    $existingLang = $vars['LANG'] ?? [];
+    $existingShufy = $existingLang['shufytheme'] ?? [];
+    $existingLang['shufytheme'] = array_merge($shufyLang, $existingShufy);
+
     // Default configuration mapping
     $defaults = [
+        'LANG' => $existingLang,
         'shuffythemeversion' => '1.3.2',
         'shuffythemedirection' => "templates/{$template}/includes/theme-core/header-layouts/header-default-layout.tpl",
         'shuffythemedirectionfooter' => "templates/{$template}/includes/theme-core/footer-layouts/footer-default-layout.tpl",
