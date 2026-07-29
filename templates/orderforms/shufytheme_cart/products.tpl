@@ -135,63 +135,47 @@
 			
 			
 			{foreach $products as $key => $product}
+			{assign var="minimalprice" value=0}
+			{assign var="show_discount" value=false}
+			{assign var="check_discount_quarterly" value=0}
+			{assign var="check_discount_semiannually" value=0}
+			{assign var="check_discount_annually" value=0}
+			{assign var="check_discount_biennially" value=0}
+			{assign var="check_discount_triennially" value=0}
 			
-			{if $product.pricing.monthly}
-				{if $product.pricing.rawpricing.monthly > 0}
-					{assign var='minimalprice' value=$product.pricing.rawpricing.monthly}
+			{if $product.pricing.monthly && $product.pricing.rawpricing.monthly > 0}
+				{assign var='minimalprice' value=$product.pricing.rawpricing.monthly}
+			{elseif $product.pricing.quarterly && $product.pricing.rawpricing.quarterly > 0}
+				{math assign="minimalprice" equation="y/3" y=$product.pricing.rawpricing.quarterly}
+			{elseif $product.pricing.semiannually && $product.pricing.rawpricing.semiannually > 0}
+				{math assign="minimalprice" equation="y/6" y=$product.pricing.rawpricing.semiannually}
+			{elseif $product.pricing.annually && $product.pricing.rawpricing.annually > 0}
+				{math assign="minimalprice" equation="y/12" y=$product.pricing.rawpricing.annually}
+			{elseif $product.pricing.biennially && $product.pricing.rawpricing.biennially > 0}
+				{math assign="minimalprice" equation="y/24" y=$product.pricing.rawpricing.biennially}
+			{elseif $product.pricing.triennially && $product.pricing.rawpricing.triennially > 0}
+				{math assign="minimalprice" equation="y/36" y=$product.pricing.rawpricing.triennially}
+			{/if}
+			
+			{if $minimalprice > 0}
+				{if $product.pricing.quarterly && $product.pricing.rawpricing.quarterly > 0}
+					{math assign="check_discount_quarterly" equation="100-((y/(x*3))*100)" x=$minimalprice y=$product.pricing.rawpricing.quarterly format="%d"}
 				{/if}
-				{elseif $product.pricing.quarterly}
-					{if $product.pricing.rawpricing.quarterly > 0}
-						{math assign="minimalprice" equation="y/3" y=$product.pricing.rawpricing.quarterly}
-					{/if}
-				{elseif $product.pricing.semiannually}
-					{if $product.pricing.rawpricing.semiannually > 0}
-						{math assign="minimalprice" equation="y/6" y=$product.pricing.rawpricing.semiannually} 
-					{/if}
-				{elseif $product.pricing.annually}
-					{if $product.pricing.rawpricing.annually > 0}
-						{math assign="minimalprice" equation="y/12" y=$product.pricing.rawpricing.annually} 
-					{/if}
-				{elseif $product.pricing.biennially}
-					{if $product.pricing.rawpricing.biennially > 0}
-						{math assign="minimalprice" equation="y/24" y=$product.pricing.rawpricing.biennially} 
-					{/if}
-				{elseif $product.pricing.triennially}   
-					{if $product.pricing.rawpricing.triennially > 0}				
-						{math assign="minimalprice" equation="y/36" y=$product.pricing.rawpricing.triennially} 
-					{/if}
-			{/if}
-			
-			{if $product.pricing.quarterly}
-				{math assign="check_discount_quarterly" equation="100-((y/(x*3))*100)" x=$minimalprice y=$product.pricing.rawpricing.quarterly format="%d"}
-			{else}
-				{assign var='check_discount_quarterly' value="0"}
-			{/if}
-			{if $product.pricing.semiannually}
-				{math assign="check_discount_semiannually" equation="100-((y/(x*6))*100)" x=$minimalprice y=$product.pricing.rawpricing.semiannually format="%d"}
-			{else}
-				{assign var='check_discount_semiannually' value="0"}
-			{/if}
-			{if $product.pricing.annually}
-				{math assign="check_discount_annually" equation="100-((y/(x*12))*100)" x=$minimalprice y=$product.pricing.rawpricing.annually format="%d"}
-			{else}
-				{assign var='check_discount_annually' value="0"}
-			{/if}
-			{if $product.pricing.biennially}
-				{math assign="check_discount_biennially" equation="100-((y/(x*24))*100)" x=$minimalprice y=$product.pricing.rawpricing.biennially format="%d"}
-			{else}
-				{assign var='check_discount_biennially' value="0"}    
-			{/if}
-			{if $product.pricing.triennially}
-				{math assign="check_discount_triennially" equation="100-((y/(x*36))*100)" x=$minimalprice y=$product.pricing.rawpricing.triennially format="%d"}
-			{else}
-				{assign var='check_discount_triennially' value="0"}      
-			{/if}
-			{if $check_discount_quarterly > 0 || $check_discount_semiannually > 0 || $check_discount_annually > 0 || $check_discount_biennially > 0 || $check_discount_triennially > 0}
-				{assign var="show_discount" value=true}
-			{/if}   
-			{if $check_discount_quarterly > 0 || $check_discount_semiannually > 0 || $check_discount_annually > 0 || $check_discount_biennially > 0 || $check_discount_triennially > 0}
-			{assign var="show_discount" value=true}
+				{if $product.pricing.semiannually && $product.pricing.rawpricing.semiannually > 0}
+					{math assign="check_discount_semiannually" equation="100-((y/(x*6))*100)" x=$minimalprice y=$product.pricing.rawpricing.semiannually format="%d"}
+				{/if}
+				{if $product.pricing.annually && $product.pricing.rawpricing.annually > 0}
+					{math assign="check_discount_annually" equation="100-((y/(x*12))*100)" x=$minimalprice y=$product.pricing.rawpricing.annually format="%d"}
+				{/if}
+				{if $product.pricing.biennially && $product.pricing.rawpricing.biennially > 0}
+					{math assign="check_discount_biennially" equation="100-((y/(x*24))*100)" x=$minimalprice y=$product.pricing.rawpricing.biennially format="%d"}
+				{/if}
+				{if $product.pricing.triennially && $product.pricing.rawpricing.triennially > 0}
+					{math assign="check_discount_triennially" equation="100-((y/(x*36))*100)" x=$minimalprice y=$product.pricing.rawpricing.triennially format="%d"}
+				{/if}
+				{if $check_discount_quarterly > 0 || $check_discount_semiannually > 0 || $check_discount_annually > 0 || $check_discount_biennially > 0 || $check_discount_triennially > 0}
+					{assign var="show_discount" value=true}
+				{/if}
 			{/if}  
 			<div class="pricing__plans__standard__item">
 				<div class="pricing__plans__standard rounded-8 pt-12 pb-8 px-9 white-bg h-100 d-flex flex-column mx-3 {if $product.isFeatured}featured__product position-relative{/if}">
@@ -296,18 +280,18 @@
 						</div>
 						{if $show_discount}          
 							<strong class="plan-highlight mb-7">
-								{if $check_discount_quarterly > 0 && $product.pricing.quarterly && $check_discount_quarterly > $check_discount_semiannually && $check_discount_quarterly > $check_discount_annually && $check_discount_quarterly > $check_discount_biennially && $check_discount_quarterly > $check_discount_triennially}
-									{$LANG.shufytheme.orderform.save} {$check_discount_quarterly}% {$LANG.shufytheme.orderform.withthreemonthbilling} 		
-								{elseif $check_discount_semiannually > 0 && $product.pricing.semiannually && $check_discount_semiannually > $check_discount_quarterly && $check_discount_semiannually > $check_discount_annually && $check_discount_semiannually > $check_discount_biennially && $check_discount_semiannually > $check_discount_triennially}
-									{$LANG.shufytheme.orderform.save} {$check_discount_semiannually}% {$LANG.shufytheme.orderform.withsixmonthbilling} 
-								{elseif $check_discount_annually > 0 && $product.pricing.annually && $check_discount_annually > $check_discount_semiannually && $check_discount_annually > $check_discount_quarterly && $check_discount_annually > $check_discount_biennially && $check_discount_annually > $check_discount_triennially}
-									{$LANG.shufytheme.orderform.save} {$check_discount_annually}% {$LANG.shufytheme.orderform.withoneyearsbilling} 
-								{elseif $check_discount_biennially > 0 && $product.pricing.biennially && $check_discount_biennially > $check_discount_semiannually && $check_discount_biennially > $check_discount_annually && $check_discount_biennially > $check_discount_quarterly && $check_discount_biennially > $check_discount_triennially}
-									{$LANG.shufytheme.orderform.save} {$check_discount_biennially}% {$LANG.shufytheme.orderform.withtwoyearsbilling} 
-								{elseif $check_discount_triennially > 0 && $product.pricing.triennially && $check_discount_triennially > $check_discount_semiannually && $check_discount_triennially > $check_discount_annually && $check_discount_triennially > $check_discount_biennially && $check_discount_triennially > $check_discount_quarterly}
-									{$LANG.shufytheme.orderform.save} {$check_discount_triennially}% {$LANG.shufytheme.orderform.withthreeyearsbilling} 
+								{if $check_discount_annually > 0 && $product.pricing.annually && $check_discount_annually >= $check_discount_semiannually && $check_discount_annually >= $check_discount_quarterly && $check_discount_annually >= $check_discount_biennially && $check_discount_annually >= $check_discount_triennially}
+									{$LANG.shufytheme.orderform.save|default:'Save'} {$check_discount_annually}% {$LANG.shufytheme.orderform.withoneyearsbilling|default:'with a 1-Year Billing Cycle'}
+								{elseif $check_discount_biennially > 0 && $product.pricing.biennially && $check_discount_biennially >= $check_discount_semiannually && $check_discount_biennially >= $check_discount_annually && $check_discount_biennially >= $check_discount_quarterly && $check_discount_biennially >= $check_discount_triennially}
+									{$LANG.shufytheme.orderform.save|default:'Save'} {$check_discount_biennially}% {$LANG.shufytheme.orderform.withtwoyearsbilling|default:'with a 2-Year Billing Cycle'}
+								{elseif $check_discount_triennially > 0 && $product.pricing.triennially && $check_discount_triennially >= $check_discount_semiannually && $check_discount_triennially >= $check_discount_annually && $check_discount_triennially >= $check_discount_biennially && $check_discount_triennially >= $check_discount_quarterly}
+									{$LANG.shufytheme.orderform.save|default:'Save'} {$check_discount_triennially}% {$LANG.shufytheme.orderform.withthreeyearsbilling|default:'with a 3-Year Billing Cycle'}
+								{elseif $check_discount_semiannually > 0 && $product.pricing.semiannually && $check_discount_semiannually >= $check_discount_quarterly && $check_discount_semiannually >= $check_discount_annually && $check_discount_semiannually >= $check_discount_biennially && $check_discount_semiannually >= $check_discount_triennially}
+									{$LANG.shufytheme.orderform.save|default:'Save'} {$check_discount_semiannually}% {$LANG.shufytheme.orderform.withsixmonthbilling|default:'with a 6-Month Billing Cycle'}
+								{elseif $check_discount_quarterly > 0 && $product.pricing.quarterly && $check_discount_quarterly >= $check_discount_semiannually && $check_discount_quarterly >= $check_discount_annually && $check_discount_quarterly >= $check_discount_biennially && $check_discount_quarterly >= $check_discount_triennially}
+									{$LANG.shufytheme.orderform.save|default:'Save'} {$check_discount_quarterly}% {$LANG.shufytheme.orderform.withthreemonthbilling|default:'with a 3-Month Billing Cycle'}
 								{else}
-									{$LANG.shufytheme.orderform.bestbillingcycle}
+									{$LANG.shufytheme.orderform.bestbillingcycle|default:'Best Billing Cycle'}
 								{/if}
 							</strong>
 						{/if}
