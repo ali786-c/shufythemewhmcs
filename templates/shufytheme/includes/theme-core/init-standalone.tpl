@@ -79,12 +79,8 @@
         'id' => '1',
         'allowdarkmode' => 'activated',
         'darkmodefault' => '',
-        'dafaultthemecolor' => 'theme-style-one'
+        'dafaultthemecolor' => 'default-color'
     ] scope="global"}
-{/if}
-
-{if !$themecolorsetting}
-    {assign var="themecolorsetting" value=$coodivcolorsettings scope="global"}
 {/if}
 
 {if !$coodivsidebaroptions}

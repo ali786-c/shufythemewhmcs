@@ -80,7 +80,7 @@
 						<fieldset name="allowdarkmode" id="allowdarkmode">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="allowdarkmode" id="allowdarkmode" value="activated" {if $themecolorsetting.allowdarkmode|default:''=='activated'}checked{/if}>
+								<input type="checkbox" name="allowdarkmode" id="allowdarkmode" value="activated" {if $themecolorsetting.allowdarkmode|default:''=='activated' || $themecolorsetting.id|default:'' != '1'}checked{/if}>
 								Allow user to switch between dark and light mode
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>
@@ -99,7 +99,7 @@
 					<div class="radio">
 						<label>
 							<img src="../modules/addons/shufyTheme/assets/img/theme-color-1.webp" alt="">
-							<input type="radio" name="dafaultthemecolor" id="theme-style-one" value="theme-style-one" {if $themecolorsetting.dafaultthemecolor|default:''=='theme-style-one' || $themecolorsetting.dafaultthemecolor|default:''==''}checked{/if}>
+							<input type="radio" name="dafaultthemecolor" id="theme-style-one" value="theme-style-one" {if $themecolorsetting.dafaultthemecolor|default:''=='theme-style-one' || $themecolorsetting.id|default:'' != '1'}checked{/if}>
 							<span class="title">Default Theme Schemes</span>
 							<span class="checkmark"></span>
 						</label>
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 		
-		<div class="section {if $themecolorsetting.dafaultthemecolor|default:''=='theme-style-one' || $themecolorsetting.dafaultthemecolor|default:''==''}d-block{else}d-none{/if}" id="custom-colors-schemes-one">
+		<div class="section {if $themecolorsetting.dafaultthemecolor|default:''=='theme-style-one' || $themecolorsetting.id|default:'' != '1'}d-block{else}d-none{/if}" id="custom-colors-schemes-one">
 			<h5 class="title">Custom Default Theme Color Schemes</h5>
 			<div class="form-group-wrapper-shadow">
 				<h6 class="sub-title">Backgrounds Colors</h6>

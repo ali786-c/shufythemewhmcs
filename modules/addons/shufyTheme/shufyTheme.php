@@ -125,17 +125,6 @@ function shufyTheme_save_settings($data) {
         if (isset($data['register-style'])) {
             $data['registerstyle'] = $data['register-style'];
         }
-    // If saving style/color options, set unchecked checkboxes to 'disabled'
-    if (strpos($action, 'color') !== false || strpos($action, 'style') !== false) {
-        $colorCheckboxes = [
-            'darkmodefault',
-            'allowdarkmode'
-        ];
-        foreach ($colorCheckboxes as $cb) {
-            if (!isset($data[$cb])) {
-                $data[$cb] = 'disabled';
-            }
-        }
     }
 
     foreach ($data as $key => $val) {
@@ -206,7 +195,6 @@ function shufyTheme_output($vars) {
     $smarty->assign('themehomepagesetting', $settings);
     $smarty->assign('coodivsettings', $settings);
     $smarty->assign('coodivcolorsettings', $settings);
-    $smarty->assign('themecolorsetting', $settings);
     $smarty->assign('coodivsidebaroptions', $settings);
     $smarty->assign('coodivlayoutssettings', $settings);
     $smarty->assign('coodivhomepagesettings', $settings);
