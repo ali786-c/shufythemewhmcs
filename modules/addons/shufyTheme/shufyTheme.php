@@ -68,6 +68,24 @@ function shufyTheme_save_settings($data) {
         }
     }
 
+    // If saving footer options, set unchecked checkboxes to 'disabled'
+    if (strpos($action, 'footer') !== false) {
+        $footerCheckboxes = [
+            'accordionfootermenu',
+            'themefootersettingpoworedbycoodiv',
+            'themefootersettinglogo',
+            'themefootersettingsocialicons',
+            'themefootersettingadress',
+            'themefootersettingmobile',
+            'themefootersettingemail'
+        ];
+        foreach ($footerCheckboxes as $cb) {
+            if (!isset($data[$cb])) {
+                $data[$cb] = 'disabled';
+            }
+        }
+    }
+
     foreach ($data as $key => $val) {
         if (in_array($key, ['token', 'action', 'itemid', 'submit'])) continue;
         $strVal = is_array($val) ? json_encode($val) : (string)$val;

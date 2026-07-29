@@ -238,7 +238,7 @@
 						<div class="footer__copyright__wrapper__text">
 							<h6 class="the__copyright__text coodiv-text-12 mb-0 font-weight-500 text-md-left text-center">
 							{lang key="copyrightFooterNotice" year=$date_year company=$companyname}
-							{if $coodivfootersettings.themefootersettingpoworedbycoodiv|default:''=='activated' || $coodivfootersettings.id|default:'' != '1'}
+							{if $coodivfootersettings.themefootersettingpoworedbycoodiv|default:''=='activated'}
 								Powered by <a target="_blank" href="https://coodiv.net/">Coodiv</a>
 							{/if}
 							</h6>

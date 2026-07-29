@@ -141,7 +141,7 @@
 						<fieldset name="themefootersettingpoworedbycoodiv" id="themefootersettingpoworedbycoodiv">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="themefootersettingpoworedbycoodiv" id="themefootersettingpoworedbycoodiv" value="activated" {if $themefootersetting.themefootersettingpoworedbycoodiv|default:''=='activated' || $themefootersetting.id|default:'' != '1'}checked{/if}>
+								<input type="checkbox" name="themefootersettingpoworedbycoodiv" id="themefootersettingpoworedbycoodiv" value="activated" {if $themefootersetting.themefootersettingpoworedbycoodiv|default:''=='activated'}checked{/if}>
 								Yes, i want to display powered by coodiv in the footer
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>
