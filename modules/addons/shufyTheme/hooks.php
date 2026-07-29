@@ -51,7 +51,8 @@ add_hook('ClientAreaPage', 1, function($vars) {
             'layoutsettingssidebarlayout'   => 'minimalist__sidebar',
             'layoutsettingssidebarposition' => 'sidebarpositionleft',
             'layoutsettingssidebarstyle'    => 'sidebarheaderlogo'
-        ], $dbSettings)
+        ], $dbSettings),
+        'CoodivMarketConnectServices' => []
     ];
 
     return $defaults;
