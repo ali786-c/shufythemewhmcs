@@ -80,7 +80,7 @@
 						<fieldset name="allowdarkmode" id="allowdarkmode">
 							<div class="radio">
 							<label class="template__label">
-								<input type="checkbox" name="allowdarkmode" id="allowdarkmode" value="activated" {if $themecolorsetting.allowdarkmode|default:''=='activated' || $themecolorsetting.id|default:'' != '1'}checked{/if}>
+								<input type="checkbox" name="allowdarkmode" id="allowdarkmode" value="activated" {if $themecolorsetting.allowdarkmode|default:''=='activated'}checked{/if}>
 								Allow user to switch between dark and light mode
 								<span class="checkmark"><i class="fal fa-check"></i></span>
 							</label>

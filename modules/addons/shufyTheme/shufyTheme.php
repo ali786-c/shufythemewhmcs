@@ -88,6 +88,19 @@ function shufyTheme_save_settings($data) {
         }
     }
 
+    // If saving style/color options
+    if (strpos($action, 'color') !== false || strpos($action, 'style') !== false) {
+        $colorCheckboxes = [
+            'darkmodefault',
+            'allowdarkmode'
+        ];
+        foreach ($colorCheckboxes as $cb) {
+            if (!isset($data[$cb])) {
+                $data[$cb] = 'disabled';
+            }
+        }
+    }
+
     // If saving general theme options
     if (strpos($action, 'themeoption') !== false || $action === 'themeoption' || $action === 'applythemeoption') {
         $generalCheckboxes = [

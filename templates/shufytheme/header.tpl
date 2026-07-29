@@ -10,10 +10,12 @@
 {if $coodivcolorsettings.allowdarkmode|default:''=='activated' || $coodivcolorsettings.id|default:'' != '1'}
 	<script>
 	const theme = localStorage.getItem('theme');
-	if (theme === "dark") {
-	document.documentElement.setAttribute('data-theme', 'dark');
-	}else{
-	document.documentElement.setAttribute('data-theme', 'light');
+	if (theme === "dark" || (theme === null && "{if $coodivcolorsettings.darkmodefault|default:''=='activated'}1{/if}" === "1")) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	} else if (theme === "light") {
+		document.documentElement.setAttribute('data-theme', 'light');
+	} else {
+		document.documentElement.setAttribute('data-theme', '{if $coodivcolorsettings.darkmodefault|default:''=='activated'}dark{else}light{/if}');
 	}
 	</script>
 {/if}
