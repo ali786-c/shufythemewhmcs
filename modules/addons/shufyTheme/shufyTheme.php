@@ -29,7 +29,9 @@ function shufyTheme_deactivate() {
 }
 
 function shufyTheme_get_all_settings() {
-    $settings = [];
+    $settings = [
+        'id' => '1'
+    ];
     try {
         $rows = Capsule::table('tbladdonmodules')
             ->where('module', 'shufyTheme')
