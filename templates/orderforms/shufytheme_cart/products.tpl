@@ -217,8 +217,8 @@
 						{/if}
 					</p>
 					<div class="buttom-pricing-element">
-						<div class="pricing d-flex align-items-start mt-lg-10 mt-4 mb-2">
-							<span class="coodiv-text-4 font-weight-bold main-text-color mr-4">
+						<div class="pricing d-flex align-items-center mt-lg-10 mt-4 mb-2">
+							<span class="coodiv-text-4 font-weight-bold main-text-color mr-2">
 							{if $product.bid}
 							{if $product.displayprice}
 							<span class="emyui-ews-plans-group-price-tag">{$product.displayprice}</span>
@@ -262,7 +262,7 @@
 							</span>
 							{/if}
 							</span>
-							<span class="coodiv-text-12 font-weight-300 line-height-20 align-self-end mb-2 ml-2">
+							<span class="coodiv-text-12 font-weight-300 text-muted ml-1" style="font-size: 13px; transform: translateY(-4px);">
 								{if $product.pricing.minprice.cycle eq "monthly" || $product.pricing.minprice.cycle eq "month"}
 									{$LANG.orderpaymenttermmonthly|default:'Monthly'}
 								{elseif $product.pricing.minprice.cycle eq "quarterly"}
