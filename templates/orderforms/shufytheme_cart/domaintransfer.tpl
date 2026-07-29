@@ -1,3 +1,4 @@
+{include file="shufytheme/includes/theme-core/init-standalone.tpl"}
 {include file="orderforms/standard_cart/common.tpl"}
 <div class="full__with__section">
 	<div class="domain__register__hero">
