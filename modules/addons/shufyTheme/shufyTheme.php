@@ -86,6 +86,41 @@ function shufyTheme_save_settings($data) {
         }
     }
 
+    // If saving general theme options
+    if (strpos($action, 'themeoption') !== false || $action === 'themeoption' || $action === 'applythemeoption') {
+        $generalCheckboxes = [
+            'textlogo',
+            'advancedemailverification',
+            'customerspin',
+            'customersnotifications',
+            'productasslider',
+            'allowproductsliderswitch',
+            'gravatar',
+            'h-anoncement',
+            'user-dropdown',
+            'notification-dropdown',
+            'cart-dropdown',
+            'client-marketconnect',
+            'services-marketconnect',
+            'domains-marketconnect'
+        ];
+        foreach ($generalCheckboxes as $cb) {
+            if (!isset($data[$cb])) {
+                $data[$cb] = 'disabled';
+            }
+        }
+
+        // Map HTML field aliases to Template DB variable names
+        $data['siteaslogo']            = $data['textlogo'] ?? 'disabled';
+        $data['headeranoncement']      = $data['h-anoncement'] ?? 'disabled';
+        $data['userdropdown']          = $data['user-dropdown'] ?? 'disabled';
+        $data['notificationdropdown']  = $data['notification-dropdown'] ?? 'disabled';
+        $data['cartdropdown']          = $data['cart-dropdown'] ?? 'disabled';
+        $data['clientmarketconnect']   = $data['client-marketconnect'] ?? 'disabled';
+        $data['servicemarketconnect']  = $data['services-marketconnect'] ?? 'disabled';
+        $data['domainmarketconnect']   = $data['domains-marketconnect'] ?? 'disabled';
+    }
+
     foreach ($data as $key => $val) {
         if (in_array($key, ['token', 'action', 'itemid', 'submit'])) continue;
         $strVal = is_array($val) ? json_encode($val) : (string)$val;
