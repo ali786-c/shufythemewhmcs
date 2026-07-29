@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --font-heading:"Rokkitt",sans-serif;
+    --font-body:"Rokkitt",sans-serif;
+}

@@ -1,0 +1,32 @@
+{
+    "schema": "1.0.4",
+    "type": "whmcs-addons",
+    "name": "shufyTheme",
+    "license": "Commercial",
+    "category": "addon",
+    "description": {
+        "name": "Coodiv themes control panel",
+        "tagline": "configure your theme using this control panel.",
+        "long": "You do not need to create complicated WHMCS hooks to create or edit menus anymore, Coodiv Primary Menu manager gives you convenient options to set up your theme main navigation.",
+        "features": [
+            "Provide admin facing user interfaces",
+            "Utilize hook functionality within WHMCS"
+        ]
+    },
+    "logo": {
+        "filename": "logo.png"
+    },
+    "support": {
+        "homepage": "https:\/\/www.coodiv.net\/", 
+        "learn_more": "https:\/\/www.coodiv.net\/", 
+        "email": "support@coodiv.net", 
+        "support_url": "https:\/\/coodiv.net\/support",
+        "docs_url": "https:\/\/demo.coodiv.net\/shufytheme-modules\/documentation\/index.html"
+    },
+    "authors": [
+        {
+            "name": "coodiv team (nedjai mohamed)",
+            "homepage": "https:\/\/www.coodiv.net\/"
+        }
+    ]
+}

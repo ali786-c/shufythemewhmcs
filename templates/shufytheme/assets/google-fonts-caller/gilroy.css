@@ -1,0 +1,20 @@
+
+
+@font-face {
+  font-family: 'customgilroy';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../gilroy-font/gilroy-medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'customgilroy';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../gilroy-font/gilroy-extrabold.woff2) format('woff2');
+}
+
+:root{
+    --font-heading:"customgilroy",sans-serif;
+    --font-body:"customgilroy",sans-serif;
+}

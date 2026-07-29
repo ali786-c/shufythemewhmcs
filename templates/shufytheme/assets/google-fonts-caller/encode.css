@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --font-heading:"Encode Sans Semi Condensed",sans-serif;
+    --font-body:"Encode Sans Semi Condensed",sans-serif;
+}
