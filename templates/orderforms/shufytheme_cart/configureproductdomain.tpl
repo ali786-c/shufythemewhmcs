@@ -460,18 +460,18 @@
 
                 <div class="buttom__cart__submit__area d-none">
 					<div class="buttom__cart__submit__area__container d-flex align-items-center justify-content-between">
-						<div class="">
-						<div class="sticky__content d-flex align-items-center">
-							<div class="coodiv-text-8 font-weight-bold buttom__cart__submit__area__domains__number" id="cartItemCount">{$cartitemcount}</div>
-							<span class="coodiv-text-8 font-weight-bold">{$LANG.orderproduct} <small class="font-weight-300 coodiv-text-11">{$LANG.recommendations.title.addedTo}</small></span>
+						<div>
+							<div class="sticky__content d-flex align-items-center gap-2">
+								<div class="coodiv-text-8 font-weight-bold buttom__cart__submit__area__domains__number mr-2" id="cartItemCount">{$cartitemcount}</div>
+								<span class="coodiv-text-8 font-weight-bold">{$LANG.orderproduct|default:'Product/Service'} <small class="font-weight-300 coodiv-text-11">{lang key='recommendations.title.addedTo'|default:'Added to Cart'}</small></span>
+							</div>
 						</div>
-						</div>
-						<div class="d-flex align-items-center">
-						<a class="viewcart-btn coodiv-text-11 font-weight-bold mr-9" href="{$WEB_ROOT}/cart.php?a=view">{$LANG.viewcart}</a>
-						<button id="btnDomainContinue" type="submit" class="btn btn-primary btn-lg w-hidden" disabled="disabled">
-						    <span class="continue__btn__text">{$LANG.continue}</span>
-						    <span class="choosedomain__btn__text">{$LANG.domaincheckerchoosedomain}</span>
-						</button>
+						<div class="d-flex align-items-center gap-3">
+							<a class="viewcart-btn coodiv-text-11 font-weight-bold mr-4" href="{$WEB_ROOT}/cart.php?a=view">{$LANG.viewcart|default:'View Cart'}</a>
+							<button id="btnDomainContinue" type="submit" class="btn btn-primary btn-lg w-hidden" disabled="disabled">
+								<span class="continue__btn__text">{lang key='continue'|default:'Continue'}</span>
+								<span class="choosedomain__btn__text">{lang key='domaincheckerchoosedomain'|default:'Choose Domain'}</span>
+							</button>
 						</div>
 					</div>
                 </div>
