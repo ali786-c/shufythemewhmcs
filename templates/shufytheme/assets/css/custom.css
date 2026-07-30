@@ -147,63 +147,197 @@ html {
     --disabled-opacity: 25%;
 }
 
-/* ==========================================
-   ShufyTheme Premium Dark Blue Theme Overrides
-   ========================================== */
+/* ===================================================
+   ⚡ ULTRA-PREMIUM MODERN OBSIDIAN & LIME DARK THEME
+   (Inspired by Modern European Cloud Hosting UI)
+   =================================================== */
 
-/* 1. Main Outer Body & Dark Background */
-body.body__dark,
-body.dark__sidebar__color {
-    background-color: #0a192f !important; /* Deep Navy Blue Outer Background */
-    color: #e2e8f0 !important;             /* Crisp Light Text */
+[data-theme=dark] body, 
+[data-theme=dark] body.theme-style-four, 
+[data-theme=dark] body.theme-style-three, 
+[data-theme=dark] body.theme-style-two, 
+body.body__dark, 
+body.body__dark.theme-style-four, 
+body.body__dark.theme-style-three, 
+body.body__dark.theme-style-two {
+    --background: #080912;
+    background: linear-gradient(125deg, #150e32 0%, #0a0b16 45%, #05060c 100%) !important;
+    background-attachment: fixed !important;
+    color: #f8fafc !important;
+
+    --background-2: #0e101d;
+    --background-3: #141729;
+    --background-4: #0a0c16;
+    --background-5: #101222;
+    --background-6: #0d0f1b;
+    --background-7: #080911;
+    --background-8: #040509;
+    --background-9: #05060c;
+    --background-10: #1b1342;
+    --background-11: #090a14;
+    --background-13: #0f1120;
+    --background-14: #15182c;
+
+    --color-sidebar-h: #ffffff;
+
+    /* Accent & Primary Electric Lime Buttons */
+    --btn-primary-bg: #a3e635;
+    --btn-primary-border: #a3e635;
+    --btn-primary-color: #000000;
+    --btn-primary-bg-hover: #84cc16;
+    --btn-primary-border-hover: #84cc16;
+    --btn-border: rgba(255, 255, 255, 0.08);
 }
 
-/* 2. Top Header & Navbar Bar */
+/* 1. Header & Top Navbar */
 body.body__dark .header,
 body.body__dark header,
 body.body__dark .fixed__header__layout {
-    background-color: #0f2744 !important; /* Rich Navy Header */
-    border-bottom: 1px solid #1e3a5f !important;
+    background-color: #0a0b16 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* 3. Cards, Containers, Boxes & Dropdown Menus */
+/* 2. Card Containers, Dropdowns & Panels */
 body.body__dark .card,
 body.body__dark .sidebar__body,
 body.body__dark .collapsable-dropdown-menu,
 body.body__dark .dropdown-menu,
 body.body__dark .bg-white,
 body.body__dark .nav__items__wrapper,
-body.body__dark .footer__wrapper {
-    background-color: #172a45 !important; /* Dark Blue Card Background */
+body.body__dark .footer__wrapper,
+body.body__dark .default__shadow__panel,
+body.body__dark .main__cart__domains__config__box,
+body.body__dark .cart__domains__config__box,
+body.body__dark .orderform__cart__header {
+    background-color: #0d0f1b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
     color: #ffffff !important;
-    border-color: #1e3a5f !important;
 }
 
-/* 4. Clickable Links, Hover States & Accent Colors */
+/* 3. Typography & Subtitles */
+body.body__dark p, 
+body.body__dark .text-muted,
+body.body__dark .sub-title,
+body.body__dark .sub-color,
+body.body__dark .coodiv-text-10,
+body.body__dark .coodiv-text-11,
+body.body__dark .coodiv-text-12 {
+    color: #94a3b8 !important; /* Premium Silver Grey Text */
+}
+
+body.body__dark h1,
+body.body__dark h2,
+body.body__dark h3,
+body.body__dark h4,
+body.body__dark h5,
+body.body__dark h6,
+body.body__dark .font-weight-bold,
+body.body__dark .coodiv-text-5,
+body.body__dark .coodiv-text-6,
+body.body__dark .coodiv-text-7,
+body.body__dark .coodiv-text-8 {
+    color: #ffffff !important;
+}
+
+/* 4. Clickable Links & Accent Highlights */
 body.body__dark a,
 body.body__dark .sidebar__link {
-    color: #38bdf8 !important; /* Bright Blue / Cyan Highlight */
+    color: #a3e635 !important;
 }
 
 body.body__dark a:hover,
 body.body__dark .sidebar__link:hover {
-    color: #60a5fa !important;
+    color: #84cc16 !important;
 }
 
-/* 5. Inputs & Form Fields in Dark Blue Mode */
+/* 5. Spotlight TLD Pills & Badges Fix */
+body.body__dark .domains__spotlighttlds__selection__wrapper .domains__spotlighttlds__selection__item,
+body.body__dark .spotlight-tlds .spotlight-tld-container {
+    background: #141729 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+body.body__dark .domains__spotlighttlds__selection__wrapper .domains__spotlighttlds__selection__item:hover,
+body.body__dark .domains__spotlighttlds__selection__wrapper .domains__spotlighttlds__selection__item.active {
+    background: #1e233d !important;
+    border-color: #a3e635 !important;
+}
+
+body.body__dark .domains__spotlighttlds__selection__wrapper .domains__spotlighttlds__selection__item span,
+body.body__dark .spotlight-tlds .spotlight-tld-container span {
+    color: #cbd5e1 !important;
+}
+
+body.body__dark .domains__spotlighttlds__selection__wrapper .domains__spotlighttlds__selection__item .tld,
+body.body__dark .spotlight-tlds .tld {
+    color: #a3e635 !important;
+    font-weight: 700 !important;
+}
+
+/* 6. Most Popular TLD Cards & Price Tags */
+body.body__dark .domain-tld-pricing,
+body.body__dark .spotlight-tlds .price,
+body.body__dark .domain-tld-price,
+body.body__dark .suggested-domains-container .price,
+body.body__dark .domain-checker-result-headline .price {
+    color: #94a3b8 !important;
+    font-weight: 600 !important;
+}
+
+body.body__dark .domain-tld-container,
+body.body__dark .domain-suggestion,
+body.body__dark .suggested-domains-container {
+    background-color: #0e101d !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+}
+
+/* 7. Domain Search Bar & Action Buttons */
+body.body__dark .domain-checker-container,
+body.body__dark .domain-checker-bg {
+    background: #0d0f1b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.body__dark input[type="text"].domain-checker-input,
+body.body__dark #inputDomain,
 body.body__dark .form-control,
 body.body__dark input[type="text"],
 body.body__dark input[type="email"],
 body.body__dark input[type="password"],
 body.body__dark select {
-    background-color: #0f2744 !important;
+    background-color: #06070d !important;
     color: #ffffff !important;
-    border: 1px solid #1e3a5f !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-/* ===================================================
-   🌙 BOTTOM CART STICKY SUBMIT AREA FIXES (Pic 2 Match)
-   =================================================== */
+body.body__dark select option {
+    background-color: #0a0c16 !important;
+    color: #ffffff !important;
+}
+
+body.body__dark .btn-primary,
+body.body__dark .orderform__submit__btn__succses,
+body.body__dark #btnDomainContinue,
+body.body__dark #btnCheckDomain {
+    background-color: #a3e635 !important;
+    border-color: #a3e635 !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+body.body__dark .btn-primary:hover,
+body.body__dark .orderform__submit__btn__succses:hover,
+body.body__dark #btnDomainContinue:hover,
+body.body__dark #btnCheckDomain:hover {
+    background-color: #84cc16 !important;
+    border-color: #84cc16 !important;
+    color: #000000 !important;
+}
+
+/* 8. Bottom Sticky Cart Submit Area */
 .buttom__cart__submit__area {
     position: fixed !important;
     bottom: 0 !important;
@@ -217,8 +351,9 @@ body.body__dark select {
 }
 
 body.body__dark .buttom__cart__submit__area {
-    background: #172a45 !important;
-    border-top-color: #1e3a5f !important;
+    background: #0a0c16 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6) !important;
 }
 
 .buttom__cart__submit__area .viewcart-btn {
@@ -232,7 +367,7 @@ body.body__dark .buttom__cart__submit__area {
 }
 
 body.body__dark .buttom__cart__submit__area .viewcart-btn {
-    color: #38bdf8 !important;
+    color: #a3e635 !important;
 }
 
 #order-standard_cart .buttom__cart__submit__area #btnDomainContinue {
@@ -245,205 +380,23 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     justify-content: center !important;
     font-weight: 700 !important;
     font-size: 15px !important;
-    color: #ffffff !important;
-    background-color: #0cbed5 !important;
+    color: #000000 !important;
+    background-color: #a3e635 !important;
     border: none !important;
     border-radius: 8px !important;
     cursor: pointer !important;
-    opacity: 1 !important;
 }
 
 #order-standard_cart .buttom__cart__submit__area #btnDomainContinue span,
 #order-standard_cart .buttom__cart__submit__area #btnDomainContinue .continue__btn__text,
 #order-standard_cart .buttom__cart__submit__area #btnDomainContinue .choosedomain__btn__text {
-    color: #ffffff !important;
+    color: #000000 !important;
     display: inline-block !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     font-size: 15px !important;
 }
 
-/* ===================================================
-   🌙 CONFIGURE PRODUCT (confproduct) PAGE FIXES
-   =================================================== */
-.icheck__control__check__cycle__btn {
-    background-color: #0cbed5 !important;
-    color: #ffffff !important;
-    border-radius: 6px !important;
-    padding: 6px 14px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    min-height: 32px !important;
-}
-
-.icheck__control__check__cycle__btn span.cycle__select,
-.icheck__control__check__cycle__btn span.cycle__selected {
-    color: #ffffff !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-#btnCompleteProductConfig,
-.orderform__submit__btn__succses {
-    background-color: #0cbed5 !important;
-    border-color: #0cbed5 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-}
-
-#btnCompleteProductConfig span,
-#btnCompleteProductConfig .btn-text {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    display: inline-block !important;
-}
-
-/* ===================================================
-   🟢 SETUP FEES & FREE SETUP BADGE STYLING FIX
-   =================================================== */
-.cycle__setep__fees__wrapper {
-    display: block !important;
-    margin-top: 4px !important;
-    text-align: center !important;
-}
-
-.cycle__setup__fees__free {
-    background-color: #10b981 !important; /* Vibrant Emerald Green */
-    color: #ffffff !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    padding: 3px 8px !important;
-    border-radius: 4px !important;
-    display: inline-block !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.4px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
-}
-
-.cycle__setup__fees {
-    background-color: #64748b !important;
-    color: #ffffff !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
-    padding: 3px 8px !important;
-    border-radius: 4px !important;
-    display: inline-block !important;
-    visibility: visible !important;
-}
-
-.cycle__with__free__domain {
-    background-color: #3b82f6 !important;
-    color: #ffffff !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
-    padding: 3px 8px !important;
-    border-radius: 4px !important;
-    display: inline-block !important;
-    margin-left: 4px !important;
-    visibility: visible !important;
-}
-
-/* ===================================================
-   🗑️ REMOVE ITEM MODAL BUTTON FIXES
-   =================================================== */
-.modal-remove-item .modal-content {
-    border-radius: 12px !important;
-    padding: 15px !important;
-}
-
-.modal-remove-item .btn-secondary,
-.modal-remove-item .btn-default {
-    background-color: #f1f5f9 !important;
-    border: 1px solid #cbd5e1 !important;
-    color: #0f172a !important;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    padding: 8px 24px !important;
-    border-radius: 6px !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    display: inline-block !important;
-}
-
-body.body__dark .modal-remove-item .btn-secondary,
-body.body__dark .modal-remove-item .btn-default {
-    background-color: #334155 !important;
-    border-color: #475569 !important;
-    color: #f8fafc !important;
-}
-
-.modal-remove-item .btn-primary {
-    background-color: #0cbed5 !important;
-    border-color: #0cbed5 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    padding: 8px 24px !important;
-    border-radius: 6px !important;
-    display: inline-block !important;
-}
-
-/* ===================================================
-   🛒 VIEWCART PAGE BUTTON & TEXT FIXES
-   =================================================== */
-#btnCompleteOrder {
-    background-color: #0cbed5 !important;
-    border-color: #0cbed5 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    height: 50px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    opacity: 1 !important;
-}
-
-#btnCompleteOrder span,
-#btnCompleteOrder .btn-text {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    display: inline-block !important;
-    visibility: visible !important;
-}
-
-.btn-primary-outline-light {
-    border: 1px solid #cbd5e1 !important;
-    color: #334155 !important;
-    background: #f8fafc !important;
-    font-weight: 600 !important;
-    border-radius: 6px !important;
-    padding: 8px 18px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
-
-body.body__dark .btn-primary-outline-light {
-    border-color: #475569 !important;
-    color: #f1f5f9 !important;
-    background: #1e293b !important;
-}
-
-/* ===================================================
-   🔄 QUANTITY INPUT & UPDATE BUTTON STYLING FIX (Pic Match)
-   =================================================== */
+/* 9. Quantity Input & Update Button Styling */
 .item__qty {
     display: inline-flex !important;
     align-items: center !important;
@@ -468,8 +421,8 @@ body.body__dark .btn-primary-outline-light {
 
 body.body__dark .item__qty input[type="number"],
 body.body__dark .item__qty .form-control {
-    background-color: #0f2744 !important;
-    border-color: #1e3a5f !important;
+    background-color: #06070d !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
     color: #ffffff !important;
 }
 
@@ -490,46 +443,23 @@ body.body__dark .item__qty .form-control {
 }
 
 .update__item__qty__btn:hover {
-    background-color: #0cbed5 !important;
-    border-color: #0cbed5 !important;
-    color: #ffffff !important;
-}
-
-.update__item__qty__btn i {
-    font-size: 13px !important;
-    color: inherit !important;
-    display: inline-block !important;
+    background-color: #a3e635 !important;
+    border-color: #a3e635 !important;
+    color: #000000 !important;
 }
 
 body.body__dark .update__item__qty__btn {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+    background-color: #141729 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
     color: #cbd5e1 !important;
 }
 
 body.body__dark .update__item__qty__btn:hover {
-    background-color: #0cbed5 !important;
-    border-color: #0cbed5 !important;
-    color: #ffffff !important;
+    background-color: #a3e635 !important;
+    border-color: #a3e635 !important;
+    color: #000000 !important;
 }
 
-/* ===================================================
-   🌐 DOMAIN REGISTRANT CONTACT SELECT BOX FIX
-   =================================================== */
-#inputDomainContact,
-#inputDomainContact option {
-    color: #0f172a !important;
-    background-color: #ffffff !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    padding: 8px 12px !important;
-}
-
-body.body__dark #inputDomainContact,
-body.body__dark #inputDomainContact option {
-    color: #ffffff !important;
-    background-color: #0f2744 !important;
-}
 
 
 
