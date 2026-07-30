@@ -37,7 +37,6 @@
 						<div class="option domain-productconfigiration-options-item">
 							<label class="d-flex align-items-center justify-content-start incartdomains">
 								<input type="radio" name="domainoption" value="incart" id="selincart" />
-								<span class="title desktop__version">{$LANG.cartproductdomainuseincart}</span>
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-shopping-cart"></i></span>
 									<span class="title">{$LANG.cartproductdomainuseincart}</span>
@@ -50,10 +49,9 @@
 						<div class="option domain-productconfigiration-options-item">
 							<label class="d-flex align-items-center justify-content-start registerdomain">
 								<input type="radio" name="domainoption" value="register" id="selregister"{if $domainoption eq "register"} checked{/if} />
-								<span class="title desktop__version">{lang key='orderForm.registerDomain'}</span>
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-search"></i></span>
-									<span class="title">{lang key='orderForm.registerDomain'}</span>
+									<span class="title">Register a<br>New Domain</span>
 								</span>
 							</label>
 						</div>
@@ -63,11 +61,10 @@
 						<div class="option domain-productconfigiration-options-item">
 							<label class="d-flex align-items-center justify-content-start transferdomain">
 								<input type="radio" name="domainoption" value="transfer" id="seltransfer"{if $domainoption eq "transfer"} checked{/if} />
-								<span class="title desktop__version">{lang key='orderForm.transferToUs'}</span>
 								<span class="mobile__version">
 									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.carttransferdomainchoice}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-exchange-alt"></i></span>
-									<span class="title">{lang key='orderForm.transferToUs'}</span>
+									<span class="title">Transfer a<br>Domain Name</span>
 								</span>
 							</label>
 						</div>
@@ -77,11 +74,10 @@
 						<div class="option domain-productconfigiration-options-item owndomain">
 							<label class="d-flex align-items-center justify-content-start owndomain">
 								<input type="radio" name="domainoption" value="owndomain" id="selowndomain"{if $domainoption eq "owndomain"} checked{/if} />
-								<span class="title desktop__version">{$LANG.cartexistingdomainchoice}</span>
 								<span class="mobile__version">
 									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.cartexistingdomainchoice}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-globe"></i></span>
-									<span class="title">{$LANG.cartexistingdomainchoice}</span>
+									<span class="title">Use an<br>Existing Domain Name</span>
 								</span>
 							</label>
 						</div>
@@ -90,7 +86,6 @@
 						<div class="option domain-productconfigiration-options-item border-opacity">
 							<label class="d-flex align-items-center justify-content-start subdomains">
 								<input type="radio" name="domainoption" value="subdomain" id="selsubdomain"{if $domainoption eq "subdomain"} checked{/if} />
-								<span class="title desktop__version">{$LANG.cartsubdomainchoice|sprintf2:$companyname}</span>
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-network-wired"></i></span>
 									<span class="title">{$LANG.cartsubdomainchoice|sprintf2:$companyname}</span>
