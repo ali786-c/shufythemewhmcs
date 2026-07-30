@@ -21,7 +21,7 @@
 						{if ($childItem->getClass() && (strpos($childItem->getClass(), 'divider') !== false || strpos($childItem->getClass(), 'nav-divider') !== false)) || strpos($childItem->getLabel(), '---') !== false || strpos($childItem->getLabel(), '----') !== false || strpos($childItem->getLabel(), '-----') !== false || $childItem->getLabel() == '-----' || $childItem->getLabel() == '---' || $childItem->getLabel() == '-'}
 							<div class="dropdown-divider my-2 border-top opacity-5"></div>
 						{else}
-							<a href="{$childItem->getUri()}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
+							<a href="{if $childItem->getName() eq 'Home' || $childItem->getLabel()|lower eq 'home' || $childItem->getUri() eq 'index.php' || $childItem->getUri() eq "{$WEB_ROOT}/index.php"}https://cloudhoste.eu{else}{$childItem->getUri()}{/if}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
 								 {if $childItem->hasIcon()}
 								 <i class="{$childItem->getIcon()}"></i>
 								 {/if}
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	{else}
-		<a aria-label="{$item->getName()} link" menuItemName="{$item->getName()}" id="{$item->getId()}" class="sidebar__item {if $item->getClass()} {$item->getClass()}{/if}" href="{$item->getUri()}" {if $item->getAttribute('target')} target="{$item->getAttribute('target')}"{/if} data-placement="right" title="{$item->getLabel()}">
+		<a aria-label="{$item->getName()} link" menuItemName="{$item->getName()}" id="{$item->getId()}" class="sidebar__item {if $item->getClass()} {$item->getClass()}{/if}" href="{if $item->getName() eq 'Home' || $item->getLabel()|lower eq 'home' || $item->getUri() eq 'index.php' || $item->getUri() eq "{$WEB_ROOT}/index.php"}https://cloudhoste.eu{else}{$item->getUri()}{/if}" {if $item->getAttribute('target')} target="{$item->getAttribute('target')}"{/if} data-placement="right" title="{$item->getLabel()}">
 			{if $item->hasIcon()}
 			<i class="side__bar__item__icon {$item->getIcon()}"></i>
 			{else}
