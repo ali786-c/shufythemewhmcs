@@ -109,17 +109,16 @@
 	{if $coodivcolorsettings.allowdarkmode|default:''=='activated' || $coodivcolorsettings.id|default:'' != '1'}
 		<script>
 			const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content'); 
-			if (theme === "light") {
+			if (theme === "dark") {
+				document.body.classList.add('body__dark');
+				if (jQuery("#theme-toggle").length > 0) {
+					document.getElementById("theme-toggle").innerHTML = "Light Mode";
+				}
+			} else {
 				document.body.classList.add('light-mode');
 				document.documentElement.setAttribute('data-theme', 'light');
 				if (jQuery("#theme-toggle").length > 0) {
 					document.getElementById("theme-toggle").innerHTML = "Dark Mode";
-				}
-			} else {
-				document.body.classList.add('body__dark');
-				document.documentElement.setAttribute('data-theme', 'dark');
-				if (jQuery("#theme-toggle").length > 0) {
-					document.getElementById("theme-toggle").innerHTML = "Light Mode";
 				}
 			}
 			function modeSwitcher() {
