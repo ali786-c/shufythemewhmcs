@@ -253,16 +253,32 @@ function shufyTheme_output($vars) {
 
     $viewsDir = __DIR__ . '/views/';
 
+    // Action Map for Menu & Special Views
+    $actionViewMap = [
+        'listgroup'   => 'menulist.tpl',
+        'menulist'    => 'menulist.tpl',
+        'additem'     => 'addmenu.tpl',
+        'addmenu'     => 'addmenu.tpl',
+        'edititem'    => 'edit_menu.tpl',
+        'edit_menu'   => 'edit_menu.tpl',
+        'addgroup'    => 'addnewgroup.tpl',
+        'addnewgroup' => 'addnewgroup.tpl',
+        'groups'      => 'groups.tpl',
+    ];
+
     // Render Coodiv Header View
     if (file_exists($viewsDir . 'header.tpl')) {
         echo $smarty->fetch($viewsDir . 'header.tpl');
     }
 
     // Render Coodiv Tab View
-    $targetView = $viewsDir . $action . '.tpl';
-    if (!file_exists($targetView)) {
-        if ($action === 'listgroup') $targetView = $viewsDir . 'menulist.tpl';
-        else $targetView = $viewsDir . 'themeoption.tpl';
+    if (isset($actionViewMap[$action])) {
+        $targetView = $viewsDir . $actionViewMap[$action];
+    } else {
+        $targetView = $viewsDir . $action . '.tpl';
+        if (!file_exists($targetView)) {
+            $targetView = $viewsDir . 'themeoption.tpl';
+        }
     }
 
     if (file_exists($targetView)) {
