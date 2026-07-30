@@ -1,0 +1,639 @@
+
+.mg-datapicker {
+    padding: 6px 12px 6px 12px !important;
+    display: flex !important;
+    position: relative !important;
+    margin: 0 !important;
+}
+.mg-datapicker:after {
+    background-color: #fff !important;
+}
+
+.md-input-action {
+    top: 6px !important;
+}
+
+.mg-copy-component-field {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+}
+
+.mg-copy-component-span:hover {
+    cursor: pointer;
+}
+
+#contentarea > div > h1 {
+    display: none!important;
+}
+
+#layers .lu-app .lu-btn--default,
+#layers .lu-app .lu-btn--danger {
+    color: #737880;
+}
+
+#layers .lu-app .vue-app-main-modal-container .lu-btn--danger:not(.lu-btn--outline) {
+    color: #fff;
+}
+
+#layers .lu-app .lu-btn--default:hover {
+    color: #505459;
+}
+
+#layers .vueDatatableTable .mgTableActions label {
+    display: block;
+    margin-bottom: auto;
+    margin-top: auto;    
+}
+
+/*FIX PRELOADER IN SUBMIT BUTTON*/
+#layers .lu-btn.mg-submit-form .lu-btn__icon.lu-preloader {
+    margin: 0 0 0 0;
+}
+
+/*fix to long modal*/
+#layers .lu-app .lu-modal {
+    display:  grid!important;
+}
+
+/*fix mobile menu */
+#layers .lu-off-canvas-responsive--right:not(.is-open) {
+    margin-right: -5000px;
+}
+
+/*FIX AA TOP MENU*/
+
+#layers .lu-preloader-container--full-screen {
+    z-index: 9999;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item:not(.has-dropdown) > .lu-nav__link > .drop-arrow {
+    height: 32px;
+    width: 32px;
+    bottom: -18px;
+    right: 50%;
+    margin-right: -24px;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item:not(.has-dropdown) > .lu-nav__link > .drop-arrow:after {
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    background: #e9ebf0;
+    box-shadow: 3px 3px 3px -1px rgba(0, 0, 0, 0.05) inset;
+    border-radius: 3px;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item:not(.has-dropdown).is-active .drop-arrow {
+    display: block;
+    z-index: 99;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item.has-dropdown > .lu-nav__link > .drop-arrow {
+    height: 32px;
+    width: 32px;
+    bottom: -18px;
+    right: 50%;
+    margin-right: -24px;
+    z-index: 99;
+    display: none;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item.has-dropdown > .lu-nav__link > .drop-arrow:after {
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    background: #e9ebf0;
+    box-shadow: 3px 3px 3px -1px rgba(0, 0, 0, 0.05) inset;
+    border-radius: 3px;
+}
+
+#layers .lu-navbar__nav > .lu-nav > .lu-nav__item.has-dropdown.is-active .drop-arrow {
+    display: block;
+    z-index: 99;
+    animation: none;
+}
+
+
+/*FIX AA TOP MENU END*/
+
+/* RED loader for delete buttons */
+#layers .lu-btn--danger .lu-preloader:before {
+    border-top-color: rgb(244, 62, 62);
+}
+
+/* GREEN loader for submit buttons */
+#layers .lu-btn--success .lu-preloader:before {
+    border-top-color: rgb(98, 202, 95);
+}
+
+/* selectize css fixes */
+#layers .selectize-control.multi .item {
+    padding: 0 8px;
+    margin: 0 4px 4px 0;
+    background: #e9ebf0;
+    line-height: 24px;
+}
+
+#layers .selectize-control.multi .item a {
+    padding-top: 0px;
+    color: #2368AD;
+    transition: color 0.3s;
+}
+
+#layers .selectize-control.multi.plugin-remove_button .item > a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#layers .selectize-control.multi .item.active {
+    color: #333;
+}
+
+#layers .selectize-control.multi .selectize-input {
+    padding-bottom: 0px;
+    padding-left: 4px;
+    display: block;
+}
+
+#layers .selectize-input.lu-form-control.lu-tagger {
+    padding-left: 15px;
+}
+
+#layers .selectize-input.lu-form-control.lu-tagger input {
+    height: 26px;
+}
+/* end of selectize css fixes */
+
+/* Breadcumbrs styles */
+#layers .lu-breadcrumb__item:before {
+    padding: 0 2px 0 8px;
+}
+/* End of breadcumbrs styles */
+
+/* Form in tab styles */
+#layers .mg-form-in-tab .ui-form-submit {
+    padding-bottom: 20px;
+}
+
+#layers .mg-form-in-tab .mg-tab-form-wrapper {
+    padding-left: 8px;
+    margin-right: 8px;
+}
+/* End of Form in tab styles */
+
+/* Modal Background */
+#layers .lu-modal.show {
+    background-color: rgba(80, 84, 89, 0.5);
+}
+/* End of Modal Background */
+
+/* Show Allerts on top of new modal background */
+#layers-body #toast-container,
+#layers #toast-container {
+  z-index: 1102;
+}
+/* End of Show Allerts on top of new modal background */
+
+/* force break lines on lu-list--info */
+#layers .lu-list--info .lu-list__value {
+    word-break: break-all;
+}
+/* end of force break lines */
+
+/* Fixes for Category menu AA */
+#layers .lu-app .lu-block__sidebar .lu-widget__header .menu-search-wrapper.is-shown {
+    position: absolute;
+    left: 0;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    min-width: auto;
+    border: none;
+}
+
+#layers .lu-app .lu-block__sidebar .lu-widget__header .menu-search-wrapper:not(.is-shown) {
+    margin-left: 0px;
+}
+
+#layers .lu-app .lu-block__sidebar .lu-widget__header .menu-search-wrapper.is-shown input {
+    padding-left: 0px;
+}
+
+#layers .lu-app .lu-block__sidebar .lu-widget__body .no-groups-found {
+    text-align: center;
+    padding-bottom: 10px;
+}
+/* End of Fixes for Category menu AA */
+
+/* Category Menu Dynamic Content - content */
+#layers #itemContentContainer
+{
+    overflow: unset;
+    overflow-y: visible;
+}
+/* End of Category Menu Dynamic Content - content */
+
+/* Fixes for Tabs widget Form */
+#layers .lu-app .lu-widget__body .mg-tabs-form-wrapper {
+    padding: 16px;
+}
+/* End of Fixes for Tabs widget Form */
+
+/* FormTabsWidget */
+#layers .mg-form-tabs-widget .ui-form-submit {
+    margin-bottom: 16px;
+    padding-left: 16px;
+}
+/* END of FormTabsWidget */
+
+/* Datatable Filters */
+#layers .vueDatatableTable .mg-dt-filters-container .mg-filters-wrapper {
+    padding-top: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+#layers .vueDatatableTable .mg-dt-filters-container .mg-filter-search-wrapper a {
+    float: right;
+}
+
+#layers .vueDatatableTable .mg-dt-filters-container .mg-filter-search-wrapper {
+    min-height: 36px;
+}
+/* end of Datatable Filters */
+
+/* Loaders for selectize */
+#layers .mg-selectize-loader {
+    position: absolute;
+    right: 35px;
+}
+/* End of Loaders for selectize */
+
+/* fix this icon is smaller than others */
+.lu-zmdi-assignment-account {
+    margin-top: 1px;
+}
+/* end of fix this icon is smaller than others */
+
+/* config options graphics styles */
+.imageFieldContainer {
+    /* border: 1px solid #dadde6; */
+    /* border-radius: 3px; */
+    /* padding: 5px; */
+}
+
+.imageFieldContainer .lu-widget__media {
+    position: relative;
+}
+
+.imageNameContainer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagePreviewContainer {
+    padding: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagePreviewContainer img{
+    height:200px;
+}
+
+.imageGalleryItem {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.imageGalleryItem figure {
+    width: 120px !important;
+    height: 109px;
+    display:-webkit-box !important;
+    -webkit-box-orient: horizontal !important;
+}
+
+.imageGalleryItem .lu-msg__icon {
+    margin-top: 24px;
+}
+
+.imageGalleryItem .lu-msg__body {
+    margin-top: 8px;
+}
+
+.imageGalleryItem figcaption {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    width: 100%;
+    white-space: nowrap;
+    height: 28px;
+    line-height: 28px;
+    border-top: 1px solid #E9EAEC;
+    padding: 0 8px;
+}
+
+.imageGalleryItem .lu-widget__content{
+    padding: 0 !important;
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-bottom: 28px !important;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    max-width: 100%;
+ }
+
+.imageGalleryItem img {
+    max-height: 120px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* margin: 8px; */
+}
+
+.imageGalleryItemContainer {
+    height: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.imageGalleryItemContainer div{
+    margin-top:auto;
+    margin-bottom:auto;
+    overflow: hidden;
+    width: 120px;
+    /* height: 100%; */
+    position: relative;
+    /* padding: 8px; */
+    margin: 8px;
+}
+
+.configOptionsBtn {
+    background: #2368AD;
+    color: #fff;
+}
+
+.imageGalleryContainer {
+    padding: 2px;
+    overflow-y: auto;
+    max-height: 300px;
+    margin: 0 -10px;
+}
+
+.imageGalleryContainer::-webkit-scrollbar {
+    width: 4px;
+}
+
+.imageGalleryContainer::-webkit-scrollbar-thumb {
+    background: #D9D9D9; 
+    border-radius: 2px;
+}
+
+.imageGalleryContainer--empty {
+    margin: 0;
+}
+
+.imageGalleryContainer__empty {
+    height: 115px;
+    border: 1px solid #DADDE6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.imageGalleryContainer__upload span {
+    color: #777777;
+}
+
+.imageGalleryContainer__upload a {
+    color: #1DA5F1;
+}
+
+.imageGalleryContainer__empty > strong {
+    line-height: 28px;
+    color: #000;
+}
+
+.uploadFileBtn {
+    display: inline-block;
+    width: 100px;
+    background-color: #1a4f83;
+    color: white;
+    text-align: center;
+    padding:4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.uploadFileBtn:hover {
+    background-color: #104375;
+}
+
+#fileInputContainer {
+    margin-top: 10px;
+}
+
+#fileInputContainer label{
+    margin: 0;
+}
+
+#fileInputContainer input{
+    display: none;
+}
+
+.imageMainGalleryItemContainer {
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    /* margin: 5px; */
+}
+
+.imageMainGalleryItemContainer div{
+    margin-top:auto;
+    margin-bottom:auto;
+    overflow: hidden;
+    width: 217px;
+    height: 100%;
+    position: relative;
+}
+
+.imageMainGalleryItem {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.imageMainGalleryItem figure {
+    height: 155px;
+    width: 218px !important;
+    display:-webkit-box !important;
+    -webkit-box-orient: horizontal !important;
+}
+
+
+.imageMainGalleryItem figcaption {
+    position: absolute;
+    top: 118px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    width: 100%;
+    white-space: nowrap;
+    height: 34px;
+    line-height: 34px;
+    border-top: 1px solid #E9EAEC;
+    padding: 0 8px;
+}
+
+.imageMainGalleryItem .lu-widget__content{
+    padding: 0 !important;
+    border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    padding-bottom: 34px !important;
+    margin-left: auto;
+    margin-right: auto;
+    overflow:hidden;
+}
+
+.imageMainGalleryItem img {
+    /* max-height: 130px; */
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+
+.imageMainGalleryContainer {
+    /* padding-top: 4px; */
+    /* padding-left: 6px; */
+    /* padding-right: 2px; */
+    overflow-y: auto;
+    /* max-height:300px; */
+}
+
+div.imageMainGalleryItem figure:hover {
+    border-color: red !important;
+}
+
+.imageMainGalleryItem .lu-widget {
+    overflow: hidden;
+    box-shadow: unset !important;
+    border: 1px solid #E9EAEC !important;
+}
+
+.subOptionsMultiselectContainer .lu-form-group:last-child {
+    width: 100%;
+    display: inline-block !important;
+}
+.tbl__image-name {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    align-items: center;
+}
+.tbl-image {
+    min-width: 24px;
+}
+.tbl-image img{
+    height:24px !important;
+    width:24px !important;
+}
+#mgModalContainer > div.lu-modal__top.lu-top {
+    height:auto;
+}
+
+
+.lu-app-main--media-manager .imageMainGalleryContainer .lu-widget figcaption {
+    line-height: 34px;
+    width: 100%;
+    border-top: 1px solid #E9EAEC;
+}
+
+.galleryFieldButtonContainer  {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+#galleryField {
+    padding: 0;
+}
+
+.lu-app--media-manager {
+    display: flex;
+    flex-direction: column;
+}
+
+.lu-app--media-manager .lu-app-main {
+    flex-grow: 1;
+}
+
+.lu-app--media-manager .lu-app-main__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lu-app--media-manager .lu-app-main__body .vue-app-main-container {
+    height: 100%;
+}
+
+.lu-app--media-manager .lu-app-main__body .vue-app-main-container > .lu-widget {
+    height: 100%;
+}
+div.selectize-control.multi.plugin-directionDetector.plugin-remove_button.plugin-restore_on_backspace {
+    height: auto !important;
+}
+
+#countriesDataTable {
+    padding: 0;
+    margin: 0 !important;
+}
+#countriesSettingsSection > h2 {
+    display: none;
+}
+#countriesDataTable > div.lu-widget__header {
+    display: none;
+}
+#contTabcountriesDataTable > div {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#countriesDataTable {
+    border-top: 0 !important;
+}
+
+#countriesSettingsSection > div.lu-row.mg-tab-form-wrapper > div > div > div > div {
+    margin-bottom:16px;
+}
+#countriesSettingsSection > div.lu-row.mg-tab-form-wrapper > div > div > div > div:nth-child(2) {
+    margin-bottom:10px;
+}
+#countriesSettingsSection > div.lu-row.mg-tab-form-wrapper > div > div > div > div > label {
+    margin-bottom: 10px;
+}
+#countriesSettingsSection > div.lu-row.mg-tab-form-wrapper > div > div > div {
+    padding-bottom: 8px;
+}

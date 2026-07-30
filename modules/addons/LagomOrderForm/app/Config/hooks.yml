@@ -1,0 +1,5 @@
+name:
+    AdminAreaFooterOutput: true
+    ShoppingCartValidateCheckout: true
+    ClientAreaHeadOutput: true
+    ClientAreaHeaderOutput: false

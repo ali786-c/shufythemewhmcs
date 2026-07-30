@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS LagomOrderForm_api_logs;

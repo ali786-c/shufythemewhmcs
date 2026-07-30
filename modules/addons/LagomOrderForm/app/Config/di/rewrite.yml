@@ -1,0 +1,15 @@
+class:
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Config\\After',                         new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Config\\After'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Activate\\After',                       new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Activate\\After'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Deactivate\\After',                     new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Deactivate\\After'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Update\\After',                         new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Update\\After'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Config\\Before',                        new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Config\\Before'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Activate\\Before',                      new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Activate\\Before'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Deactivate\\Before',                    new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Deactivate\\Before'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Configuration\\Addon\\Update\\Before',                        new: '\\ModulesGarden\\LagomOrderForm\\App\\Configuration\\Addon\\Update\\Before'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\App\\Controllers\\Instances\\Http\\ClientPageController',     new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\CustomClientPageController'}
+    - {old: 'ModulesGarden\\LagomOrderForm\\Core\\App\\Controllers\\Instances\\Http\\ClientPageController',       new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\CustomClientPageController'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\App\\Controllers\\Instances\\Http\\Integration',               new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\CustomClientIntegration'}
+    - {old: 'ModulesGarden\\LagomOrderForm\\Core\\App\\Controllers\\Instances\\Http\Integration',                 new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\CustomClientIntegration'}
+    - {old: '\\ModulesGarden\\LagomOrderForm\\Core\\Hook\\HookIntegrationsWrapper',                               new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\HookIntegrationsWrapper'}
+    - {old: 'ModulesGarden\\LagomOrderForm\\Core\\Hook\\HookIntegrationsWrapper',                                 new: '\\ModulesGarden\\LagomOrderForm\\App\\Helpers\\HookIntegrationsWrapper'}

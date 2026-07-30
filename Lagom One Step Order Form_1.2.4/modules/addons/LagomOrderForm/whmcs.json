@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "type": "whmcs-addons",
+  "name": "LagomOrderForm",
+  "license": "proprietary",
+  "category": "orders",
+  "description": {
+    "name": "Lagom One Step Order Form",
+    "tagline": "Redefine the process of purchasing WHMCS products by customizing the order form pages and reducing the ordering time to a minimum.",
+    "long": "Lagom One Step Order Form For WHMCS is certain to refashion the shopping experience with its tasteful and well-balanced composition. From trendy layouts and styles to multiple customization options, this form has been thought through down to the last detail so as to please every taste.\n\nWhether your customers will go through the ordering process in one step or two is entirely up to you, just like choosing if the summary box should be visible as a sidebar or at the bottom of the screen. What is more, the product packages come in two types, and can be displayed in either a vertical or horizontal setup. To add that special touch, you are also free to implement any from the range of optional accessories, such as a smart page slider, additional navigation tabs or domain spotlights.\n\nLagom One Step Order Form For WHMCS can be used in your WHMCS as a standalone product, that is without Lagom Client Theme installed, but it is thanks to this particular combination that access to three more styles, each enriched with 5 different color schemes, is unlocked for instant application.",
+    "features": [
+
+    ]
+  },
+  "logo": {
+    "filename": "logo.png"
+  },
+  "marketplace": {
+    "url": "https:\/\/marketplace.whmcs.com\/product\/1594"
+  },
+  "support": {
+    "docs_url": "https://www.docs.modulesgarden.com/Lagom_One_Step_Order_Form_For_WHMCS"
+  },
+  "authors": [
+    {
+      "name": "ModulesGarden",
+      "homepage": "https:\/\/www.modulesgarden.com\/"
+    }
+  ]
+}

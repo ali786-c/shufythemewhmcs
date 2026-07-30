@@ -1,0 +1,4 @@
+class:
+  - {namespace: '\\ModulesGarden\\LagomOrderForm\\App\\Libs\\Api\\LagomOrderForm\\App\\Requests\\OrderSession',                             alias: "orderSession", singleton: true , auto: true}
+  - {namespace: '\\ModulesGarden\\LagomOrderForm\\App\\Libs\\Integrations\\Modules\\PaymentGatewayCharges\\Integration',      alias: "pgcIntegration", singleton: true , auto: false}
+  - {namespace: '\\ModulesGarden\\LagomOrderForm\\App\\Libs\\Integrations\\Modules\\PaymentGatewayAllocator\\Integration',    alias: "pgaIntegration", singleton: true , auto: false}

@@ -1,0 +1,5 @@
+- \ModulesGarden\LagomOrderForm\Core\Lang\Lang
+- \ModulesGarden\LagomOrderForm\Core\App\Controllers\Instances\Addon\Config
+- \ModulesGarden\LagomOrderForm\Core\UI\Widget\Sidebar\SidebarService
+- \ModulesGarden\LagomOrderForm\Core\Helper\WhmcsParams
+- \ModulesGarden\LagomOrderForm\Core\App\AppParamsContainer

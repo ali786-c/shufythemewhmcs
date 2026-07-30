@@ -1,0 +1,9 @@
+version: '1.2.0'
+systemName: 'LagomOrderForm'
+name: 'Lagom One Step Order Form'
+description: 'This unique product has been developed to personalize the used theme look and to vastly simplify the whole process of ordering products and services in the WHMCS client area. 
+<br>For more info visit our <a href="https://www.docs.modulesgarden.com/Lagom_One_Step_Order_Form_For_WHMCS" style="color: #4169E1;" target="_blank">Wiki</a>.'
+clientareaName: 'One Page Order'
+author: '<a href="http://www.modulesgarden.com" target="_blank">ModulesGarden</a> <a href="https://rsstudio.net/" target="_blank">RS Studio</a>'
+moduleIcon: 'one_page_order'
+debug: false

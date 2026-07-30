@@ -1,0 +1,48 @@
+{
+  "name": "modulesgarden/lagom-order-form",
+  "description": "",
+  "version": "1.0.0",
+  "type": "project",
+  "license": "EULA",
+  "homepage": "https://www.modulesgarden.com",
+  "support": {
+    "email": "contact@modulesgarden.com",
+    "issues": "https://www.modulesgarden.com/customers/support",
+    "forum": "https://www.forum.modulesgarden.com/"
+  },
+  "authors": [],
+  "require": {
+    "php": ">=7.2.0",
+    "piwik/ini": "1.0.6",
+    "mso/idna-convert": "1.1.0",
+    "adbario/php-dot-notation": "2.1.0",
+    "symfony/polyfill-apcu": "1.10.0",
+    "altorouter/altorouter": "1.1.0",
+    "rappasoft/laravel-helpers": "^1.0",
+    "zircote/swagger-php": "^3.1"
+  },
+  "replace": {
+    "symfony/http-foundation": "*",
+    "symfony/yaml" : "*",
+    "symfony/dependency-injection": "*",
+    "symfony/polyfill-php70": "*",
+    "symfony/polyfill-php80" : "*",
+    "symfony/cache": "*",
+    "psr/container": "*",
+    "psr/log": "*",
+    "psr/cache": "*",
+    "psr/simple-cache": "*",
+    "symfony/finder" : "*",
+    "doctrine/lexer" : "*",
+    "doctrine/annotation" : "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ModulesGarden\\LagomOrderForm\\Core\\": "./core",
+      "ModulesGarden\\LagomOrderForm\\App\\": "./app"
+    },
+    "files": [
+      "./core/Helper/Functions.php"
+    ]
+  }
+}

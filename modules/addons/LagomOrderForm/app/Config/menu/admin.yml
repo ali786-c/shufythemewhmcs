@@ -1,0 +1,43 @@
+templates:
+    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-assignment'
+settings:
+    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-settings'
+    submenu:
+        generalSettings: [ ]
+        layoutSettings: [ ]
+        domainSettings: [ ]
+        pricingSettings: [ ]
+        billingCycleSettings: [ ]
+        billingDetailsSettings: [ ]
+        captchaSettings: [ ]
+orders:
+    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-format-align-justify'
+productConfig:
+    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-widgets'
+    submenu:
+        gateways: [ ]
+        orderFields: [ ]
+        configOptions: [ ]
+        addons: [ ]
+        media: [ ]
+        geolocation: []
+#gateways:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-money-box'
+#feedback:
+#        icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-assignment'
+#abandoned:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-assignment'
+#apiLogs:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-assignment'
+#    debug: true
+#orderFields:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-assignment-check'
+#configurableOptions:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-comment-image'
+#addons:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-widgets'
+#gallery:
+#    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-collection-image'
+documentation:
+    icon: 'lu-nav__link-icon lu-zmdi lu-zmdi-file-text'
+    externalUrl: "https://www.docs.modulesgarden.com/Lagom_One_Step_Order_Form_For_WHMCS"
