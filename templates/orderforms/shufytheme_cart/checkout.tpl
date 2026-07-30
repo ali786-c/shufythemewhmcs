@@ -561,64 +561,63 @@
 						</ul>
 						
 
-						<div class="row" id="newCardInfo">
+						<div class="row align-items-end" id="newCardInfo">
 							<div id="cardNumberContainer" class="col-sm-6 new-card-container">
-								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.cardNumber'}</span>
+								<div class="form-group mb-3">
+									<span class="d-block coodiv-text-12 font-weight-500 pl-1 pb-2">{lang key='orderForm.cardNumber'|default:'Card Number'}</span>
 									<input type="tel" name="ccnumber" id="inputCardNumber" class="field form-control cc-number-field" placeholder="1234 1234 1234 1234" autocomplete="cc-number" data-message-unsupported="{lang key='paymentMethodsManage.unsupportedCardType'}" data-message-invalid="{lang key='paymentMethodsManage.cardNumberNotValid'}" data-supported-cards="{$supportedCardTypes}" />
 									<span class="field-error-msg"></span>
 								</div>
 							</div>
 							<div class="col-sm-3 new-card-container">
-								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.clientareadomainexpirydate}</span>
+								<div class="form-group mb-3">
+									<span class="d-block coodiv-text-12 font-weight-500 pl-1 pb-2">{lang key='creditcardcardexpires'|default:'Expiry Date'}</span>
 									<input type="tel" name="ccexpirydate" id="inputCardExpiry" class="field form-control" placeholder="MM / YY{if $showccissuestart} ({$LANG.creditcardcardexpires}){/if}" autocomplete="cc-exp">
 									<span class="field-error-msg">{lang key="paymentMethodsManage.expiryDateNotValid"}</span>
 								</div>
 							</div>
 							<div class="col-sm-3" id="cvv-field-container">
-								<div class="form-group">
-									<div class="d-flex align-items-center pl-1 pb-2">
-									<span class="coodiv-text-12 font-weight-400">{$LANG.creditcardcvvnumber}</span>
-									<button type="button" class="btn__what__is__this" data-toggle="popover" data-placement="bottom" data-content="<img src='{$BASE_PATH_IMG}/ccv.gif' width='210' />">
-										<i class="fas fa-question-circle"></i>
-									</button>
+								<div class="form-group mb-3">
+									<div class="d-flex align-items-center justify-content-between pl-1 pb-2">
+										<span class="coodiv-text-12 font-weight-500">{lang key='creditcardcvvnumber'|default:'CVV / CVC'}</span>
+										<button type="button" class="btn__what__is__this p-0 border-0 bg-transparent text-muted" data-toggle="popover" data-placement="bottom" data-content="<img src='{$BASE_PATH_IMG}/ccv.gif' width='210' />" title="CVV Info">
+											<i class="fas fa-question-circle"></i>
+										</button>
 									</div>
-									<input type="tel" name="cccvv" id="inputCardCVV" class="field form-control" placeholder="{$LANG.creditcardcvvnumbershort}" autocomplete="cc-cvc">
+									<input type="tel" name="cccvv" id="inputCardCVV" class="field form-control" placeholder="{$LANG.creditcardcvvnumbershort|default:'CVV'}" autocomplete="cc-cvc">
 									<span class="field-error-msg">{lang key="paymentMethodsManage.cvcNumberNotValid"}</span>
 								</div>
 							</div>
 							{if $showccissuestart}
 								<div class="col-sm-3 col-sm-offset-6 new-card-container offset-sm-6">
-									<div class="form-group">
-										<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.creditcardcardstart}</span>
+									<div class="form-group mb-3">
+										<span class="d-block coodiv-text-12 font-weight-500 pl-1 pb-2">{lang key='creditcardcardstart'|default:'Start Date'}</span>
 										<input type="tel" name="ccstartdate" id="inputCardStart" class="field form-control" placeholder="MM / YY" autocomplete="cc-exp">
 									</div>
 								</div>
 								<div class="col-sm-3 new-card-container">
-									<div class="form-group">
-										<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.creditcardcardissuenum}</span>
+									<div class="form-group mb-3">
+										<span class="d-block coodiv-text-12 font-weight-500 pl-1 pb-2">{lang key='creditcardcardissuenum'|default:'Issue Number'}</span>
 										<input type="tel" name="ccissuenum" id="inputCardIssue" class="field form-control">
 									</div>
 								</div>
 							{/if}
 						</div>
 						
-						<div id="newCardSaveSettings">
-							<div class="row form-group new-card-container">
+						<div id="newCardSaveSettings" class="mt-2">
+							<div class="row form-group new-card-container align-items-center">
 								<div id="inputDescriptionContainer" class="col-md-6">
-									<div class="form-group">
-										<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.paymentMethods.descriptionInput} {$LANG.paymentMethodsManage.optional}</span>
-										<input type="text" class="field form-control" id="inputDescription" name="ccdescription" autocomplete="off" value="" />
+									<div class="form-group mb-0">
+										<span class="d-block coodiv-text-12 font-weight-500 pl-1 pb-2">{lang key='paymentMethods.descriptionInput'|default:'Card Description'} ({lang key='orderForm.optional'|default:'optional'})</span>
+										<input type="text" class="field form-control" id="inputDescription" name="ccdescription" autocomplete="off" value="" placeholder="e.g. My Personal Card" />
 									</div>
 								</div>
 								{if $allowClientsToRemoveCards}
-									<div id="inputNoStoreContainer" class="col-md-6" style="line-height: 32px;">
+									<div id="inputNoStoreContainer" class="col-md-6 pt-4">
 										<input type="hidden" name="nostore" value="1">
 										<input type="checkbox" class="toggle-switch-success no-icheck" data-size="mini" checked="checked" name="nostore" id="inputNoStore" value="0" data-on-text="{lang key='yes'}" data-off-text="{lang key='no'}">
-										<label for="inputNoStore" class="checkbox-inline no-padding">
-											&nbsp;&nbsp;
-											{$LANG.creditCardStore}
+										<label for="inputNoStore" class="checkbox-inline no-padding ml-2 coodiv-text-12 font-weight-500">
+											{lang key='creditCardStore'|default:'Save card for future billing'}
 										</label>
 									</div>
 								{/if}
