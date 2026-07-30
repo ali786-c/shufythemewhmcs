@@ -288,6 +288,47 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     opacity: 1 !important;
 }
 
+/* Setup Fees & Free Domain Badges (Green Badge) */
+.cycle__setep__fees__wrapper {
+    margin-top: 8px !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.cycle__setup__fees__free {
+    background-color: #10b981 !important; /* Green Badge Color */
+    color: #ffffff !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.2) !important;
+}
+
+.cycle__setup__fees {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+}
+
+.cycle__with__free__domain {
+    background-color: #0284c7 !important; /* Cyan Free Domain Badge */
+    color: #ffffff !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    margin-left: 3px !important;
+}
+
+
 #btnCompleteProductConfig,
 .orderform__submit__btn__succses {
     background-color: #0cbed5 !important;

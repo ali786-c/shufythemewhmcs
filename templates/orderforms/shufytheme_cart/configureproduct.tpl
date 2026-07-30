@@ -91,8 +91,8 @@ var _localLang = {
 																<div class="icheck__control__check__cycle__btn">
 																	<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																	<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.msetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.msetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('monthly', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div> 
 																</div>
+																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.msetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.msetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('monthly', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 															</div>
 														</div>
 														<div class="cart__choose__cycle__content text-center">
@@ -119,8 +119,8 @@ var _localLang = {
 																<div class="icheck__control__check__cycle__btn">
 																	<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																	<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.qsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.qsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('quarterly', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 																</div>
+																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.qsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.qsetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('quarterly', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 															</div>
 														</div>														
 														<div class="cart__choose__cycle__content text-center">
@@ -149,8 +149,8 @@ var _localLang = {
 															<div class="icheck__control__check__cycle__btn">
 																<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.ssetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.ssetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('semiannually', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
+															<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.ssetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.ssetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('semiannually', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
@@ -177,8 +177,8 @@ var _localLang = {
 															<div class="icheck__control__check__cycle__btn">
 																<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.asetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.asetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('annually', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
+															<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.asetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.asetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('annually', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
@@ -205,8 +205,8 @@ var _localLang = {
 															<div class="icheck__control__check__cycle__btn">
 																<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.bsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.bsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('biennially', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
+															<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.bsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.bsetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('biennially', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
@@ -235,8 +235,8 @@ var _localLang = {
 															<div class="icheck__control__check__cycle__btn">
 																<span class="cycle__select">Select</span> 
 																	<span class="cycle__selected">Selected</span>
-																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.tsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.tsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('triennially', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
+															<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.tsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.tsetupfee}{$currency.suffix} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree|default:'Free!'} {$LANG.ordersetupfee|default:'Setup Fee'}</span>{/if}{if in_array('triennially', $productinfo.freedomainpaymentterms)} <span class="cycle__with__free__domain">{$LANG.orderfreedomainonly|default:'Free Domain'}</span>{/if}</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
