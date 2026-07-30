@@ -40,14 +40,7 @@
 								<span class="title desktop__version">{$LANG.cartproductdomainuseincart}</span>
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-shopping-cart"></i></span>
-									<span class="title">
-									{assign var="cartdomtexts" value=" "|explode:$LANG.cartproductdomainuseincart}
-									{$cartdomtexts.0} {$cartdomtexts.1} {$cartdomtexts.2}<br>
-									{foreach $cartdomtexts|@array_slice:3 as $cartdomtext}
-										{$cartdomtext}{if !$cartdomtext@last} {/if}
-									{/foreach}
-									
-									</span>
+									<span class="title">{$LANG.cartproductdomainuseincart}</span>
 								</span>
 							</label>
 						</div>
@@ -57,18 +50,10 @@
 						<div class="option domain-productconfigiration-options-item">
 							<label class="d-flex align-items-center justify-content-start registerdomain">
 								<input type="radio" name="domainoption" value="register" id="selregister"{if $domainoption eq "register"} checked{/if} />
-								<span class="title desktop__version">{$LANG.cartregisterdomainchoice|sprintf2:$companyname}</span>
+								<span class="title desktop__version">{lang key='orderForm.registerDomain'}</span>
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-search"></i></span>
-									<span class="title">
-									{assign var="registerdomtexts" value=" "|explode:$LANG.orderregisterdomain}
-									{$registerdomtexts.0} {$registerdomtexts.1}<br>
-									{foreach $registerdomtexts|@array_slice:2 as $registerdomtext}
-										{$registerdomtext}{if !$registerdomtext@last} {/if}
-									{/foreach}
-									</span>
-									
-									</span>
+									<span class="title">{lang key='orderForm.registerDomain'}</span>
 								</span>
 							</label>
 						</div>
@@ -78,17 +63,11 @@
 						<div class="option domain-productconfigiration-options-item">
 							<label class="d-flex align-items-center justify-content-start transferdomain">
 								<input type="radio" name="domainoption" value="transfer" id="seltransfer"{if $domainoption eq "transfer"} checked{/if} />
-								<span class="title desktop__version">{$LANG.orderForm.transferToUs}</span>
+								<span class="title desktop__version">{lang key='orderForm.transferToUs'}</span>
 								<span class="mobile__version">
 									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.carttransferdomainchoice}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-exchange-alt"></i></span>
-									<span class="title">
-									{assign var="transferdomtexts" value=" "|explode:$LANG.transferdomainname}
-									{$transferdomtexts.0} {$transferdomtexts.1}<br>
-									{foreach $transferdomtexts|@array_slice:2 as $transferdomtext}
-										{$transferdomtext}{if !$transferdomtext@last} {/if}
-									{/foreach}
-									</span>
+									<span class="title">{lang key='orderForm.transferToUs'}</span>
 								</span>
 							</label>
 						</div>
@@ -102,13 +81,7 @@
 								<span class="mobile__version">
 									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.cartexistingdomainchoice}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-globe"></i></span>
-									<span class="title">
-									{assign var="existingdomtexts" value=" "|explode:$LANG.ordertransferdomain}
-									{$LANG.orderForm.use} {$existingdomtexts.1}<br>
-									{foreach $existingdomtexts|@array_slice:2 as $existingdomtext}
-										{$existingdomtext}{if !$existingdomtext@last} {/if}
-									{/foreach}
-									</span>
+									<span class="title">{$LANG.cartexistingdomainchoice}</span>
 								</span>
 							</label>
 						</div>
@@ -118,13 +91,10 @@
 							<label class="d-flex align-items-center justify-content-start subdomains">
 								<input type="radio" name="domainoption" value="subdomain" id="selsubdomain"{if $domainoption eq "subdomain"} checked{/if} />
 								<span class="title desktop__version">{$LANG.cartsubdomainchoice|sprintf2:$companyname}</span>
-								
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-network-wired"></i></span>
 									<span class="title">{$LANG.cartsubdomainchoice|sprintf2:$companyname}</span>
 								</span>
-								
-								
 							</label>
 						</div>
 						{/if}
@@ -148,7 +118,7 @@
 									</div>
 									<div class="domain__search__input__options col-auto d-flex align-items-center">
                                         <button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom" id="useOwnDomain">
-                                            {$LANG.orderForm.use}
+                                            {lang key='orderForm.use'}
                                         </button>
                                     </div>
 								</div>
@@ -194,7 +164,7 @@
 												</div>
 												<div class="config__productdomain__advenced__buttons__wrapper d-flex align-items-center">
 													<button id="btnCheckAvailability" type="submit" class="btn btn-sm btn-primary d-flex align-items-center gap-5">
-														{$LANG.orderForm.check}{if $showAdvancedSearchOptions}  <i class="fa-light fa-sparkles"></i>{/if}
+														{lang key='orderForm.check'}{if $showAdvancedSearchOptions}  <i class="fa-light fa-sparkles"></i>{/if}
 													</button>
 												</div>
 											</div>
@@ -212,7 +182,7 @@
 											{/foreach}
 										</select>
 									</div>
-									<button id="btnCheckAvailability" type="submit" class="domain-selection-options-buttom btn btn-primary search-btn">{$LANG.orderForm.check}</button>
+									<button id="btnCheckAvailability" type="submit" class="domain-selection-options-buttom btn btn-primary search-btn">{lang key='orderForm.check'}</button>
 									</div>
 									{/if}
 								</div>
@@ -238,7 +208,7 @@
 												{/foreach}
 											</select>
 										</div>
-										<button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom">{$LANG.orderForm.transfer}</button>
+										<button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom">{lang key='orderForm.transfer'}</button>
 									</div>
 								</div>
 							</div>
@@ -258,7 +228,7 @@
 										<div class="inputdomainselect select__dropdown__menu__search__wrapper">
 											<input type="text" id="owndomaintld" value="{$tld|substr:1}" placeholder="{$LANG.yourtldplaceholder}" class="owndomaintld-input-ab form-control form-control-lg input-lg" autocapitalize="none" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="{lang key='orderForm.required'}" />
 										</div>
-									<button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom" id="useOwnDomain">{$LANG.orderForm.use}</button>
+									<button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom" id="useOwnDomain">{lang key='orderForm.use'}</button>
 									</div>
 								</div>
                             </div>
@@ -282,7 +252,31 @@
 												{/foreach}
 											</select>
 										</div>
-										<button type="submit" class="domain-selection-options-buttom btn btn-primary">{$LANG.orderForm.check}</button>
+										<button type="submit" class="domain-selection-options-buttom btn btn-primary">{lang key='orderForm.check'}</button>
+									</div>
+								</div>
+                            </div>
+                        </div>
+					{/if}
+                    {if $subdomains}
+                        <div class="option">
+                            <div class="domain-input-group clearfix" id="domainsubdomain">
+								<div class="dark-mode-texts mb-7">
+									<p class="coodiv-text-9 font-weight-light mb-0">{$LANG.cartsubdomainchoice|sprintf2:$companyname}</p>
+								</div>
+								<div class="domain__search__input__wrapper single-input row justify-content-start w-100 position-relative">
+									<div class="domain__search__input__searching position-relative col">
+										<input id="subdomainsld" value="{$sld}" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="{lang key='orderForm.enterDomain'}" class="inputdomainsearch form-control form-control-lg input-lg search__input" placeholder="yourname" autocapitalize="none">
+									</div>
+									<div class="inputdomainselect domain__search__input__options col-auto d-flex align-items-center">
+										<div class="inputdomainselect select__dropdown__menu__search__wrapper">
+											<select name="subdomaintld" id="subdomaintld" class="select__dropdown__menu__search">
+												{foreach $subdomains as $subid => $subdomain}
+													<option value="{$subid}">{$subdomain}</option>
+												{/foreach}
+											</select>
+										</div>
+										<button type="submit" class="domain-selection-options-buttom btn btn-primary">{lang key='orderForm.check'}</button>
 									</div>
 								</div>
                             </div>
