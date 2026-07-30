@@ -397,6 +397,51 @@ body.body__dark .modal-remove-item .btn-default {
     display: inline-block !important;
 }
 
+/* ===================================================
+   🛒 VIEWCART PAGE BUTTON & TEXT FIXES
+   =================================================== */
+#btnCompleteOrder {
+    background-color: #0cbed5 !important;
+    border-color: #0cbed5 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+
+#btnCompleteOrder span,
+#btnCompleteOrder .btn-text {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.btn-primary-outline-light {
+    border: 1px solid #cbd5e1 !important;
+    color: #334155 !important;
+    background: #f8fafc !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    padding: 8px 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+body.body__dark .btn-primary-outline-light {
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
+    background: #1e293b !important;
+}
+
+
 
 
 

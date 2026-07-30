@@ -179,7 +179,7 @@
 												{if $configoption.qty}
 												{$configoption.optionname}
 												{else}
-												{$LANG.no}
+												{lang key='no'|default:'No'}
 												{/if}
 												{elseif $configoption.type eq 4}
 												{$configoption.qty} x {$configoption.option}
@@ -696,7 +696,7 @@
 								<!-- {$LANG.orderForm.checkout} -->
 							<!-- </a> -->
 							<button type="submit" form="frmCheckout" id="btnCompleteOrder" class="btn btn-primary btn-lg w-100 btn-checkout disable-on-click spinner-on-click{if $captcha}{$captcha->getButtonClass($captchaForm)}{/if}" {if $cartitems==0}disabled="disabled"{/if}>
-								{if $inExpressCheckout}{$LANG.confirmAndPay}{else}{$LANG.completeorder}{/if}
+								<span class="btn-text">{if $inExpressCheckout}{lang key='confirmAndPay'|default:'Confirm & Pay'}{else}{lang key='completeorder'|default:'Complete Order'}{/if}</span>
 							</button>
 						</div>
 					</div>
@@ -717,8 +717,8 @@
 							</a>
 							<form class="sidebar__aply__promo__code__form d-none" method="post" action="{$WEB_ROOT}/cart.php?a=checkout">
 								<input type="text" name="promocode" id="inputPromotionCode" class="field form-control" placeholder="{lang key="orderPromoCodePlaceholder"}" required="required">
-								<button type="submit" name="validatepromo" class="btn btn-primary-light btn-small" value="{$LANG.orderpromovalidatebutton}">
-									{$LANG.apply}
+								<button type="submit" name="validatepromo" class="btn btn-primary-light btn-small" value="{$LANG.orderpromovalidatebutton|default:'Validate'}">
+									{$LANG.apply|default:'Apply'}
 								</button>
 							</form>
 						{/if}
