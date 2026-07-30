@@ -9,10 +9,10 @@
 		{if $coodivcolorsettings.allowdarkmode|default:''=='activated' || $coodivcolorsettings.id|default:'' != '1'}
 			<script>
 			const theme = localStorage.getItem('theme');
-			if (theme === "dark") {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			}else{
-			document.documentElement.setAttribute('data-theme', 'light');
+			if (theme === "light") {
+				document.documentElement.setAttribute('data-theme', 'light');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'dark');
 			}
 			</script>
 		{/if}
