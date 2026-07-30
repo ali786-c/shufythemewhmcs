@@ -5,8 +5,8 @@
 		<div class="row justify-content-start">
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
-					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.domaincheckerchoosedomain}</h1>
-					<p class="coodiv-text-10 font-weight-300">{$LANG.cartdomainsconfigdesc}</p>
+					<h1 class="coodiv-text-5 font-weight-bold mb-0">{lang key='domaincheckerchoosedomain'|default:'Choose a Domain...'}</h1>
+					<p class="coodiv-text-10 font-weight-300">{lang key='cartdomainsconfigdesc'|default:'Configure your domain options below.'}</p>
 				</div>
 			</div>
 		</div>
@@ -27,7 +27,7 @@
     <div class="row justify-content-start">
         <div class="col-12">	
 
-			<h6 class="coodiv-text-6 mb-5">{$LANG.orderdomainoptions}</h6>
+			<h6 class="coodiv-text-6 mb-5">{lang key='orderdomainoptions'|default:'Domain Options'}</h6>
             <form id="frmProductDomain">
 				<input type="hidden" id="frmProductDomainPid" value="{$pid}" />
 				<div class="domain-productconfigiration-options-group-scrolling-wrapper">
@@ -61,7 +61,7 @@
 							<label class="d-flex align-items-center justify-content-start transferdomain">
 								<input type="radio" name="domainoption" value="transfer" id="seltransfer"{if $domainoption eq "transfer"} checked{/if} />
 								<span class="mobile__version">
-									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.carttransferdomainchoice}"><i class="fal fa-question-circle"></i></a>
+									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{lang key='carttransferdomainchoice'|default:'Transfer your domain from another registrar'}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-exchange-alt"></i></span>
 									<span class="title">Transfer a<br>Domain Name</span>
 								</span>
@@ -74,7 +74,7 @@
 							<label class="d-flex align-items-center justify-content-start owndomain">
 								<input type="radio" name="domainoption" value="owndomain" id="selowndomain"{if $domainoption eq "owndomain"} checked{/if} />
 								<span class="mobile__version">
-									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{$LANG.cartexistingdomainchoice}"><i class="fal fa-question-circle"></i></a>
+									<a data-placement="top" tabindex="0" class="knowing__more__btn" role="button" data-toggle="popover" data-trigger="focus" data-content="{lang key='cartexistingdomainchoice'|default:'Use your existing domain and update your nameservers'}"><i class="fal fa-question-circle"></i></a>
 									<span class="icon"><i class="fal fa-globe"></i></span>
 									<span class="title">Use an<br>Existing Domain Name</span>
 								</span>
@@ -125,7 +125,7 @@
 							<div class="domain-input-group clearfix{if $showAdvancedSearchOptions} domain-checker-advanced{/if}" id="domainregister">
 							<div class="domain-header-search-form d-flex flex-wrap shadow-0">
 								<div class="dark-mode-texts mb-7">
-									<p class="coodiv-text-9 font-weight-light mb-0">{$LANG.registerdomaindesc}</p>
+									<p class="coodiv-text-9 font-weight-light mb-0">{lang key='registerdomaindesc'|default:'Search for your ideal domain name below'}</p>
 								</div>
 								<div class="{if $showAdvancedSearchOptions}advanced__domain__search__input__wrapper {/if}domain__search__input__wrapper single-input row justify-content-start w-100 position-relative">
 									{if $showAdvancedSearchOptions}
@@ -188,7 +188,7 @@
                         <div class="option">
                             <div class="domain-input-group clearfix" id="domaintransfer">
 								<div class="dark-mode-texts mb-7">
-									<p class="coodiv-text-9 font-weight-light mb-0">{$LANG.carttransferdomainchoice}</p>
+									<p class="coodiv-text-9 font-weight-light mb-0">{lang key='carttransferdomainchoice'|default:'Transfer your domain from another registrar'}</p>
 								</div>
 								<div class="domain__search__input__wrapper single-input row justify-content-start w-100 position-relative">
 									<div class="domain__search__input__searching position-relative col">
@@ -212,7 +212,7 @@
                         <div class="option">
                             <div class="domain-input-group clearfix" id="domainowndomain">
 								<div class="dark-mode-texts mb-7">
-									<p class="coodiv-text-9 font-weight-light mb-0">{$LANG.orderdomainoption2}</p>
+									<p class="coodiv-text-9 font-weight-light mb-0">{lang key='orderdomainoption2'|default:'Use your existing domain and update your nameservers'}</p>
 								</div>
 								<div class="domain__search__input__wrapper single-input row justify-content-start w-100 position-relative">
 									<div class="domain__search__input__searching position-relative col">
@@ -220,7 +220,7 @@
 									</div>
 									<div class="domain__search__input__options col-auto d-flex align-items-center">
 										<div class="inputdomainselect select__dropdown__menu__search__wrapper">
-											<input type="text" id="owndomaintld" value="{$tld|substr:1}" placeholder="{$LANG.yourtldplaceholder}" class="owndomaintld-input-ab form-control form-control-lg input-lg" autocapitalize="none" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="{lang key='orderForm.required'}" />
+											<input type="text" id="owndomaintld" value="{$tld|substr:1}" placeholder="{lang key='yourtldplaceholder'|default:'.com'}" class="owndomaintld-input-ab form-control form-control-lg input-lg" autocapitalize="none" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="{lang key='orderForm.required'}" />
 										</div>
 									<button type="submit" class="domain-selection-options-buttom btn btn-primary domain-selection-options-buttom" id="useOwnDomain">{lang key='orderForm.use'}</button>
 									</div>

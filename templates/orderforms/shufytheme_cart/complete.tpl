@@ -5,12 +5,12 @@
 		<div class="col-md-6 col-12">
 			<div class="card">
 				<div class="card__header">
-					<h6 class="coodiv-text-10 mb-0 text-center">{$LANG.orderconfirmation} <b>#{$ordernumber}</b></h6>
+					<h6 class="coodiv-text-10 mb-0 text-center">{lang key='orderconfirmation'|default:'Order Confirmation'} <b>#{$ordernumber}</b></h6>
 				</div>
 				<div class="card__body text-center">
 					<i style="font-size: 45px;display: block;margin-bottom: 20px;color: #72df77;" class="fal fa-check"></i>
-					<p class="coodiv-text-11">{$LANG.orderreceived}</p>
-					<p class="coodiv-text-11">{$LANG.orderfinalinstructions}</p>
+					<p class="coodiv-text-11">{lang key='orderreceived'|default:'Thank you for your order. You will receive a confirmation email shortly.'}</p>
+					<p class="coodiv-text-11">{lang key='orderfinalinstructions'|default:'If you have any questions about your order, please open a support ticket from your client area.'}</p>
 					 {if $expressCheckoutInfo}
 						<div class="alert alert-info text-center mt-10">
 							{$expressCheckoutInfo}
@@ -21,10 +21,10 @@
 						</div>
 					{elseif $invoiceid && !$ispaid}
 						<div class="alert alert-warning text-center mt-10">
-							{$LANG.ordercompletebutnotpaid}
+							{lang key='ordercompletebutnotpaid'|default:'This order has been completed but not paid for yet.'}
 							<br />
 							<a href="{$WEB_ROOT}/viewinvoice.php?id={$invoiceid}" target="_blank" class="alert-link">
-								{$LANG.invoicenumber}{$invoiceid}
+								{lang key='invoicenumber'|default:'Invoice #'}{$invoiceid}
 							</a>
 						</div>
 					{/if}
