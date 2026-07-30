@@ -91,14 +91,12 @@
 
 					<div class="view__cart__items__wrapper__header">
 						<div class="row justify-content-start">
-							<div class="{if $showqtyoptions || $showAddonQtyOptions}col-5{else}col-7{/if}">
+							<div class="col-5">
 								<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.productOptions'}</span>
 							</div>
-							{if $showqtyoptions || $showAddonQtyOptions}
-								<div class="col-sm-2 col-auto">
-									<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.qty'}</span>
-								</div>
-							{/if}
+							<div class="col-sm-2 col-auto">
+								<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.qty'}</span>
+							</div>
 							<div class="col">
 								<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.priceCycle'}</span>
 							</div>
@@ -110,7 +108,7 @@
 						{foreach $products as $num => $product}
 							<div class="view__cart__items__wrapper__body__item">
 								<div class="view__cart__items__wrapper__main__item view__cart__items__wrapper__body__item__product__info position-relative row justify-content-start">
-									<div class="{if $showqtyoptions || $showAddonQtyOptions}col-5{else}col-7{/if}">
+									<div class="col-5">
 										<div class="view__cart__items__wrapper__body__item__productinfo">
 											<h6 class="coodiv-text-10 font-weight-bold mb-0">{$product.productinfo.groupname} - {$product.productinfo.name}</h6>
 											{if $product.domain}
@@ -120,18 +118,18 @@
 											{/if}
 										</div>
 									</div>
-									{if $showqtyoptions}
-										<div class="col-auto col-sm-2 item__qty">
-											{if $product.allowqty}
-												<input type="number" name="qty[{$num}]" value="{$product.qty}" class="form-control text-center" min="0" />
-												<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'}" class="update__item__qty__btn">
-													<svg class="options__icons icon__repeat">
-													  <use xlink:href="#icon-repeat"></use>
-													</svg>
-												</button>
-											{/if}
-										</div>
-									{/if}
+									<div class="col-auto col-sm-2 item__qty">
+										{if $product.allowqty}
+											<input type="number" name="qty[{$num}]" value="{$product.qty}" class="form-control text-center" min="0" />
+											<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'}" class="update__item__qty__btn">
+												<svg class="options__icons icon__repeat">
+												  <use xlink:href="#icon-repeat"></use>
+												</svg>
+											</button>
+										{else}
+											<span class="d-inline-block px-3 py-1 bg-light rounded text-center coodiv-text-11">{$product.qty|default:1}</span>
+										{/if}
+									</div>
 									<div class="col item__price">
 										<div class="d-block">
 											<span class="price">{$product.pricing.totalTodayExcludingTaxSetup}</span>
@@ -248,7 +246,7 @@
 						{foreach $addons as $num => $addon}
 							<div class="view__cart__items__wrapper__body__item">
 								<div class="view__cart__items__wrapper__main__item view__cart__items__wrapper__body__item__product__info position-relative row justify-content-start">
-									<div class="{if $showqtyoptions || $showAddonQtyOptions}col-8{else}col-7{/if}">
+									<div class="col-5">
 										<div class="view__cart__items__wrapper__body__item__productinfo">
 											<h6 class="coodiv-text-10 font-weight-bold mb-0">{$addon.name} - {$addon.productname}</h6>
 											{if $addon.domainname}
@@ -258,21 +256,19 @@
 											{/if}
 										</div>	
 									</div>
-									
-									
-									{if $showAddonQtyOptions}
-										<div class="col-sm-2 item-qty">
-											{if $addon.allowqty === 2}
-												<input type="number" name="addonqty[{$num}]" value="{$addon.qty}" class="form-control text-center" min="0" />
-												<button type="submit" class="btn btn-xs">
-													{lang key='orderForm.update'}
-												</button>
-											{/if}
-										</div>
-									{/if}
-									<div class="col-4 item-price">
+									<div class="col-auto col-sm-2 item__qty">
+										{if $addon.allowqty === 2}
+											<input type="number" name="addonqty[{$num}]" value="{$addon.qty}" class="form-control text-center" min="0" />
+											<button type="submit" class="update__item__qty__btn" title="{lang key='orderForm.update'}">
+												<svg class="options__icons icon__repeat">
+												  <use xlink:href="#icon-repeat"></use>
+												</svg>
+											</button>
+										{/if}
+									</div>
+									<div class="col item__price">
 										<span>{$addon.totaltoday}</span>
-										<span class="cycle">{$addon.billingcyclefriendly}</span>
+										<span class="cycle"> / {$addon.billingcyclefriendly}</span>
 										{if $addon.setup}{$addon.setup->toPrefixed()} {$LANG.ordersetupfee}{/if}
 										{if $addon.isProrated}<br />({$LANG.orderprorata} {$addon.prorataDate}){/if}
 									</div>
@@ -291,9 +287,9 @@
 						{foreach $domains as $num => $domain}
 							<div class="view__cart__items__wrapper__body__item">
 								<div class="view__cart__items__wrapper__main__item view__cart__items__wrapper__body__item__product__info position-relative row justify-content-start">
-									<div class="{if $showqtyoptions || $showAddonQtyOptions}col-8{else}col-7{/if}">
+									<div class="col-5">
 										<div class="view__cart__items__wrapper__body__item__productinfo">
-											<h6 class="coodiv-text-10 font-weight-bold mb-0">{if $domain.type eq "register"}{$LANG.orderdomainregistration}{else}{$LANG.orderdomaintransfer}{/if}</h6>
+											<h6 class="coodiv-text-10 font-weight-bold mb-0">{if $domain.type eq "transfer"}{lang key='orderdomaintransfer'|default:'Domain Transfer'}{else}{lang key='orderdomainregistration'|default:'Domain Registration'}{/if}</h6>
 											{if $domain.domain}
 											<span class="this__item__domain">
 												{$domain.domain}
@@ -301,7 +297,9 @@
 											{/if}
 										</div>	
 									</div>
-									<div class="col-4 item__price">
+									<div class="col-auto col-sm-2 item__qty">
+									</div>
+									<div class="col item__price">
 										{if count($domain.pricing) == 1 || $domain.type == 'transfer'}
 											<div class="d-block">
 												<span name="{$domain.domain}Price">{$domain.price}</span>
