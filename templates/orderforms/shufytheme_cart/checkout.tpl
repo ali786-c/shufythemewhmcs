@@ -642,7 +642,7 @@
 		<div class="field-container mt-8">
 			<div class="row justify-content-start mb-5">
 				<div class="col-md-10 col-12">
-					<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{$LANG.ordertos}</h6> 
+					<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{lang key='ordertos'|default:'Terms of Service'}</h6> 
 				</div>
 			</div>
 			<div class="default__shadow__panel">
@@ -653,8 +653,7 @@
 					<label class="checkbox-inline one__lign__checkbox">
 						<input type="checkbox" name="accepttos" id="accepttos" />
 						<span class="accepttos__checkout__activations__styles"></span>
-						{$LANG.ordertosagreement}  <a href="{$tosurl}" target="_blank">{$LANG.ordertos}</a>
-						
+						{lang key='ordertosagreement'|default:'I have read and agree to the'} <a href="{$tosurl}" target="_blank" class="text-primary">{lang key='ordertos'|default:'Terms of Service'}</a>
 					</label>
 				</div>
 				{/if}
@@ -674,7 +673,7 @@
 								<div class="form-group mb-2">
 									<input name="notes" class="field form-control" value="{$orderNotes}" />
 								</div>
-								<p class="coodiv-text-12 sub-color font-weight-300">{$LANG.ordernotesdescription}</p>
+								<p class="coodiv-text-12 sub-color font-weight-300">{lang key='ordernotesdescription'|default:'You can enter any additional notes or information you want included with your order here...'}</p>
 							</div>
 						</div>
 					</div>
@@ -710,8 +709,8 @@
 	</form>
 	{if $servedOverSsl}
 		<div class="alert alert-warning custom-alert-text " id="overdueInvoicesPanel" role="alert">
-		  <h6 class="alert-title coodiv-text-10 mb-1">{$LANG.store.ssl.shared.secureTransactions}</h6>
-		  <p>{$LANG.ordersecure} (<strong>{$ipaddress}</strong>) {$LANG.ordersecure2}</p>
+		  <h6 class="alert-title coodiv-text-10 mb-1">{lang key='store.ssl.shared.secureTransactions'|default:'Secure online transactions'}</h6>
+		  <p>{$LANG.ordersecure|default:'This order form is provided in a secure environment and to help protect against fraud your current IP address'} (<strong>{$ipaddress}</strong>) {$LANG.ordersecure2|default:'is being logged.'}</p>
 		</div>
 	{/if}
 </div>
