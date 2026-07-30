@@ -38,6 +38,9 @@
 <link href="{$__assetPath__}" rel="stylesheet">
 {/assetExists}
 {if $coodivsettings.customcsscode|default:'' != null}
+<style id="shufytheme-custom-css">
+{$coodivsettings.customcsscode}
+</style>
 <link rel="stylesheet" media="all" href="{$css_base}/custom.css?v={$coodivsettings.customcss_version|default:''}">
 {/if}
 {if $coodivhomepagesettings.id|default:'' == '1'}

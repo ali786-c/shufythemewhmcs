@@ -142,7 +142,27 @@ function shufyTheme_save_settings($data) {
         }
     }
 
-    foreach ($data as $key => $val) {
+        if (isset($data['customcsscode'])) {
+            $cssContent = $data['customcsscode'];
+            $cssDirAddon = __DIR__ . '/css-values';
+            $cssDirTemplate = dirname(__DIR__, 2) . '/templates/shufytheme/assets/css-values';
+            $cssDirTemplateCss = dirname(__DIR__, 2) . '/templates/shufytheme/assets/css';
+
+            if (!file_exists($cssDirAddon)) {
+                @mkdir($cssDirAddon, 0755, true);
+            }
+            @file_put_contents($cssDirAddon . '/custom.css', $cssContent);
+
+            if (file_exists($cssDirTemplate)) {
+                @file_put_contents($cssDirTemplate . '/custom.css', $cssContent);
+            }
+            if (file_exists($cssDirTemplateCss)) {
+                @file_put_contents($cssDirTemplateCss . '/custom.css', $cssContent);
+            }
+            $data['customcss_version'] = time();
+        }
+
+        foreach ($data as $key => $val) {
         if (in_array($key, ['token', 'action', 'itemid', 'submit'])) continue;
         $strVal = is_array($val) ? json_encode($val) : (string)$val;
         try {
