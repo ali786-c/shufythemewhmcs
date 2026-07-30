@@ -89,8 +89,8 @@ var _localLang = {
 														    <div class="icheck__control__check__icon">
 																<div class="icheck__control__check__icon__checked__effect"></div>
 																<div class="icheck__control__check__cycle__btn">
-																	<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																	<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																	<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.msetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.msetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('monthly', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div> 
 																</div>
 															</div>
@@ -110,22 +110,22 @@ var _localLang = {
 										<div class="item__grid col-md-4 col-6">
 											<div class="radio__check__panel default__shadow__panel">
 												<div class="default__shadow__panel__body__small">
-													<span class="best__pricing__cycle__badge quarterly d-none"><i class="fas fa-bolt"></i> {$LANG.shufytheme.new.text.bestchoise}</span>
+													<span class="best__pricing__cycle__badge quarterly d-none"><i class="fas fa-bolt"></i> Best Choice</span>
 													<label class="cart__choose__cycle__label d-flex justify-content-center" for="quarterly" {if $configurableoptions}data-update-config data-config-i={$i} data-config-val="quarterly"{else}data-change-billingcycle{/if}>
 														<div class="cart__choose__cycle__input check check-cycle cercle__input__radio">
 															<input class="icheck-control" type="radio" value="quarterly" name="billingcycle" {if $billingcycle eq "quarterly"} checked{/if}>
 															<div class="icheck__control__check__icon">
 																<div class="icheck__control__check__icon__checked__effect"></div>
 																<div class="icheck__control__check__cycle__btn">
-																	<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																	<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																	<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.qsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.qsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('quarterly', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 																</div>
 															</div>
 														</div>														
 														<div class="cart__choose__cycle__content text-center">
 															<h6 class="coodiv-text-10">{$LANG.orderpaymenttermquarterly}</h6>
-															<span class="cart__choose__cycle__content__saving quarterly"><s>{$currency.prefix}{$price_save_quarterly|number_format:2:'.':','}</s><span class="disoucted__price"><span id="quarterlydisount"></span> {$LANG.markdown.saved}</span></span>															
+															<span class="cart__choose__cycle__content__saving quarterly"><s>{$currency.prefix}{$price_save_quarterly|number_format:2:'.':','}</s><span class="disoucted__price"><span id="quarterlydisount"></span> Saved</span></span>															
 															<p id="cyclepricequarterly" data-row-price="{$pricing.rawpricing.quarterly}" class="coodiv-text-6 main-text-color font-weight-bold">{$currency.prefix}{$pricing.rawpricing.quarterly|number_format:2:'.':','}{$currency.suffix}</p>
 															<span class="coodiv-text-12 font-weight-300">{$currency.prefix}<span>{($pricing.rawpricing.quarterly/3)|string_format:"%.2f"|number_format:2:'.':','}</span> {$LANG.orderpaymenttermmonthly}</span>
 														</div>
@@ -140,22 +140,22 @@ var _localLang = {
 									<div class="item__grid col-md-4 col-6">
 										<div class="radio__check__panel default__shadow__panel">
 											<div class="default__shadow__panel__body__small">
-												<span class="best__pricing__cycle__badge semiannually d-none"><i class="fas fa-bolt"></i> {$LANG.shufytheme.new.text.bestchoise}</span>
+												<span class="best__pricing__cycle__badge semiannually d-none"><i class="fas fa-bolt"></i> Best Choice</span>
 												<label class="cart__choose__cycle__label d-flex justify-content-center" {if $configurableoptions}data-update-config data-config-i={$i} data-config-val="semiannually"{else}data-change-billingcycle{/if}>
 													<div class="cart__choose__cycle__input check check-cycle cercle__input__radio">
 														<input class="icheck-control" type="radio" name="billingcycle" value="semiannually"{if $billingcycle eq "semiannually"} checked{/if}>
 														<div class="icheck__control__check__icon">
 															<div class="icheck__control__check__icon__checked__effect"></div>
 															<div class="icheck__control__check__cycle__btn">
-																<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.ssetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.ssetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('semiannually', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
 														<h6 class="coodiv-text-10">{$LANG.orderpaymenttermsemiannually}</h6>
-														<span class="cart__choose__cycle__content__saving semiannually"><s>{$currency.prefix}{$price_save_semiannually|number_format:2:'.':','}</s><span class="disoucted__price"><span id="semiannuallydisount"></span> {$LANG.markdown.saved}</span></span>
+														<span class="cart__choose__cycle__content__saving semiannually"><s>{$currency.prefix}{$price_save_semiannually|number_format:2:'.':','}</s><span class="disoucted__price"><span id="semiannuallydisount"></span> Saved</span></span>
 														<p id="cyclepricesemiannually" data-row-price="{$pricing.rawpricing.semiannually}" class="coodiv-text-6 main-text-color font-weight-bold">{$currency.prefix}{$pricing.rawpricing.semiannually|number_format:2:'.':','}{$currency.suffix}</p>
 														<span class="coodiv-text-12 font-weight-300">{$currency.prefix}<span>{($pricing.rawpricing.semiannually/6)|string_format:"%.2f"|number_format:2:'.':','}</span> {$LANG.orderpaymenttermmonthly}</span>
 													</div>
@@ -168,22 +168,22 @@ var _localLang = {
 									<div class="radio__check__panel item__grid col-md-4 col-6">
 										<div class="radio__check__panel default__shadow__panel">
 											<div class="default__shadow__panel__body__small">
-												<span class="best__pricing__cycle__badge annually d-none"><i class="fas fa-bolt"></i> {$LANG.shufytheme.new.text.bestchoise}</span>
+												<span class="best__pricing__cycle__badge annually d-none"><i class="fas fa-bolt"></i> Best Choice</span>
 												<label class="cart__choose__cycle__label d-flex justify-content-center" {if $configurableoptions}data-update-config data-config-i={$i} data-config-val="annually"{else}data-change-billingcycle{/if}>
 													<div class="cart__choose__cycle__input check check-cycle cercle__input__radio">
 														<input class="icheck-control" type="radio" name="billingcycle" value="annually"{if $billingcycle eq "annually"} checked{/if}>
 														<div class="icheck__control__check__icon">
 															<div class="icheck__control__check__icon__checked__effect"></div>
 															<div class="icheck__control__check__cycle__btn">
-																<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.asetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.asetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('annually', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
 														<h6 class="coodiv-text-10">{$LANG.orderpaymenttermannually}</h6>
-														<span class="cart__choose__cycle__content__saving annually"><s>{$currency.prefix}{$price_save_annually|number_format:2:'.':','}</s><span class="disoucted__price"><span id="annuallydisount"></span> {$LANG.markdown.saved}</span></span>
+														<span class="cart__choose__cycle__content__saving annually"><s>{$currency.prefix}{$price_save_annually|number_format:2:'.':','}</s><span class="disoucted__price"><span id="annuallydisount"></span> Saved</span></span>
 														<p id="cyclepriceannually" data-row-price="{$pricing.rawpricing.annually}" class="coodiv-text-6 main-text-color font-weight-bold">{$currency.prefix}{$pricing.rawpricing.annually|number_format:2:'.':','}{$currency.suffix}</p>
 														<span class="coodiv-text-12 font-weight-300">{$currency.prefix}<span>{($pricing.rawpricing.annually/12)|string_format:"%.2f"|number_format:2:'.':','}</span> {$LANG.orderpaymenttermmonthly}</span>
 													</div>
@@ -196,22 +196,22 @@ var _localLang = {
 									<div class="radio__check__panel item__grid col-md-4 col-6">
 										<div class="radio__check__panel default__shadow__panel">
 											<div class="default__shadow__panel__body__small">
-												<span class="best__pricing__cycle__badge biennially d-none"><i class="fas fa-bolt"></i> {$LANG.shufytheme.new.text.bestchoise}</span>
+												<span class="best__pricing__cycle__badge biennially d-none"><i class="fas fa-bolt"></i> Best Choice</span>
 												<label class="cart__choose__cycle__label d-flex justify-content-center" {if $configurableoptions}data-update-config data-config-i={$i} data-config-val="biennially"{else}data-change-billingcycle{/if}>
 													<div class="cart__choose__cycle__input check check-cycle cercle__input__radio">
 														<input class="icheck-control" type="radio" name="billingcycle" value="biennially"{if $billingcycle eq "biennially"} checked{/if}>
 														<div class="icheck__control__check__icon">
 															<div class="icheck__control__check__icon__checked__effect"></div>
 															<div class="icheck__control__check__cycle__btn">
-																<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.bsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.bsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('biennially', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
 														<h6 class="coodiv-text-10">{$LANG.orderpaymenttermbiennially}</h6>
-														<span class="cart__choose__cycle__content__saving biennially"><s>{$currency.prefix}{$price_save_biennially|number_format:2:'.':','}</s><span class="disoucted__price"><span id="bienniallydisount"></span> {$LANG.markdown.saved}</span></span>
+														<span class="cart__choose__cycle__content__saving biennially"><s>{$currency.prefix}{$price_save_biennially|number_format:2:'.':','}</s><span class="disoucted__price"><span id="bienniallydisount"></span> Saved</span></span>
 														<p id="cyclepricebiennially" data-row-price="{$pricing.rawpricing.biennially}" class="coodiv-text-6 main-text-color font-weight-bold">{$currency.prefix}{$pricing.rawpricing.biennially|number_format:2:'.':','}{$currency.suffix}</p>
 														<span class="coodiv-text-12 font-weight-300">{$currency.prefix}<span>{($pricing.rawpricing.biennially/24)|string_format:"%.2f"|number_format:2:'.':','}</span> {$LANG.orderpaymenttermmonthly}</span>
 													</div>
@@ -226,22 +226,22 @@ var _localLang = {
 									<div class="radio__check__panel item__grid col-md-4 col-6">
 										<div class="radio__check__panel default__shadow__panel">
 											<div class="default__shadow__panel__body__small">
-												<span class="best__pricing__cycle__badge triennially d-none"><i class="fas fa-bolt"></i> {$LANG.shufytheme.new.text.bestchoise}</span>
+												<span class="best__pricing__cycle__badge triennially d-none"><i class="fas fa-bolt"></i> Best Choice</span>
 												<label class="cart__choose__cycle__label d-flex justify-content-center" {if $configurableoptions}data-update-config data-config-i={$i} data-config-val="triennially"{else}data-change-billingcycle{/if}>
 													<div class="cart__choose__cycle__input check check-cycle cercle__input__radio">
 														<input class="icheck-control" type="radio" name="billingcycle" value="triennially"{if $billingcycle eq "triennially"} checked{/if}>
 														<div class="icheck__control__check__icon">
 															<div class="icheck__control__check__icon__checked__effect"></div>
 															<div class="icheck__control__check__cycle__btn">
-																<span class="cycle__select">{$LANG.shufytheme.new.text.select}</span> 
-																	<span class="cycle__selected">{$LANG.shufytheme.new.text.selected}</span>
+																<span class="cycle__select">Select</span> 
+																	<span class="cycle__selected">Selected</span>
 																<div class="cycle__setep__fees__wrapper">{if $pricing.rawpricing.tsetupfee neq 0}<span class="cycle__setup__fees">{$currency.prefix}{$pricing.rawpricing.tsetupfee}{$currency.suffix} {$LANG.ordersetupfee}</span>{else}<span class="cycle__setup__fees__free">{$LANG.orderfree} {$LANG.ordersetupfee}</span>{/if} {if in_array('triennially', $productinfo.freedomainpaymentterms)}<span class="cycle__with__free__domain">{$LANG.orderfreedomainonly}</span>{/if}</div>
 															</div>
 														</div>
 													</div>
 													<div class="cart__choose__cycle__content text-center">
 														<h6 class="coodiv-text-10">{$LANG.orderpaymenttermtriennially}</h6>
-														<span class="cart__choose__cycle__content__saving triennially"><s>{$currency.prefix}{$price_save_triennially|number_format:2:'.':','}</s><span class="disoucted__price"><span id="trienniallydisount"></span> {$LANG.markdown.saved}</span></span>
+														<span class="cart__choose__cycle__content__saving triennially"><s>{$currency.prefix}{$price_save_triennially|number_format:2:'.':','}</s><span class="disoucted__price"><span id="trienniallydisount"></span> Saved</span></span>
 														<p id="cyclepricetriennially" data-row-price="{$pricing.rawpricing.triennially}" class="coodiv-text-6 main-text-color font-weight-bold">{$currency.prefix}{$pricing.rawpricing.triennially|number_format:2:'.':','}{$currency.suffix}</p>
 														<span class="coodiv-text-12 font-weight-300">{$currency.prefix}<span>{($pricing.rawpricing.triennially/36)|string_format:"%.2f"|number_format:2:'.':','}</span> {$LANG.orderpaymenttermmonthly}</span>
 													</div>
@@ -578,7 +578,7 @@ var _localLang = {
 								</div>
                             </div>
 							<div class="sticky__order__summary__sidebar__footer">
-							   <button type="submit" id="btnCompleteProductConfig" class="orderform__submit__btn__succses btn btn-primary btn-lg w-100">{$LANG.continue}</button>
+							   <button type="submit" id="btnCompleteProductConfig" class="orderform__submit__btn__succses btn btn-primary btn-lg w-100"><span class="btn-text">{$LANG.continue|default:'Continue'}</span></button>
 						   </div>
                         </div>
                     </div>

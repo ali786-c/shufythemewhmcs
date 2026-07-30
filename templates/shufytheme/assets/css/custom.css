@@ -262,3 +262,52 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     font-size: 15px !important;
 }
 
+/* ===================================================
+   🌙 CONFIGURE PRODUCT (confproduct) PAGE FIXES
+   =================================================== */
+.icheck__control__check__cycle__btn {
+    background-color: #0cbed5 !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 6px 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    min-height: 32px !important;
+}
+
+.icheck__control__check__cycle__btn span.cycle__select,
+.icheck__control__check__cycle__btn span.cycle__selected {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#btnCompleteProductConfig,
+.orderform__submit__btn__succses {
+    background-color: #0cbed5 !important;
+    border-color: #0cbed5 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+}
+
+#btnCompleteProductConfig span,
+#btnCompleteProductConfig .btn-text {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+
