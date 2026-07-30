@@ -146,3 +146,57 @@ html {
     --letter-spacing: 0em;
     --disabled-opacity: 25%;
 }
+
+/* ==========================================
+   ShufyTheme Premium Dark Blue Theme Overrides
+   ========================================== */
+
+/* 1. Main Outer Body & Dark Background */
+body.body__dark,
+body.dark__sidebar__color {
+    background-color: #0a192f !important; /* Deep Navy Blue Outer Background */
+    color: #e2e8f0 !important;             /* Crisp Light Text */
+}
+
+/* 2. Top Header & Navbar Bar */
+body.body__dark .header,
+body.body__dark header,
+body.body__dark .fixed__header__layout {
+    background-color: #0f2744 !important; /* Rich Navy Header */
+    border-bottom: 1px solid #1e3a5f !important;
+}
+
+/* 3. Cards, Containers, Boxes & Dropdown Menus */
+body.body__dark .card,
+body.body__dark .sidebar__body,
+body.body__dark .collapsable-dropdown-menu,
+body.body__dark .dropdown-menu,
+body.body__dark .bg-white,
+body.body__dark .nav__items__wrapper,
+body.body__dark .footer__wrapper {
+    background-color: #172a45 !important; /* Dark Blue Card Background */
+    color: #ffffff !important;
+    border-color: #1e3a5f !important;
+}
+
+/* 4. Clickable Links, Hover States & Accent Colors */
+body.body__dark a,
+body.body__dark .sidebar__link {
+    color: #38bdf8 !important; /* Bright Blue / Cyan Highlight */
+}
+
+body.body__dark a:hover,
+body.body__dark .sidebar__link:hover {
+    color: #60a5fa !important;
+}
+
+/* 5. Inputs & Form Fields in Dark Blue Mode */
+body.body__dark .form-control,
+body.body__dark input[type="text"],
+body.body__dark input[type="email"],
+body.body__dark input[type="password"],
+body.body__dark select {
+    background-color: #0f2744 !important;
+    color: #ffffff !important;
+    border: 1px solid #1e3a5f !important;
+}
