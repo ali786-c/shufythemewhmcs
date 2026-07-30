@@ -20,8 +20,8 @@
 		<div class="row justify-content-start">
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
-					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.cartreviewcheckout}</h1>
-					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.configureDesiredOptions'}</p>
+					<h1 class="coodiv-text-5 font-weight-bold mb-0">{lang key='cartreviewcheckout'|default:'Review & Checkout'}</h1>
+					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.configureDesiredOptions'|default:'Review your order selections and proceed to checkout.'}</p>
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 					</div>
 				{elseif $promotioncode && $rawdiscount eq "0.00"}
 					<div class="alert alert-info text-center" role="alert">
-						{$LANG.promoappliedbutnodiscount}
+						{lang key='promoappliedbutnodiscount'|default:'Promo code applied but no discount available'}
 					</div>
 				{elseif $promoaddedsuccess}
 					<div class="alert alert-success text-center" role="alert">
@@ -78,7 +78,7 @@
 
 				{if $bundlewarnings}
 					<div class="alert alert-warning" role="alert">
-						<strong>{$LANG.bundlereqsnotmet}</strong><br />
+						<strong>{lang key='bundlereqsnotmet'|default:'Bundle requirements not met'}</strong><br />
 						<ul>
 							{foreach from=$bundlewarnings item=warning}
 								<li>{$warning}</li>
@@ -131,7 +131,7 @@
 											
 											 {if $product.pricing.productonlysetup}
 											 <span class="d-block product__only__setup__price">
-											 {$product.pricing.productonlysetup->toPrefixed()} {$LANG.ordersetupfee}
+											 {$product.pricing.productonlysetup->toPrefixed()} {lang key='ordersetupfee'|default:'Setup Fee'}
 											 </span>
 											 {/if}
 											 {if $product.proratadate}
@@ -190,7 +190,7 @@
 												{else}
 												-
 												{/if}
-												{if $configoption.setup} + {$configoption.setup->toPrefixed()} {$LANG.ordersetupfee}{/if}
+												{if $configoption.setup} + {$configoption.setup->toPrefixed()} {lang key='ordersetupfee'|default:'Setup Fee'}{/if}
 												</span>
 											</div>
 										</div>
@@ -199,7 +199,7 @@
 									{foreach key=addonnum item=addon from=$product.addons}
 									<div class="configoptions__item row"{if $showAddonQtyOptions && $addon.allowqty===2} data-input-number-secondary{/if}>
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
 											<span class="item__value">{$addon.name}</span>
 										</div>
 										{if $showqtyoptions || $showAddonQtyOptions}
@@ -672,7 +672,7 @@
 								{foreach $expressCheckoutButtons as $checkoutButton}
 									{$checkoutButton}
 									<div class="separator">
-										- {$LANG.or|strtoupper} -
+										- {lang key='or'|default:'OR'|upper} -
 									</div>
 								{/foreach}
 							</div>
