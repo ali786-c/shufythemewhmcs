@@ -121,10 +121,8 @@
 									<div class="col-auto col-sm-2 item__qty">
 										{if $product.allowqty}
 											<input type="number" name="qty[{$num}]" value="{$product.qty}" class="form-control text-center" min="0" />
-											<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'}" class="update__item__qty__btn">
-												<svg class="options__icons icon__repeat">
-												  <use xlink:href="#icon-repeat"></use>
-												</svg>
+											<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'|default:'Update'}" class="update__item__qty__btn">
+												<i class="fas fa-sync-alt"></i>
 											</button>
 										{else}
 											<span class="d-inline-block px-3 py-1 bg-light rounded text-center coodiv-text-11">{$product.qty|default:1}</span>
@@ -212,10 +210,8 @@
 											<div class="item__qty {if $addon.allowqty !== 2} addon__qty__empty{/if} col-sm-2">
 												{if $addon.allowqty === 2}
 													<input type="number" name="paddonqty[{$num}][{$addonnum}]" value="{$addon.qty}" class="form-control text-center" min="0" />
-													<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.update'}" type="submit" class="update__item__qty__btn">
-														<svg class="options__icons icon__repeat">
-														  <use xlink:href="#icon-repeat"></use>
-														</svg>
+													<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.update'|default:'Update'}" type="submit" class="update__item__qty__btn">
+														<i class="fas fa-sync-alt"></i>
 													</button>
 												{else}
 													- 
@@ -259,10 +255,8 @@
 									<div class="col-auto col-sm-2 item__qty">
 										{if $addon.allowqty === 2}
 											<input type="number" name="addonqty[{$num}]" value="{$addon.qty}" class="form-control text-center" min="0" />
-											<button type="submit" class="update__item__qty__btn" title="{lang key='orderForm.update'}">
-												<svg class="options__icons icon__repeat">
-												  <use xlink:href="#icon-repeat"></use>
-												</svg>
+											<button type="submit" class="update__item__qty__btn" title="{lang key='orderForm.update'|default:'Update'}">
+												<i class="fas fa-sync-alt"></i>
 											</button>
 										{/if}
 									</div>
