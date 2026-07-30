@@ -110,11 +110,11 @@
 			{if $coodivsettings.allowproductsliderswitch=='activated' || $coodivsettings.id != '1'}
 				<div class="standard__slider__standard__cart__toggle">
 					{if $coodivsettings.productasslider=='activated' || $coodivsettings.id != '1'}
-						<span class="standard__slider__standard__cart__toggle__slider selected">{$LANG.shufytheme.orderform.slider}</span>
-						<span class="standard__slider__standard__cart__toggle__all">{$LANG.shufytheme.orderform.all}</span>
+						<span class="standard__slider__standard__cart__toggle__slider selected">{$LANG.shufytheme.orderform.slider|default:'Slider'}</span>
+						<span class="standard__slider__standard__cart__toggle__all">{$LANG.shufytheme.orderform.all|default:'All'}</span>
 					{else}
-						<span class="standard__slider__standard__cart__toggle__slider">{$LANG.shufytheme.orderform.slider}</span>
-						<span class="standard__slider__standard__cart__toggle__all selected">{$LANG.shufytheme.orderform.all}</span>
+						<span class="standard__slider__standard__cart__toggle__slider">{$LANG.shufytheme.orderform.slider|default:'Slider'}</span>
+						<span class="standard__slider__standard__cart__toggle__all selected">{$LANG.shufytheme.orderform.all|default:'All'}</span>
 					{/if}
 				</div>
 			{/if}
