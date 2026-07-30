@@ -288,31 +288,65 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     opacity: 1 !important;
 }
 
-/* Setup Fees & Free Domain Badges (Green Badge) */
-.cycle__setep__fees__wrapper {
-    margin-top: 8px !important;
+/* Card Layout (Pic 1 Match) */
+.cart__choose__cycle__label {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
-    display: block !important;
+    padding: 22px 15px 18px 15px !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+.cart__choose__cycle__content {
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.cart__choose__cycle__input {
+    margin-bottom: 8px !important;
+    display: flex !important;
+    justify-content: center !important;
     width: 100% !important;
 }
 
+.icheck__control__check__icon {
+    position: static !important; /* Remove absolute positioning */
+    display: inline-flex !important;
+    justify-content: center !important;
+}
+
+/* Setup Fees & Free Domain Badges (Green Badge directly under Selected button) */
+.cycle__setep__fees__wrapper {
+    margin-top: 6px !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: static !important;
+}
+
 .cycle__setup__fees__free {
-    background-color: #10b981 !important; /* Green Badge Color */
+    background-color: #10b981 !important; /* Bright Green Badge Color */
     color: #ffffff !important;
-    padding: 3px 10px !important;
-    border-radius: 20px !important;
-    font-size: 11px !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     display: inline-block !important;
-    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.2) !important;
+    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.25) !important;
 }
 
 .cycle__setup__fees {
     background-color: #f1f5f9 !important;
     color: #475569 !important;
-    padding: 3px 10px !important;
-    border-radius: 20px !important;
-    font-size: 11px !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
     font-weight: 600 !important;
     display: inline-block !important;
 }
@@ -320,9 +354,9 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
 .cycle__with__free__domain {
     background-color: #0284c7 !important; /* Cyan Free Domain Badge */
     color: #ffffff !important;
-    padding: 3px 10px !important;
-    border-radius: 20px !important;
-    font-size: 11px !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     display: inline-block !important;
     margin-left: 3px !important;
