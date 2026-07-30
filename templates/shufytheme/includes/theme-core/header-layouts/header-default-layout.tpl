@@ -5,7 +5,7 @@
 		  <div class="header__row d-flex justify-content-between align-items-center">
 				<div class="top__header__website__identity website__identity__sidebar {if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarheaderlogo'}d-flex{else}d-md-none d-flex{/if} align-items-center">		
 					<button aria-label="sidebar toggle" class="header__burger"></button>	 
-					<a aria-label="website homepage" class="website__identity__sidebar__link" href="{$WEB_ROOT}/index.php">
+					<a aria-label="website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
 						{if $coodivsettings.siteaslogo|default:''=='activated'}
 							<div class="website__identity__sidebar__text__logo__wrapper">
 								<span class="website__identity__sidebar__text__logo__first__later">
@@ -151,7 +151,7 @@
 	<div class="sidebar__container">
 		{if $coodivlayoutssettings.layoutsettingssidebarstyle|default:''=='sidebarsidebarlogo' || $coodivlayoutssettings.id|default:'' != '1'}
 		<div class="website__identity__sidebar d-flex align-items-center">		
-			<a aria-label="Website homepage" class="website__identity__sidebar__link" href="{$WEB_ROOT}/index.php">
+			<a aria-label="Website homepage" class="website__identity__sidebar__link" href="https://cloudhoste.eu">
 				{if $coodivsettings.siteaslogo|default:''=='activated'}
 					<div class="website__identity__sidebar__text__logo__wrapper">
 						<span class="website__identity__sidebar__text__logo__first__later">

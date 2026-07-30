@@ -8,7 +8,7 @@
 					<div class="footer__website__informations">
 					{if $coodivfootersettings.themefootersettinglogo=='activated' || $coodivfootersettings.id != '1'}
 						<div class="footer__logo__wrapper website__identity__sidebar d-flex align-items-center justify-content-center mb-4">		
-							<a aria-label="website homepage" class="website__identity__sidebar__link text-center d-flex align-items-center gap-10" href="{$WEB_ROOT}/index.php">
+							<a aria-label="website homepage" class="website__identity__sidebar__link text-center d-flex align-items-center gap-10" href="https://cloudhoste.eu">
 								{if $coodivsettings.siteaslogo=='activated'}
 									<div class="website__identity__sidebar__text__logo__wrapper">
 										<span class="website__identity__sidebar__text__logo__first__later">

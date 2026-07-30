@@ -1,7 +1,7 @@
 <div class="login__register__sidebar d-lg-flex d-none">
 
 	<div class="website__identity__sidebar d-flex align-items-center justify-content-start mb-8">		
-		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-start gap-10" href="{$WEB_ROOT}/index.php">
+		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-start gap-10" href="https://cloudhoste.eu">
 			{if $coodivsettings.siteaslogo|default:''=='activated'}
 				<div class="website__identity__sidebar__text__logo__wrapper">
 					<span class="website__identity__sidebar__text__logo__first__later">

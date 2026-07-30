@@ -2,7 +2,7 @@
 	<div class="main__login__content">
 	
 	<div class="autho__logo__wrapper website__identity__sidebar {if $coodivsettings.loginstyle|default:''!='loginstyletwo'}d-lg-none{/if} d-flex align-items-center justify-content-center mb-8">		
-		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-center gap-10" href="{$WEB_ROOT}/index.php">
+		<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-center gap-10" href="https://cloudhoste.eu">
 			{if $coodivsettings.siteaslogo|default:''=='activated'}
 				<div class="website__identity__sidebar__text__logo__wrapper">
 					<span class="website__identity__sidebar__text__logo__first__later">
