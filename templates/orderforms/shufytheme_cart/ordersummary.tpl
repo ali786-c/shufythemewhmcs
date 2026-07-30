@@ -7,18 +7,18 @@
 			 </div>
 			 {if $producttotals.configoptions}
 			 <div class="product__info__wrapper configoption">
-				<span class="product__info__wrapper__title">{$LANG.cartproductconfig}</span>
+				<span class="product__info__wrapper__title">{lang key='cartproductconfig'|default:'Product Configuration'}</span>
 				{foreach $producttotals.configoptions as $configoption}
 					<div class="product__info__item">
 						<span class="product__info__name">{$configoption.name}: {$configoption.optionname}</span>
-						<span class="product__info__price">{$configoption.recurring}{if $configoption.setup} + {$configoption.setup} {$LANG.ordersetupfee}{/if}</span>
+						<span class="product__info__price">{$configoption.recurring}{if $configoption.setup} + {$configoption.setup} {lang key='ordersetupfee'|default:'Setup Fee'}{/if}</span>
 					</div>
 				{/foreach}
 			 </div>
 			 {/if}
 			 {if $producttotals.addons}
 			 <div class="product__info__wrapper addon">
-				 <span class="product__info__wrapper__title">{$LANG.cartaddons}</span>
+				 <span class="product__info__wrapper__title">{lang key='cartaddons'|default:'Addons'}</span>
 				 {foreach $producttotals.addons as $addon}
 					<div class="product__info__item addon">
 						<span class="product__info__name">{$addon.name}</span>
@@ -33,7 +33,7 @@
 			<div class="product__summary__totals__wrapper">
 				{if $producttotals.pricing.setup}
 					<div class="product__summary__totals__item">
-						<span class="product__summary__name">{$LANG.cartsetupfees}:</span>
+						<span class="product__summary__name">{lang key='cartsetupfees'|default:'Setup Fees'}:</span>
 						<span class="product__summary__price">{$producttotals.pricing.setup}</span>
 					</div>
 				{/if}
@@ -60,7 +60,7 @@
 	</div>
 
     <div class="sidebar__separated__price d-flex flex-column">
-		<span class="coodiv-text-11 font-weight-300">{$LANG.ordertotalduetoday}</span>
+		<span class="coodiv-text-11 font-weight-300">{lang key='ordertotalduetoday'|default:'Total Due Today'}</span>
         <span class="coodiv-text-5 font-weight-bold amt">{$producttotals.pricing.totaltoday}</span>
     </div>
 	{elseif !empty($renewals) || !empty($serviceRenewals)}
