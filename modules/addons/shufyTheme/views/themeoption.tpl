@@ -24,6 +24,7 @@
 </div>
 {/if}
 
+
 <div class="page__wrapper__content">
 	<div class="coodiv__main__hero with__menu">
 		<div class="coodiv__main__hero__breadcrumbs">{$breadcrumbs}</div>
@@ -52,9 +53,11 @@
 		  <li class="nav-item"><a class="nav-link" href="{$modurl}&action=themehealthcheck">Health</a></li>
 		  
 		  <li class="nav-item ml-auto"><a href="{$modurl}&action=extentions" class="nav-link">Extention manager</a></li> 
+		  
+		  
 		</ul>
+	
 	</div>
-
 	<form id="applythemeoption" class="full__fieldset__area default__form__panel__cart coodiv__whmcs__admin__panel__form shufytheme__ajax__save" action="{$modurl}&action=applythemeoption" method="post">
 		<input type="hidden" name="itemid" value="1">
 		<div class="section">
@@ -65,42 +68,154 @@
 						<label for="textlogo">Use Site Name as Logo (text) <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field to display your site name as a logo." class="fas fa-info-circle"></i></label>
 						<fieldset name="textlogo" id="textlogo">
 							<div class="radio">
-								<label class="template__label">
-									<input type="checkbox" name="textlogo" id="textlogo" value="activated" {if $themesetting.siteaslogo|default:''=='activated'}checked{/if}>
-									i want to use my site Name as Logo
-									<span class="checkmark"><i class="fal fa-check"></i></span>
-								</label>
+							<label class="template__label">
+								<input type="checkbox" name="textlogo" id="textlogo" value="activated" {if $themesetting.siteaslogo|default:''=='activated'}checked{/if}>
+								i want to use my site Name as Logo
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
 							</div>
 						</fieldset>
 					</div>
 					<div class="form-group">
 						<label for="customtextlogo">Custom text logo<i data-toggle="tooltip" data-placement="bottom" title="Add your custom logo text to display in place of the logo." class="fas fa-info-circle"></i></label>
-						<input type="text" name="customtextlogo" id="customtextlogo" {if $themesetting.customtextlogo|default:'' == null}value="" placeholder="Leave this field empty if you'd like to use the default WHMCS settings"{else}value="{$themesetting.customtextlogo|default:''}"{/if} class="form-control" >
+						<input type="text" name="customtextlogo" id="customtextlogo" {if $themesetting.customtextlogo|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default WHMCS settings"{else}value="{$themesetting.customtextlogo|default:''}"{/if} class="form-control" >
+					</div>
+					<div class="form-group d-none">
+						<label for="additionelsetting">Additionel value<i data-toggle="tooltip" data-placement="bottom" title="Add your custom logo text to display in place of the logo." class="fas fa-info-circle"></i></label>
+						<input type="text" name="additionelsetting" id="additionelsetting" {if $themesetting.additionelsetting|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default WHMCS settings"{else}value="{$themesetting.additionelsetting|default:''}"{/if} class="form-control" >
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6 col-12">
+					<div class="form-group">
+						<label for="defaultlogolinkicon">Your default logo icon URL (1:1 aspect ratio)<i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your icon logo must be a 1:1 aspect ratio for the sidebar views." class="fas fa-info-circle"></i></label>
+						<input type="url" name="defaultlogolinkicon" id="defaultlogolinkicon" {if $themesetting.defaultlogolinkicon|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.defaultlogolinkicon|default:''}"{/if} class="form-control" >
 					</div>
 					<div class="form-group">
-						<label for="customlogolink">Custom Logo Target Link / URL <i data-toggle="tooltip" data-placement="bottom" title="Set a custom target URL when users click on your website logo (e.g. https://cloudhoste.eu). Leave empty for default WHMCS homepage." class="fas fa-info-circle"></i></label>
-						<input type="text" name="customlogolink" id="customlogolink" {if $themesetting.customlogolink|default:'' == null}value="" placeholder="Leave empty for default WHMCS homepage (e.g. https://cloudhoste.eu or /index.php)"{else}value="{$themesetting.customlogolink|default:''}"{/if} class="form-control" >
+						<label for="defaultlogolinktagline">Your default logo tagline (without icon) URL <i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your logo without your icon." class="fas fa-info-circle"></i></label>
+						<input type="url" name="defaultlogolinktagline" id="defaultlogolinktagline" {if $themesetting.defaultlogolinktagline|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.defaultlogolinktagline|default:''}"{/if} class="form-control" >
+					</div>
+					<div class="form-group">
+						<label for="defaultlogolinkfull">Your Full logo link URL <i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your full logo." class="fas fa-info-circle"></i></label>
+						<input type="url" name="defaultlogolinkfull" id="defaultlogolinkfull" {if $themesetting.defaultlogolinkfull|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.defaultlogolinkfull|default:''}"{/if} class="form-control" >
 					</div>
 				</div>
 				<div class="col-md-6 col-12">
 					<div class="form-group">
-						<label for="defaultlogolinkicon">Your default logo icon URL (1:1 aspect ratio)<i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your icon logo must be a 1:1 aspect ratio for the sidebar views." class="fas fa-info-circle"></i></label>
-						<input type="url" name="defaultlogolinkicon" id="defaultlogolinkicon" {if $themesetting.defaultlogolinkicon|default:'' == null}value="" placeholder="Leave this field empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.defaultlogolinkicon|default:''}"{/if} class="form-control" >
+						<label for="darklogolinkicon">Your logo icon for dark backgrounds (inverse icon) (1:1 aspect ratio) URL<i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your icon logo must be a 1:1 aspect ratio for the sidebar views for dark backgrounds." class="fas fa-info-circle"></i></label>
+						<input type="url" name="darklogolinkicon" id="darklogolinkicon" {if $themesetting.darklogolinkicon|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.darklogolinkicon|default:''}"{/if} class="form-control" >
 					</div>
 					<div class="form-group">
-						<label for="defaultlogolinkfull">Your Full logo link URL <i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your full logo." class="fas fa-info-circle"></i></label>
-						<input type="url" name="defaultlogolinkfull" id="defaultlogolinkfull" {if $themesetting.defaultlogolinkfull|default:'' == null}value="" placeholder="Leave this field empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.defaultlogolinkfull|default:''}"{/if} class="form-control" >
+						<label for="darklogolinktagline">Your logo for tagline dark backgrounds (without icon) (inverse tagline) URL<i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your logo without your icon for dark backgrounds." class="fas fa-info-circle"></i></label>
+						<input type="url" name="darklogolinktagline" id="darklogolinktagline" {if $themesetting.darklogolinktagline|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.darklogolinktagline|default:''}"{/if} class="form-control" >
+					</div>
+					<div class="form-group">
+						<label for="darklogolinkfull">Your Full logo link for dark backgrounds (inverse logo) URL<i data-toggle="tooltip" data-placement="bottom" title="Add The URL to your full logo for dark backgrounds." class="fas fa-info-circle"></i></label>
+						<input type="url" name="darklogolinkfull" id="darklogolinkfull" {if $themesetting.darklogolinkfull|default:'' == null}value="" placeholder="Leave this filed empty if you'd like to use the default Coodiv Shufy theme settings"{else}value="{$themesetting.darklogolinkfull|default:''}"{/if} class="form-control" >
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="section">
-			<h5 class="title">General settings</h5>
+			<h5 class="title">Genaral settings</h5>
 			<div class="row">
 				<div class="col-md-6 col-12">
 					<div class="form-group templates__form__control">
-						<label for="user-dropdown">Header dropdowns <i data-toggle="tooltip" data-placement="bottom" title="This Fields Are Bbout Display Dropdowns As a Sidebar" class="fas fa-info-circle"></i></label>
+						<label for="advancedemailverification">Activate the advanced email verification system <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field to enable the advanced email verification system for your customers." class="fas fa-info-circle"></i></label>
+						<fieldset name="advancedemailverification" id="advancedemailverification">
+							<div class="radio">
+								<label class="template__label">
+									<input type="checkbox" name="advancedemailverification" id="advancedemailverification" value="activated" {if $themesetting.advancedemailverification|default:''=='activated'}checked{/if}>
+									i want to use the advanced email verification system for your customers.
+									<span class="checkmark"><i class="fal fa-check"></i></span>
+								</label>
+							</div>
+						</fieldset>
+					</div>
+										
+					<div class="form-group templates__form__control">
+						<label for="customerspin">Customer Support PIN <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field to enable the customers support PIN addon in your system." class="fas fa-info-circle"></i></label>
+						<fieldset name="customerspin" id="customerspin">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="customerspin" id="customerspin" value="activated" {if $themesetting.customerspin|default:''=='activated'}checked{/if}>
+								i want to use the customers support PIN addon in my system
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+					</div>
+										
+					<div class="form-group templates__form__control">
+						<label for="customersnotifications">Delete notification when close it <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field if you want your customers to not show notifications and alerts again when close them." class="fas fa-info-circle"></i></label>
+						<fieldset name="customersnotifications" id="customersnotifications">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="customersnotifications" id="customersnotifications" value="activated" {if $themesetting.customersnotifications|default:''=='activated'}checked{/if}>
+								i want to delete notifications and alerts when customers close them.
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+					</div>	
+										
+					<div class="form-group templates__form__control">
+						<label for="productasslider">Slider mode in product page <i data-toggle="tooltip" data-placement="bottom" title="in these fields, you can configure the slider mode in the product page" class="fas fa-info-circle"></i></label>
+						<fieldset name="productasslider" id="productasslider" style="margin-bottom:10px">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="productasslider" id="productasslider" value="activated" {if $themesetting.productasslider|default:''=='activated' || $themesetting.id|default:'' != '1'}checked{/if}>
+								I want to display my products as a slider as the default
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+						
+						<fieldset name="allowproductsliderswitch" id="allowproductsliderswitch">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="allowproductsliderswitch" id="allowproductsliderswitch" value="activated" {if $themesetting.allowproductsliderswitch|default:''=='activated' || $themesetting.id|default:'' != '1'}checked{/if}>
+								Allow user to switch from and to slider mode in product page
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+					</div>	
+
+					
+					<div class="form-group templates__form__control">
+						<label for="gravatar">Gravatar  <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field to display Gravatar as profile picture for my clients." class="fas fa-info-circle"></i></label>
+						<fieldset name="gravatar" id="gravatar">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="gravatar" id="gravatar" value="activated" {if $themesetting.gravatar|default:''=='activated' || $themesetting.id|default:'' != '1'}checked{/if}>
+								i want to use Gravatar avatar as profile picture for my clients
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+					</div>
+					
+					<div class="form-group templates__form__control">
+						<label for="h-anoncement">Header anoncements  <i data-toggle="tooltip" data-placement="bottom" title="tick/enable this field to display header anoncement slider" class="fas fa-info-circle"></i></label>
+						<fieldset name="h-anoncement" id="h-anoncement">
+							<div class="radio">
+							<label class="template__label">
+								<input type="checkbox" name="h-anoncement" id="h-anoncement" value="activated" {if $themesetting.headeranoncement|default:''=='activated' || $themesetting.id|default:'' != '1'}checked{/if}>
+									Display anoncements in header
+								<span class="checkmark"><i class="fal fa-check"></i></span>
+							</label>
+							</div>
+						</fieldset>
+					</div>
+					
+					<div class="form-group templates__form__control">
+						<label for="user-dropdown">Header dropdowns  <i data-toggle="tooltip" data-placement="bottom" title="This Fields Are Bbout Display Dropdowns As a Sidebar" class="fas fa-info-circle"></i></label>
+						<fieldset style="margin-bottom:10px" name="user-dropdown" id="user-dropdown">
+							<div class="radio">
 							<label class="template__label">
 								<input type="checkbox" name="user-dropdown" id="user-dropdown" value="activated" {if $themesetting.userdropdown|default:''=='activated' || $themesetting.id|default:'' != '1'}checked{/if}>
 									I want to display header user dropdown as a sidebar

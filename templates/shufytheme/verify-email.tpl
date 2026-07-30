@@ -2,7 +2,7 @@
 <div class="{$coodivsettings.loginstyle|default:''} main__login__content__wrapper primary-content">
 	<div class="main__registeration__content">
 		<div class="autho__logo__wrapper website__identity__sidebar d-flex align-items-center justify-content-center mb-8">		
-			<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-center gap-10" href="{if $coodivsettings.customlogolink}{$coodivsettings.customlogolink}{else}{$WEB_ROOT}/index.php{/if}">
+			<a class="website__identity__sidebar__link text-center d-flex align-items-center justify-content-center gap-10" href="{$WEB_ROOT}/index.php">
 				{if $coodivsettings.siteaslogo|default:''=='activated'}
 					<div class="website__identity__sidebar__text__logo__wrapper">
 						<span class="website__identity__sidebar__text__logo__first__later">
