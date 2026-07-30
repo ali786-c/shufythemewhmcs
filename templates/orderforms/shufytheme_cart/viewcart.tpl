@@ -119,14 +119,10 @@
 										</div>
 									</div>
 									<div class="col-auto col-sm-2 item__qty">
-										{if $product.allowqty}
-											<input type="number" name="qty[{$num}]" value="{$product.qty}" class="form-control text-center" min="0" />
-											<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'|default:'Update'}" class="update__item__qty__btn">
-												<i class="fas fa-sync-alt"></i>
-											</button>
-										{else}
-											<span class="d-inline-block px-3 py-1 bg-light rounded text-center coodiv-text-11">{$product.qty|default:1}</span>
-										{/if}
+										<input type="number" name="qty[{$num}]" value="{$product.qty|default:1}" class="form-control text-center" min="1" />
+										<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'|default:'Update'}" class="update__item__qty__btn">
+											<i class="fas fa-sync-alt"></i>
+										</button>
 									</div>
 									<div class="col item__price">
 										<div class="d-block">
