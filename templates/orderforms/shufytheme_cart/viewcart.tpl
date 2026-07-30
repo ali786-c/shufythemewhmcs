@@ -607,12 +607,12 @@
 					<div class="sidebar__with__promo__box__wrapper">
 					<div class="sticky__order__summary__sidebar">
 						<div class="sticky__order__summary__sidebar__header">
-							<h2 class="coodiv-text-7 font-weight-300 mb-0">{$LANG.ordersummary}</h2>
+							<h2 class="coodiv-text-7 font-weight-300 mb-0">{lang key='ordersummary'|default:'Order Summary'}</h2>
 						</div>
 						<div class="sticky__sidebar__order__summary position-relative">
 							<div class="sticky__order__summary__sidebar__body">
 								<div class="product__summary__totals__item">
-									<span class="product__summary__name">{$LANG.ordersubtotal}</span>
+									<span class="product__summary__name">{lang key='ordersubtotal'|default:'Subtotal'}</span>
 									<span id="subtotal" class="product__summary__price">{$subtotal}</span>
 								</div>
 								{if $promotioncode || $taxrate || $taxrate2}
@@ -641,29 +641,29 @@
 									<span class="product__summary__name">{lang key='orderForm.totals'}</span>
 									<span id="recurring" class="product__summary__price recurring-charges">
 										<span id="recurringMonthly" {if !$totalrecurringmonthly}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringmonthly}</span> {$LANG.orderpaymenttermmonthly}<br />
+											<span class="cost">{$totalrecurringmonthly}</span> {lang key='orderpaymenttermmonthly'|default:'Monthly'}<br />
 										</span>
 										<span id="recurringQuarterly" {if !$totalrecurringquarterly}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringquarterly}</span> {$LANG.orderpaymenttermquarterly}<br />
+											<span class="cost">{$totalrecurringquarterly}</span> {lang key='orderpaymenttermquarterly'|default:'Quarterly'}<br />
 										</span>
 										<span id="recurringSemiAnnually" {if !$totalrecurringsemiannually}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringsemiannually}</span> {$LANG.orderpaymenttermsemiannually}<br />
+											<span class="cost">{$totalrecurringsemiannually}</span> {lang key='orderpaymenttermsemiannually'|default:'Semi-Annually'}<br />
 										</span>
 										<span id="recurringAnnually" {if !$totalrecurringannually}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringannually}</span> {$LANG.orderpaymenttermannually}<br />
+											<span class="cost">{$totalrecurringannually}</span> {lang key='orderpaymenttermannually'|default:'Annually'}<br />
 										</span>
 										<span id="recurringBiennially" {if !$totalrecurringbiennially}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringbiennially}</span> {$LANG.orderpaymenttermbiennially}<br />
+											<span class="cost">{$totalrecurringbiennially}</span> {lang key='orderpaymenttermbiennially'|default:'Biennially'}<br />
 										</span>
 										<span id="recurringTriennially" {if !$totalrecurringtriennially}style="display:none;"{/if}>
-											<span class="cost">{$totalrecurringtriennially}</span> {$LANG.orderpaymenttermtriennially}<br />
+											<span class="cost">{$totalrecurringtriennially}</span> {lang key='orderpaymenttermtriennially'|default:'Triennially'}<br />
 										</span>
 									</span>
 								</div>
 							</div>
 							
 							<div class="sidebar__separated__price d-flex flex-column" >
-								<span class="coodiv-text-11 font-weight-300">{$LANG.ordertotalduetoday}</span>
+								<span class="coodiv-text-11 font-weight-300">{lang key='ordertotalduetoday'|default:'Total Due Today'}</span>
 								<span class="totalDueToday"><span id="totalCartPrice" class="coodiv-text-5 font-weight-bold amt">{$total}</span></span>
 							</div>
 									
