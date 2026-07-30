@@ -353,7 +353,7 @@
 		<div class="field-container mt-10">
 			<div class="row justify-content-start mb-5">
 				<div class="col-md-10 col-12">
-					<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{$LANG.domainregistrantinfo}</h6> 
+					<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{lang key='domainregistrantinfo'|default:'Domain Registrant Information'}</h6> 
 				</div>
 			</div>
 			<div class="default__shadow__panel">
@@ -363,14 +363,14 @@
 					
 					<div class="form-group">
 						<select name="contact" id="inputDomainContact" class="field form-control">
-							<option value="">{$LANG.usedefaultcontact}</option>
+							<option value="">{lang key='usedefaultcontact'|default:'Use Default Contact (Details Above)'}</option>
 							{foreach $domaincontacts as $domcontact}
 								<option value="{$domcontact.id}"{if $contact == $domcontact.id} selected{/if}>
 									{$domcontact.name}
 								</option>
 							{/foreach}
 							<option value="addingnew"{if $contact == "addingnew"} selected{/if}>
-								{$LANG.clientareanavaddcontact}...
+								{lang key='clientareanavaddcontact'|default:'Add New Contact'}...
 							</option>
 						</select>
 					</div>

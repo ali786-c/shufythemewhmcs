@@ -513,6 +513,25 @@ body.body__dark .update__item__qty__btn:hover {
     color: #ffffff !important;
 }
 
+/* ===================================================
+   🌐 DOMAIN REGISTRANT CONTACT SELECT BOX FIX
+   =================================================== */
+#inputDomainContact,
+#inputDomainContact option {
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+}
+
+body.body__dark #inputDomainContact,
+body.body__dark #inputDomainContact option {
+    color: #ffffff !important;
+    background-color: #0f2744 !important;
+}
+
+
 
 
 
