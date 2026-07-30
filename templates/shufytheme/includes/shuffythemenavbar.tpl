@@ -18,13 +18,17 @@
 				<span class="sidebar__dropdown__title">{$item->getLabel()}</span>
 				<div class="sidebar__body__scrollable__element">
 					{foreach $item->getChildren() as $childItem}
-						<a href="{$childItem->getUri()}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
-							 {if $childItem->hasIcon()}
-							 <i class="{$childItem->getIcon()}"></i>
-							 {/if}
-							 {$childItem->getLabel()}
-							 {if $childItem->hasBadge()}<span class="childitem__side__bar__item__icon__badge">{$childItem->getBadge()}</span>{/if}
-						 </a>
+						{if ($childItem->getClass() && (strpos($childItem->getClass(), 'divider') !== false || strpos($childItem->getClass(), 'nav-divider') !== false)) || strpos($childItem->getLabel(), '---') !== false || strpos($childItem->getLabel(), '----') !== false || strpos($childItem->getLabel(), '-----') !== false || $childItem->getLabel() == '-----' || $childItem->getLabel() == '---' || $childItem->getLabel() == '-'}
+							<div class="dropdown-divider my-2 border-top opacity-5"></div>
+						{else}
+							<a href="{$childItem->getUri()}" class="sidebar__link {if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}" {if $childItem->getAttribute('target')} target="{$childItem->getAttribute('target')}"{/if}>
+								 {if $childItem->hasIcon()}
+								 <i class="{$childItem->getIcon()}"></i>
+								 {/if}
+								 {$childItem->getLabel()}
+								 {if $childItem->hasBadge()}<span class="childitem__side__bar__item__icon__badge">{$childItem->getBadge()}</span>{/if}
+							 </a>
+						{/if}
 					{/foreach}
 				</div>
 			</div>
