@@ -208,6 +208,11 @@ function shufyTheme_output($vars) {
     $smarty->assign('license_status', 'active');
     $smarty->assign('themesetting', $settings);
     $smarty->assign('themehomepagesetting', $settings);
+    $smarty->assign('themecolorsetting', $settings);
+    $smarty->assign('themesidebarsetting', $settings);
+    $smarty->assign('themelayoutsetting', $settings);
+    $smarty->assign('themetyposetting', $settings);
+    $smarty->assign('themeheadersetting', $settings);
     $smarty->assign('coodivsettings', $settings);
     $smarty->assign('coodivcolorsettings', $settings);
     $smarty->assign('coodivsidebaroptions', $settings);
