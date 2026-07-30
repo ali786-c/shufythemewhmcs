@@ -746,8 +746,8 @@
 								<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{lang key='orderForm.removeItem'}</h4>
 								<p class="coodiv-text-11 font-weight-400">{lang key='cartremoveitemconfirm'}</p>
 								<div class="d-flex align-items-center gap-5 flex-wrap justify-content-center mt-5">
-									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{$LANG.no}</button>
-									<button type="submit" class="btn btn-primary btn-sm">{$LANG.yes}, {lang key='orderForm.removeItem'}</button>
+									<button type="button" class="btn btn-secondary btn-sm px-4" data-dismiss="modal">{lang key='no'|default:'No'}</button>
+									<button type="submit" class="btn btn-primary btn-sm px-4">{lang key='yes'|default:'Yes'}, {lang key='orderForm.removeItem'|default:'Remove Item'}</button>
 								</div>
 							</div>
                         </div>
@@ -770,11 +770,11 @@
                         <div class="modal-body pb-18">
 							<div class="d-flex align-items-center justify-content-center flex-column"> 
 								<i class="fal fa-exclamation-triangle coodiv-text-2 text-danger"></i>    
-								<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{$LANG.emptycart}</h4>
+								<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{$LANG.emptycart|default:'Empty Cart'}</h4>
 								<p class="coodiv-text-11 font-weight-400">{$LANG.cartemptyconfirm}</p>
 								<div class="d-flex align-items-center gap-5 flex-wrap justify-content-center mt-5">
-									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{$LANG.no}</button>
-									<button type="submit" class="btn btn-primary btn-sm">{$LANG.yes}, {$LANG.emptycart}</button>
+									<button type="button" class="btn btn-secondary btn-sm px-4" data-dismiss="modal">{lang key='no'|default:'No'}</button>
+									<button type="submit" class="btn btn-primary btn-sm px-4">{lang key='yes'|default:'Yes'}, {$LANG.emptycart|default:'Empty Cart'}</button>
 								</div>
 							</div>
                         </div>
