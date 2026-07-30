@@ -439,10 +439,10 @@
 									<span class="promo w-hidden"></span>
                                     <div class="actions">
                                         <button type="button" class="btn-add-to-cart product-domain" data-whois="1" data-domain="">
-                                            <span class="to-add">{$LANG.addtocart}</span>
+                                            <span class="to-add">{lang key='addtocart'|default:'Add to Cart'}</span>
                                             <span class="loading"><i class="fas fa-spinner fa-spin"></i></span>
                                             <span class="added">{lang key='domaincheckeradded'}</span>
-                                            <span class="unavailable">{$LANG.domaincheckertaken}</span>
+                                            <span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
                                         </button>
                                         <button type="button" class="btn btn-primary domain-contact-support w-hidden">{lang key='domainChecker.contactSupport'}</button>
                                     </div>

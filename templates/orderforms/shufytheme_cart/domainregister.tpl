@@ -175,12 +175,12 @@
 												<span class="coodiv-text-11 font-weight-300 price"></span>
 												
 												<button class="btn btn-primary btn-sm btn-add-to-cart mt-3" data-whois="0" data-domain="">
-													<span class="to-add">{$LANG.addtocart}</span>
+													<span class="to-add">{lang key='addtocart'|default:'Add to Cart'}</span>
 													<span class="loading">
 														<i class="fas fa-spinner fa-spin"></i> {lang key='loading'}
 													</span>
 													<span class="added"><i class="far fa-shopping-cart"></i> {lang key='checkout'}</span>
-													<span class="unavailable">{$LANG.domaincheckertaken}</span>
+													<span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
 												</button>
 											</div>
 											<p class="coodiv-text-11 font-weight-300 domain-error domain-checker-unavailable"></p>
@@ -217,12 +217,12 @@
 																
 																
 																<button type="button" class="recommended__domains__wrapper__btn btn btn-primary btn-sm btn-add-to-cart w-hidden" data-whois="0" data-domain="">
-																	<span class="to-add">{$LANG.addtocart}</span>
+																	<span class="to-add">{lang key='addtocart'|default:'Add to Cart'}</span>
 																	<span class="loading">
 																		<i class="fas fa-spinner fa-spin"></i> {lang key='loading'}
 																	</span>
 																	<span class="added"><i class="far fa-shopping-cart"></i> {lang key='checkout'}</span>
-																	<span class="unavailable">{$LANG.domaincheckertaken}</span>
+																	<span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
 																</button>
 																											
 																<button type="button" class="btn btn-primary domain-contact-support w-hidden">
@@ -295,7 +295,7 @@
 																<i class="fas fa-spinner fa-spin"></i> {lang key='loading'}
 															</span>
 															<span class="added"><i class="far fa-shopping-cart"></i> {lang key='checkout'}</span>
-															<span class="unavailable">{$LANG.domaincheckertaken}</span>
+															<span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
 														</button>
 																									
 														<button type="button" class="btn btn-primary domain-contact-support w-hidden">
@@ -344,10 +344,10 @@
 					
 											
 											<button type="button" class="btn-add-to-cart" data-whois="1" data-domain="">
-												<span class="to-add">{$LANG.addtocart}</span>
+												<span class="to-add">{lang key='addtocart'|default:'Add to Cart'}</span>
 												<span class="loading"><i class="fas fa-spinner fa-spin"></i></span>
 												<span class="added">{lang key='checkout'}</span>
-												<span class="unavailable">{$LANG.domaincheckertaken}</span>
+												<span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
 											</button>
 														
 														
@@ -395,7 +395,7 @@
 													<i class="fas fa-spinner fa-spin"></i> {lang key='loading'}
 												</span>
 												<span class="added"><i class="far fa-shopping-cart"></i> {lang key='checkout'}</span>
-												<span class="unavailable">{$LANG.domaincheckertaken}</span>
+												<span class="unavailable">{lang key='domaincheckertaken'|default:'Unavailable'}</span>
 											</button>
 											<button type="button" class="btn btn-primary domain-contact-support w-hidden">
 												{lang key='domainChecker.contactSupport'}
