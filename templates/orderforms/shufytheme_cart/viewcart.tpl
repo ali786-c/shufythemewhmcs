@@ -136,7 +136,7 @@
 											 {/if}
 											 {if $product.proratadate}
 											 <span class="d-block product__only__setup__price">
-											 ({$LANG.orderprorata} {$product.proratadate})
+											 ({lang key='orderprorata'|default:'Prorated to'} {$product.proratadate})
 											 </span>
 											 {/if}
 										</div>
@@ -217,8 +217,8 @@
 										
 										<div class="col item-price">
 											<span class="item__price">{$addon.totaltoday} / {$addon.billingcyclefriendly}</span>
-											{if $addon.setup}{$addon.setup->toPrefixed()} {$LANG.ordersetupfee}{/if}
-											{if $addon.isProrated}<br />({$LANG.orderprorata} {$addon.prorataDate}){/if}
+											{if $addon.setup}{$addon.setup->toPrefixed()} {lang key='ordersetupfee'|default:'Setup Fee'}{/if}
+											{if $addon.isProrated}<br />({lang key='orderprorata'|default:'Prorated to'} {$addon.prorataDate}){/if}
 										</div>
 									
 										<div class="addon-actions d-none">
@@ -259,8 +259,8 @@
 									<div class="col item__price">
 										<span>{$addon.totaltoday}</span>
 										<span class="cycle"> / {$addon.billingcyclefriendly}</span>
-										{if $addon.setup}{$addon.setup->toPrefixed()} {$LANG.ordersetupfee}{/if}
-										{if $addon.isProrated}<br />({$LANG.orderprorata} {$addon.prorataDate}){/if}
+										{if $addon.setup}{$addon.setup->toPrefixed()} {lang key='ordersetupfee'|default:'Setup Fee'}{/if}
+										{if $addon.isProrated}<br />({lang key='orderprorata'|default:'Prorated to'} {$addon.prorataDate}){/if}
 									</div>
 									
 									<div class="view__cart__items__wrapper__body__item__options">
@@ -353,24 +353,24 @@
 									{if $domain.dnsmanagement}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domaindnsmanagement}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domaindnsmanagement'|default:'DNS Management'}</span>
 										</div>
 									</div>
 									{/if}
 									{if $domain.emailforwarding}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domainemailforwarding}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domainemailforwarding'|default:'Email Forwarding'}</span>
 										</div>
 									</div>
 									{/if}
 									{if $domain.idprotection}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domainidprotection}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domainidprotection'|default:'ID Protection'}</span>
 										</div>
 									</div>
 									{/if}
@@ -412,13 +412,13 @@
 								<div class="view__cart__items__wrapper__main__item view__cart__items__wrapper__body__item__product__info position-relative row justify-content-start">
 									<div class="{if $showqtyoptions || $showAddonQtyOptions}col-8{else}col-7{/if}">
 										<div class="view__cart__items__wrapper__body__item__productinfo">
-											<h6 class="coodiv-text-10 font-weight-bold mb-0">{$LANG.domainrenewal}</h6>
+											<h6 class="coodiv-text-10 font-weight-bold mb-0">{lang key='domainrenewal'|default:'Domain Renewal'}</h6>
 											<span class="this__item__domain">{$domain.domain}</span>
 										</div>	
 									</div>
 									<div class="col-4 item__price">
 										<span class="price">{$domain.price}</span>
-										<span class="cycle">{$domain.regperiod} {$LANG.orderyears}</span>													
+										<span class="cycle">{$domain.regperiod} {lang key='orderyears'|default:'Year(s)'}</span>													
 									</div>
 									<div class="view__cart__items__wrapper__body__item__options">
 										<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('r','{$num}')">
@@ -433,24 +433,24 @@
 									{if $domain.dnsmanagement}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domaindnsmanagement}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domaindnsmanagement'|default:'DNS Management'}</span>
 										</div>
 									</div>
 									{/if}
 									{if $domain.emailforwarding}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domainemailforwarding}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domainemailforwarding'|default:'Email Forwarding'}</span>
 										</div>
 									</div>
 									{/if}
 									{if $domain.idprotection}
 									<div class="configoptions__item row">
 										<div class="addon__name {if $showqtyoptions || $showAddonQtyOptions}col-6{else}col-7{/if}">
-											<span class="item__name">{$LANG.orderaddon}:</span>
-											<span class="item__value">{$LANG.domainidprotection}</span>
+											<span class="item__name">{lang key='orderaddon'|default:'Addon'}:</span>
+											<span class="item__value">{lang key='domainidprotection'|default:'ID Protection'}</span>
 										</div>
 									</div>
 									{/if}
@@ -536,7 +536,7 @@
 									<svg class="options__icons icon__trash">
 										<use xlink:href="#icon-trash"></use>
 									</svg>
-									<span>{$LANG.emptycart}</span>
+									<span>{lang key='emptycart'|default:'Empty Cart'}</span>
 								</button>    
 							</div>
 						</div>
@@ -758,11 +758,11 @@
                         <div class="modal-body pb-18">
 							<div class="d-flex align-items-center justify-content-center flex-column"> 
 								<i class="fal fa-exclamation-triangle coodiv-text-2 text-danger"></i>    
-								<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{$LANG.emptycart|default:'Empty Cart'}</h4>
-								<p class="coodiv-text-11 font-weight-400">{$LANG.cartemptyconfirm}</p>
+								<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{lang key='emptycart'|default:'Empty Cart'}</h4>
+								<p class="coodiv-text-11 font-weight-400">{lang key='cartemptyconfirm'|default:'Are you sure you want to empty your cart?'}</p>
 								<div class="d-flex align-items-center gap-5 flex-wrap justify-content-center mt-5">
 									<button type="button" class="btn btn-secondary btn-sm px-4" data-dismiss="modal">{lang key='no'|default:'No'}</button>
-									<button type="submit" class="btn btn-primary btn-sm px-4">{lang key='yes'|default:'Yes'}, {$LANG.emptycart|default:'Empty Cart'}</button>
+									<button type="submit" class="btn btn-primary btn-sm px-4">{lang key='yes'|default:'Yes'}, {lang key='emptycart'|default:'Empty Cart'}</button>
 								</div>
 							</div>
                         </div>
