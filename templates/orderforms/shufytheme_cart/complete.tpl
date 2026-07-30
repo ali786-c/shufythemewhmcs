@@ -41,7 +41,7 @@
 					{/if}
 				</div>
 			<div class="card__footer justify-content-center d-flex">
-				<a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default btn-sm">{$LANG.orderForm.continueToClientArea}</a>
+				<a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default btn-sm">{lang key='orderForm.continueToClientArea'}</a>
 			</div>
 		</div>
 		</div>

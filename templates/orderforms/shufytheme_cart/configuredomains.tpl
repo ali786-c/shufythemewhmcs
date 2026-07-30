@@ -2,8 +2,8 @@
 
 <script>
 var _localLang = {
-    'addToCart': '{$LANG.orderForm.addToCart|escape}',
-    'addedToCartRemove': '{$LANG.orderForm.addedToCartRemove|escape}'
+    'addToCart': '{lang key='orderForm.addToCart'|escape}',
+    'addedToCartRemove': '{lang key='orderForm.addedToCartRemove'|escape}'
 }
 </script>
 
@@ -14,7 +14,7 @@ var _localLang = {
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
 					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.cartdomainsconfig}</h1>
-					<p class="coodiv-text-10 font-weight-300">{$LANG.orderForm.reviewDomainAndAddons}</p>
+					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.reviewDomainAndAddons'}</p>
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@ var _localLang = {
 
                 {if $errormessage}
                     <div class="alert alert-danger" role="alert">
-                        <p>{$LANG.orderForm.correctErrors}:</p>
+                        <p>{lang key='orderForm.correctErrors'}:</p>
                         <ul>
                             {$errormessage}
                         </ul>
@@ -71,7 +71,7 @@ var _localLang = {
 								<div class="cart__domains__config__period">
 									<span class="coodiv-text-12">{$LANG.orderregperiod}: {$domain.regperiod} {$LANG.orderyears}</span>
 								</div>
-								<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.remove}" type="button" class="btn-remove-from-cart" onclick="removeItem('d','{$num}')">
+								<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('d','{$num}')">
 									<svg class="options__icons icon__trash">
 									  <use xlink:href="#icon-trash"></use>
 									</svg>

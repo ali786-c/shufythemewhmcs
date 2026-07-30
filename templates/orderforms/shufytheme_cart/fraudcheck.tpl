@@ -46,7 +46,7 @@
 
                         <p>
                             <a href="{$WEB_ROOT}/submitticket.php" class="btn btn-default">
-                                {$LANG.orderForm.submitTicket}
+                                {lang key='orderForm.submitTicket'}
                                 &nbsp;<i class="fas fa-arrow-right"></i>
                             </a>
                         </p>

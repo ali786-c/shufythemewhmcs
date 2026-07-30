@@ -1,8 +1,8 @@
 {include file="orderforms/standard_cart/common.tpl"}
 <script>
 var _localLang = {
-    'addToCart': '{$LANG.orderForm.addToCart|escape}',
-    'addedToCartRemove': '{$LANG.orderForm.addedToCartRemove|escape}'
+    'addToCart': '{lang key='orderForm.addToCart'|escape}',
+    'addedToCartRemove': '{lang key='orderForm.addedToCartRemove'|escape}'
 }
 </script>
 <div class="standard__cart__order__steps__container full__with__section into__main__page__content__full__width__element">
@@ -11,7 +11,7 @@ var _localLang = {
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
 					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.orderconfigure}</h1>
-					<p class="coodiv-text-10 font-weight-300">{$LANG.orderForm.configureDesiredOptions}</p>
+					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.configureDesiredOptions'}</p>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@ var _localLang = {
                         </div>
 
                         <div class="alert alert-danger w-hidden" role="alert" id="containerProductValidationErrors">
-                            <p>{$LANG.orderForm.correctErrors}:</p>
+                            <p>{lang key='orderForm.correctErrors'}:</p>
                             <ul id="containerProductValidationErrorsList"></ul>
                         </div>
 

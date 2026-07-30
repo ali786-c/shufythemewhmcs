@@ -27,13 +27,16 @@
 
             <div class="text-center">
                 {if count($searchResults.pricing) == 1}
-                    <p class="margin-bottom">{$LANG.orderForm.domainAddedToCart}</p>
-                    <button type="button" class="btn btn-default btn-lg margin-bottom">
-                        <span class="far fa-shopping-cart"></span>
-                        {$searchResults.shortestPeriod.register}
-                    </button>
+                    <p class="margin-bottom">{lang key='orderForm.domainAddedToCart'}</p>
+                    <div class="row text-center">
+                        <div class="col-xs-8 col-xs-offset-2">
+                            <form method="post" action="{$WEB_ROOT}/cart.php?a=confdomains">
+                                <input type="submit" value="{$LANG.ordercontinue}" class="btn btn-primary btn-lg btn-block" />
+                            </form>
+                        </div>
+                    </div>
                 {else}
-                    <p class="margin-bottom">{$LANG.orderForm.registerLongerAndSave}</p>
+                    <p class="margin-bottom">{lang key='orderForm.registerLongerAndSave'}</p>
                     <div class="btn-group btn-group-lg margin-bottom">
                         <button type="button" class="btn btn-default btn-sm">
                             <span name="{$searchResults.domainName}-selected-price">
@@ -81,7 +84,7 @@
             <div class="domain-checker-result-headline domain-checker-unavailable">
                 {$LANG.carttransfernotregistered|sprintf2:$domain}
             </div>
-            <p class="text-center">{$LANG.orderForm.tryRegisteringInstead}</p>
+            <p class="text-center">{lang key='orderForm.tryRegisteringInstead'}</p>
 
         {elseif $status eq "unavailable" || $status eq "error"}
 
@@ -162,7 +165,7 @@
     {if $continueok}
         <div class="alert alert-info info-text-sm">
             <i class="fas fa-info-circle"></i>
-            {$LANG.orderForm.domainAvailabilityCached}
+            {lang key='orderForm.domainAvailabilityCached'}
         </div>
 
         <div class="text-center">

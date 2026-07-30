@@ -102,7 +102,7 @@
 		<p class="text-center">
 			<a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default">
 				<i class="fas fa-arrow-circle-left"></i>
-				{$LANG.orderForm.returnToClientArea}
+				{lang key='orderForm.returnToClientArea'}
 			</a>
 		</p>
 	{/if}
@@ -127,7 +127,7 @@
 								</div>
 								<div class="col-auto">
 									<button type="submit" class="btn btn-primary btn-sm">
-										{$LANG.ordernowbutton|default:$LANG.orderForm.orderNow|default:'Order Now'}
+										{$LANG.ordernowbutton|default:'Order Now'}
 									</button>
 								</div>
 							</div>

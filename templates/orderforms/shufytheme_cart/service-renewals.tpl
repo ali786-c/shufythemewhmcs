@@ -114,7 +114,7 @@
 {if $totalServiceCount == 0}
 	<div class="container">
 		<div id="no-services" class="custom-alert-text alert alert-warning" role="alert"><p>{lang key='renewService.noServices'}</p></div>
-		<p class="text-center"><a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default">{$LANG.orderForm.returnToClientArea}</a></p>
+		<p class="text-center"><a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default">{lang key='orderForm.returnToClientArea'}</a></p>
 	</div>
 {else}
 			

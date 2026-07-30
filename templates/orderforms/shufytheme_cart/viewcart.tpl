@@ -12,7 +12,7 @@
     window.langPasswordWeak = "{$LANG.pwstrengthweak}";
     window.langPasswordModerate = "{$LANG.pwstrengthmoderate}";
     window.langPasswordStrong = "{$LANG.pwstrengthstrong}";
-	window.langVatErrorInvalidFormat = "{$LANG.tax.errorVatInvalidFormat}";
+	window.langVatErrorInvalidFormat = "{lang key='tax.errorVatInvalidFormat'}";
 </script>
 
 <div class="standard__cart__order__steps__container full__with__section into__main__page__content__full__width__element">
@@ -21,7 +21,7 @@
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
 					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.cartreviewcheckout}</h1>
-					<p class="coodiv-text-10 font-weight-300">{$LANG.orderForm.configureDesiredOptions}</p>
+					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.configureDesiredOptions'}</p>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 					</div>
 				{elseif $errormessage}
 					<div class="alert alert-danger" role="alert">
-						<p>{$LANG.orderForm.correctErrors}:</p>
+						<p>{lang key='orderForm.correctErrors'}:</p>
 						<ul>
 							{$errormessage}
 						</ul>
@@ -72,7 +72,7 @@
 					</div>
 				{elseif $promoaddedsuccess}
 					<div class="alert alert-success text-center" role="alert">
-						{$LANG.orderForm.promotionAccepted}
+						{lang key='orderForm.promotionAccepted'}
 					</div>
 				{/if}
 
@@ -92,15 +92,15 @@
 					<div class="view__cart__items__wrapper__header">
 						<div class="row justify-content-start">
 							<div class="{if $showqtyoptions || $showAddonQtyOptions}col-5{else}col-7{/if}">
-								<span class="view__cart__items__wrapper__header__title">{$LANG.orderForm.productOptions}</span>
+								<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.productOptions'}</span>
 							</div>
 							{if $showqtyoptions || $showAddonQtyOptions}
 								<div class="col-sm-2 col-auto">
-									<span class="view__cart__items__wrapper__header__title">{$LANG.orderForm.qty}</span>
+									<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.qty'}</span>
 								</div>
 							{/if}
 							<div class="col">
-								<span class="view__cart__items__wrapper__header__title">{$LANG.orderForm.priceCycle}</span>
+								<span class="view__cart__items__wrapper__header__title">{lang key='orderForm.priceCycle'}</span>
 							</div>
 						</div>
 					</div>
@@ -124,7 +124,7 @@
 										<div class="col-auto col-sm-2 item__qty">
 											{if $product.allowqty}
 												<input type="number" name="qty[{$num}]" value="{$product.qty}" class="form-control text-center" min="0" />
-												<button data-toggle="tooltip" data-placement="top" type="submit" title="{$LANG.orderForm.update}" class="update__item__qty__btn">
+												<button data-toggle="tooltip" data-placement="top" type="submit" title="{lang key='orderForm.update'}" class="update__item__qty__btn">
 													<svg class="options__icons icon__repeat">
 													  <use xlink:href="#icon-repeat"></use>
 													</svg>
@@ -154,12 +154,12 @@
 									</div>
 									
 									<div class="view__cart__items__wrapper__body__item__options">
-										<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.remove}" type="button" class="btn-remove-from-cart" onclick="removeItem('p','{$num}')">
+										<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('p','{$num}')">
 										<svg class="options__icons icon__trash">
 										  <use xlink:href="#icon-trash"></use>
 										</svg>
 										</button>
-										<a data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.edit}" href="{$WEB_ROOT}/cart.php?a=confproduct&i={$num}">
+										<a data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.edit'}" href="{$WEB_ROOT}/cart.php?a=confproduct&i={$num}">
 										<svg class="options__icons icon__edit">
 										  <use xlink:href="#icon-edit"></use>
 										</svg>
@@ -214,7 +214,7 @@
 											<div class="item__qty {if $addon.allowqty !== 2} addon__qty__empty{/if} col-sm-2">
 												{if $addon.allowqty === 2}
 													<input type="number" name="paddonqty[{$num}][{$addonnum}]" value="{$addon.qty}" class="form-control text-center" min="0" />
-													<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.update}" type="submit" class="update__item__qty__btn">
+													<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.update'}" type="submit" class="update__item__qty__btn">
 														<svg class="options__icons icon__repeat">
 														  <use xlink:href="#icon-repeat"></use>
 														</svg>
@@ -233,7 +233,7 @@
 									
 										<div class="addon-actions d-none">
 											<div class="cart-item-actions">
-												<button type="button" class="btn btn-xs btn-icon btn-hover-danger" data-toggle="tooltip" data-html="true" data-original-title=" {$LANG.orderForm.remove}" onclick="removeAddonItem('{$num}', 'products', '{$addonnum}')">
+												<button type="button" class="btn btn-xs btn-icon btn-hover-danger" data-toggle="tooltip" data-html="true" data-original-title="{lang key='orderForm.remove'}" onclick="removeAddonItem('{$num}', 'products', '{$addonnum}')">
 													<i class="lm lm-trash"></i>
 												</button>
 											</div>
@@ -265,7 +265,7 @@
 											{if $addon.allowqty === 2}
 												<input type="number" name="addonqty[{$num}]" value="{$addon.qty}" class="form-control text-center" min="0" />
 												<button type="submit" class="btn btn-xs">
-													{$LANG.orderForm.update}
+													{lang key='orderForm.update'}
 												</button>
 											{/if}
 										</div>
@@ -278,7 +278,7 @@
 									</div>
 									
 									<div class="view__cart__items__wrapper__body__item__options">
-										<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.remove}" type="button" class="btn-remove-from-cart" onclick="removeItem('a','{$num}')">
+										<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('a','{$num}')">
 										<svg class="options__icons icon__trash">
 										  <use xlink:href="#icon-trash"></use>
 										</svg>
@@ -346,12 +346,12 @@
 									</div>
 									
 									<div class="view__cart__items__wrapper__body__item__options">
-										<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.remove}" type="button" class="btn-remove-from-cart" onclick="removeItem('d','{$num}')">
+										<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('d','{$num}')">
 										<svg class="options__icons icon__trash">
 										  <use xlink:href="#icon-trash"></use>
 										</svg>
 										</button>
-										<a data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.edit}" href="{$WEB_ROOT}/cart.php?a=confdomains">
+										<a data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.edit'}" href="{$WEB_ROOT}/cart.php?a=confdomains">
 										<svg class="options__icons icon__edit">
 										  <use xlink:href="#icon-edit"></use>
 										</svg>
@@ -433,7 +433,7 @@
 										<span class="cycle">{$domain.regperiod} {$LANG.orderyears}</span>													
 									</div>
 									<div class="view__cart__items__wrapper__body__item__options">
-										<button data-toggle="tooltip" data-placement="top" title="{$LANG.orderForm.remove}" type="button" class="btn-remove-from-cart" onclick="removeItem('r','{$num}')">
+										<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('r','{$num}')">
 										<svg class="options__icons icon__trash">
 										  <use xlink:href="#icon-trash"></use>
 										</svg>
@@ -495,7 +495,7 @@
 											{if $upgrade->allowMultipleQuantities}
 												<input type="number" name="upgradeqty[{$num}]" value="{$upgrade->qty}" class="form-control text-center" min="{$upgrade->minimumQuantity}" />
 												<button type="submit" class="btn btn-xs">
-													{$LANG.orderForm.update}
+													{lang key='orderForm.update'}
 												</button>
 											{/if}
 										</div>
@@ -507,7 +507,7 @@
 									<div class="col-sm-1">
 										<button type="button" class="btn btn-link btn-xs btn-remove-from-cart" onclick="removeItem('u','{$num}')">
 											<i class="fas fa-times"></i>
-											<span class="visible-xs d-block d-sm-none">{$LANG.orderForm.remove}</span>
+											<span class="visible-xs d-block d-sm-none">{lang key='orderForm.remove'}</span>
 										</button>
 									</div>
 								</div>
@@ -539,7 +539,7 @@
 									<svg class="options__icons icon__arrow__left">
 										<use xlink:href="#icon-arrow-left"></use>
 									</svg>
-									{$LANG.orderForm.continueShopping}
+									{lang key='orderForm.continueShopping'}
 								</a>  
 							</div>
 						
@@ -581,14 +581,14 @@
 				<div class="field-container mt-8">
 					<div class="row justify-content-start mb-5">
 						<div class="col-md-10 col-12">
-							<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{$LANG.orderForm.estimateTaxes}</h6> 
+							<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{lang key='orderForm.estimateTaxes'}</h6> 
 						</div>
 					</div>
 					<div class="default__shadow__panel">
 						<div class="default__shadow__panel__body">
 							<form method="post" action="{$WEB_ROOT}/cart.php?a=setstateandcountry">
 								<div class="form-group">
-									<label for="inputCountry">{$LANG.orderForm.country}</label>
+									<label for="inputCountry">{lang key='orderForm.country'}</label>
 									<select name="country" id="inputCountry" class="form-control">
 										{foreach $countries as $countrycode => $countrylabel}
 											<option value="{$countrycode}"{if (!$country && $countrycode == $defaultcountry) || $countrycode eq $country} selected{/if}>
@@ -598,12 +598,12 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="inputState">{$LANG.orderForm.state}</label>
+									<label for="inputState">{lang key='orderForm.state'}</label>
 									<input type="text" name="state" id="inputState" value="{$clientsdetails.state}" class="form-control"{if $loggedin} disabled="disabled"{/if} />
 								</div>
 								<div class="form-group text-right mb-0">
 									<button type="submit" class="btn btn-primary btn-small">
-										{$LANG.orderForm.updateTotals}
+										{lang key='orderForm.updateTotals'}
 									</button>
 								</div>
 							</form>
@@ -650,7 +650,7 @@
 									</div>
 								{/if}
 								<div class="recurring-totals product__summary__totals__item">
-									<span class="product__summary__name">{$LANG.orderForm.totals}</span>
+									<span class="product__summary__name">{lang key='orderForm.totals'}</span>
 									<span id="recurring" class="product__summary__price recurring-charges">
 										<span id="recurringMonthly" {if !$totalrecurringmonthly}style="display:none;"{/if}>
 											<span class="cost">{$totalrecurringmonthly}</span> {$LANG.orderpaymenttermmonthly}<br />
@@ -708,12 +708,12 @@
 									<svg class="options__icons icon__trash">
 										<use xlink:href="#icon-trash"></use>
 									</svg>
-									{$LANG.orderForm.remove}
+									{lang key='orderForm.remove'}
 								</a>
 							</div>
 						{else}
 							<a class="sidebar__aply__promo__code__caller coodiv-text-12 d-block text-center">
-							  {$LANG.orderForm.applyPromoCode}
+							  {lang key='orderForm.applyPromoCode'}
 							</a>
 							<form class="sidebar__aply__promo__code__form d-none" method="post" action="{$WEB_ROOT}/cart.php?a=checkout">
 								<input type="text" name="promocode" id="inputPromotionCode" class="field form-control" placeholder="{lang key="orderPromoCodePlaceholder"}" required="required">
@@ -763,7 +763,7 @@
                     <div class="modal-content">
 					
 						<div class="modal-header border-0">
-							<button type="button" class="close" data-dismiss="modal" aria-label="{$LANG.orderForm.close}">
+							<button type="button" class="close" data-dismiss="modal" aria-label="{lang key='orderForm.close'}">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>

@@ -27,7 +27,7 @@
 		
 		<div class="already__registered__card__header" id="logincard">
 			<button class="already__registered__card__title d-flex align-items-center" id="btnAlreadyRegistered" type="button" data-toggle="collapse" data-target="#already__registered__wrapper__login" aria-expanded="true" aria-controls="already__registered__wrapper__login">
-			  <span class="cursor"></span><span class="coodiv-text-11 font-weight-600">{if $loggedin}{lang key='switchAccount.title'}{else}{$LANG.orderForm.existingCustomerLogin}{/if}</span>
+			  <span class="cursor"></span><span class="coodiv-text-11 font-weight-600">{if $loggedin}{lang key='switchAccount.title'}{else}{lang key='orderForm.existingCustomerLogin'}{/if}</span>
 			</button>
 		</div>
 		
@@ -105,7 +105,7 @@
 					<div class="row align-items-center">
 						<div class="col-sm-5 pr-0">
 							<div class="form-group mb-0">
-								<input type="text" name="loginemail" id="inputLoginEmail" class="field form-control" placeholder="{$LANG.orderForm.emailAddress}" value="{$loginemail}">
+								<input type="text" name="loginemail" id="inputLoginEmail" class="field form-control" placeholder="{lang key='orderForm.emailAddress'}" value="{$loginemail}">
 							</div>
 						</div>
 						<div class="col-sm-5 pr-0">
@@ -134,7 +134,7 @@
 		{if !$loggedin}	
 		<div class="already__registered__card__header" id="registercard">
 			<button id="btnNewUserSignup" class="already__registered__card__title d-flex align-items-center collapsed" type="button" data-toggle="collapse" data-target="#already__registered__wrapper__register" aria-expanded="false" aria-controls="already__registered__wrapper__register">
-			  <span class="cursor"></span><span class="coodiv-text-11 font-weight-600">{$LANG.orderForm.createAccount}</span>
+			  <span class="cursor"></span><span class="coodiv-text-11 font-weight-600">{lang key='orderForm.createAccount'}</span>
 			</button>
 		</div>
 		{/if}
@@ -148,70 +148,70 @@
 				{include file="orderforms/shufytheme_cart/linkedaccounts.tpl" linkContext="checkout-new"}
 			</div>
 
-			<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{$LANG.orderForm.personalInformation}</h6>
+			<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{lang key='orderForm.personalInformation'}</h6>
 			
 
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.firstName}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.firstName'}</span>
 						<input type="text" name="firstname" id="inputFirstName" class="field form-control" value="{$clientsdetails.firstname}" autofocus>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.lastName}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.lastName'}</span>
 						<input type="text" name="lastname" id="inputLastName" class="field form-control" value="{$clientsdetails.lastname}">
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.emailAddress}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.emailAddress'}</span>
 						<input type="email" name="email" id="inputEmail" class="field form-control" value="{$clientsdetails.email}">
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.phoneNumber}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.phoneNumber'}</span>
 						<input type="tel" name="phonenumber" id="inputPhone" class="field form-control" value="{$clientsdetails.phonenumber}">
 					</div>
 				</div>
 			</div>
-			<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{$LANG.orderForm.billingAddress}</h6>
+			<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{lang key='orderForm.billingAddress'}</h6>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.companyName} ({$LANG.orderForm.optional})</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.companyName'} ({lang key='orderForm.optional'})</span>
 						<input type="text" name="companyname" id="inputCompanyName" class="field form-control" value="{$clientsdetails.companyname}">
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.streetAddress}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.streetAddress'}</span>
 						<input type="text" name="address1" id="inputAddress1" class="field form-control" value="{$clientsdetails.address1}">
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.streetAddress2}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.streetAddress2'}</span>
 						<input type="text" name="address2" id="inputAddress2" class="field form-control" value="{$clientsdetails.address2}">
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.city}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.city'}</span>
 						<input type="text" name="city" id="inputCity" class="field form-control" value="{$clientsdetails.city}">
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.state}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.state'}</span>
 						<input type="text" name="state" id="inputState" class="field form-control" value="{$clientsdetails.state}">
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.postcode}</span>
+						<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.postcode'}</span>
 						<input type="text" name="postcode" id="inputPostcode" class="field form-control" value="{$clientsdetails.postcode}">
 					</div>
 				</div>
@@ -230,7 +230,7 @@
 				{if $showTaxIdField}
 					<div class="col-sm-12">
 						<div class="form-group">
-							<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$taxLabel} ({$LANG.orderForm.optional})</span>
+							<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$taxLabel} ({lang key='orderForm.optional'})</span>
 							<input type="text" name="tax_id" id="inputTaxId" class="field form-control" placeholder="{$taxLabel}" value="{$clientsdetails.tax_id}" autocomplete="off">
 						</div>
 					</div>
@@ -260,7 +260,7 @@
 			
 			{if !$loggedin}
 			<div id="containerNewUserSecurity" {if (!$loggedin && $custtype eq "existing") || ($remote_auth_prelinked && !$securityquestions)}class="w-hidden"{/if}>
-				<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{$LANG.orderForm.accountSecurity}</h6>
+				<h6 class="d-flex coodiv-text-9 font-weight-600 mb-5">{lang key='orderForm.accountSecurity'}</h6>
 				<div id="containerPassword" class="row{if $remote_auth_prelinked && $securityquestions} w-hidden{/if}">
 					<div id="passwdFeedback" class="alert alert-info text-center col-sm-12 w-hidden"></div>
 					<div class="col-sm-6">
@@ -359,7 +359,7 @@
 			<div class="default__shadow__panel">
 				<div class="default__shadow__panel__body">
 				
-					<p class="coodiv-text-11 font-weight-400 mb-5">{$LANG.orderForm.domainAlternativeContact}</p>
+					<p class="coodiv-text-11 font-weight-400 mb-5">{lang key='orderForm.domainAlternativeContact'}</p>
 					
 					<div class="form-group">
 						<select name="contact" id="inputDomainContact" class="field form-control">
@@ -379,67 +379,67 @@
 						<div class="row" id="domainRegistrantInputFields">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.firstName}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.firstName'}</span>
 									<input type="text" name="domaincontactfirstname" id="inputDCFirstName" class="field form-control" value="{$domaincontact.firstname}">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.lastName}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.lastName'}</span>
 									<input type="text" name="domaincontactlastname" id="inputDCLastName" class="field form-control" value="{$domaincontact.lastname}">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.emailAddress}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.emailAddress'}</span>
 									<input type="email" name="domaincontactemail" id="inputDCEmail" class="field form-control" value="{$domaincontact.email}">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.phoneNumber}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.phoneNumber'}</span>
 									<input type="tel" name="domaincontactphonenumber" id="inputDCPhone" class="field form-control" value="{$domaincontact.phonenumber}">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.companyName} ({$LANG.orderForm.optional})</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.companyName'} ({lang key='orderForm.optional'})</span>
 									<input type="text" name="domaincontactcompanyname" id="inputDCCompanyName" class="field form-control" value="{$domaincontact.companyname}">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.streetAddress}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.streetAddress'}</span>
 									<input type="text" name="domaincontactaddress1" id="inputDCAddress1" class="field form-control" value="{$domaincontact.address1}">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.streetAddress2}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.streetAddress2'}</span>
 									<input type="text" name="domaincontactaddress2" id="inputDCAddress2" class="field form-control" value="{$domaincontact.address2}">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.city}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.city'}</span>
 									<input type="text" name="domaincontactcity" id="inputDCCity" class="field form-control" value="{$domaincontact.city}">
 								</div>
 							</div>
 							<div class="col-sm-5">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.state}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.state'}</span>
 									<input type="text" name="domaincontactstate" id="inputDCState" class="field form-control" value="{$domaincontact.state}">
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.postcode}</span>
-									<input type="text" name="domaincontactpostcode" id="inputDCPostcode" class="field form-control" placeholder="{$LANG.orderForm.postcode}" value="{$domaincontact.postcode}">
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.postcode'}</span>
+									<input type="text" name="domaincontactpostcode" id="inputDCPostcode" class="field form-control" placeholder="{lang key='orderForm.postcode'}" value="{$domaincontact.postcode}">
 								</div>
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.postcode}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.country'}</span>
 									<select name="domaincontactcountry" id="inputDCCountry" class="field form-control">
 										{foreach $countries as $countrycode => $countrylabel}
 											<option value="{$countrycode}"{if (!$domaincontact.country && $countrycode == $defaultcountry) || $countrycode eq $domaincontact.country} selected{/if}>
@@ -451,7 +451,7 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.postcode}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$taxLabel} ({lang key='orderForm.optional'})</span>
 									<input type="text" name="domaincontacttax_id" id="inputDCTaxId" class="field form-control" placeholder="{$taxLabel}" value="{$domaincontact.tax_id}" autocomplete="off">
 								</div>
 							</div>
@@ -493,7 +493,7 @@
 				<div class="row justify-content-start mb-5">
 					<div class="col-md-10 col-12">
 						<h6 class="field__title coodiv-text-7 font-weight-300 mb-0">{$LANG.orderpaymentmethod}</h6> 
-						<p class="coodiv-text-12 font-weight-300">{$LANG.orderForm.preferredPaymentMethod}</p>
+						<p class="coodiv-text-12 font-weight-300">{lang key='orderForm.preferredPaymentMethod'}</p>
 					</div>
 				</div>
 				<div class="checkout__payment__gateway__radios__wrapper default__shadow__panel">
@@ -523,7 +523,7 @@
 				
 				<div class="row justify-content-start mb-5">
 					<div class="col-md-10 col-12">
-						<h6 class="field__title coodiv-text-7 font-weight-300 mb-0 text-start">{$LANG.orderForm.paymentDetails}</h6> 
+						<h6 class="field__title coodiv-text-7 font-weight-300 mb-0 text-start">{lang key='orderForm.paymentDetails'}</h6> 
 					</div>
 				</div>
 				
@@ -564,7 +564,7 @@
 						<div class="row" id="newCardInfo">
 							<div id="cardNumberContainer" class="col-sm-6 new-card-container">
 								<div class="form-group">
-									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{$LANG.orderForm.cardNumber}</span>
+									<span class="d-block coodiv-text-12 font-weight-400 pl-1 pb-2">{lang key='orderForm.cardNumber'}</span>
 									<input type="tel" name="ccnumber" id="inputCardNumber" class="field form-control cc-number-field" placeholder="1234 1234 1234 1234" autocomplete="cc-number" data-message-unsupported="{lang key='paymentMethodsManage.unsupportedCardType'}" data-message-invalid="{lang key='paymentMethodsManage.cardNumberNotValid'}" data-supported-cards="{$supportedCardTypes}" />
 									<span class="field-error-msg"></span>
 								</div>
@@ -663,7 +663,7 @@
 					<div class="shownotesfield mt-5">
 						<div class="row justify-content-between align-items-center mb-3">
 							<div class="col-auto">
-								<h6 class="field__title coodiv-text-11 font-weight-500 mb-0">{$LANG.orderForm.additionalNotes}</h6> 
+								<h6 class="field__title coodiv-text-11 font-weight-500 mb-0">{lang key='orderForm.additionalNotes'}</h6> 
 							</div>
 							<div class="col-auto">
 								<h6 class="coodiv-text-12 sub-color font-weight-300 mb-0">(optional)</h6> 

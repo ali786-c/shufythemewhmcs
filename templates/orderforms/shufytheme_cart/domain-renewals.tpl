@@ -103,7 +103,7 @@
 
 {if $totalDomainCount == 0}
 <div id="no-domains" class="custom-alert-text alert alert-warning" role="alert"><p>{$LANG.domainRenewal.noDomains}</p></div>
-<p class="text-center"><a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default">{$LANG.orderForm.returnToClientArea}</a></p>
+<p class="text-center"><a href="{$WEB_ROOT}/clientarea.php" class="btn btn-default">{lang key='orderForm.returnToClientArea'}</a></p>
 {else}
 <div id="order-standard_cart">
 
