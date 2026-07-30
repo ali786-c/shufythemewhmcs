@@ -51,7 +51,7 @@
 									<img class="image__logo icon white__logo" src="{$coodivsettings.defaultlogolinkicon}" alt="{$companyname} logo" />
 								{/if}
 								{if $coodivsettings.defaultlogolinktagline == null}
-									<span class="text__logo__tagline">
+									<span class="text__logo__tagline {if $coodivsettings.defaultlogolinkicon != null}d-none{/if}">
 									{if $coodivsettings.customtextlogo == null}
 										{$companyname}
 									{else}
@@ -88,7 +88,7 @@
 									<img class="image__logo icon dark__logo" src="{$coodivsettings.darklogolinkicon}" alt="{$companyname} logo" />
 								{/if}
 								{if $coodivsettings.darklogolinktagline == null}
-									<span class="text__logo__tagline dark__logo">
+									<span class="text__logo__tagline dark__logo {if $coodivsettings.darklogolinkicon != null}d-none{/if}">
 									{if $coodivsettings.customtextlogo == null}
 										{$companyname}
 									{else}
@@ -197,7 +197,7 @@
 							<img class="image__logo icon white__logo" src="{$coodivsettings.defaultlogolinkicon}" alt="{$companyname} logo" />
 						{/if}
 						{if $coodivsettings.defaultlogolinktagline == null}
-							<span class="text__logo__tagline">
+							<span class="text__logo__tagline {if $coodivsettings.defaultlogolinkicon != null}d-none{/if}">
 							{if $coodivsettings.customtextlogo == null}
 								{$companyname}
 							{else}
@@ -234,7 +234,7 @@
 							<img class="image__logo icon dark__logo" src="{$coodivsettings.darklogolinkicon}" alt="{$companyname} logo" />
 						{/if}
 						{if $coodivsettings.darklogolinktagline == null}
-							<span class="text__logo__tagline dark__logo">
+							<span class="text__logo__tagline dark__logo {if $coodivsettings.darklogolinkicon != null}d-none{/if}">
 							{if $coodivsettings.customtextlogo == null}
 								{$companyname}
 							{else}

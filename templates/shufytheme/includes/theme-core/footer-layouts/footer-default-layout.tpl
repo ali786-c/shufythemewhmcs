@@ -95,7 +95,7 @@
 												<img class="image__logo icon dark__logo" src="{$coodivsettings.darklogolinkicon|default:''}" alt="{$companyname} logo" />
 											{/if}
 											{if $coodivsettings.darklogolinktagline|default:'' == null}
-												<span class="text__logo__tagline dark__logo">
+												<span class="text__logo__tagline dark__logo {if $coodivsettings.darklogolinkicon|default:'' != null}d-none{/if}">
 												{if $coodivsettings.customtextlogo|default:'' == null}
 													{$companyname}
 												{else}
