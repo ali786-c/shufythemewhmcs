@@ -38,7 +38,7 @@
 								<input type="radio" name="domainoption" value="incart" id="selincart" />
 								<span class="mobile__version">
 									<span class="icon"><i class="fal fa-shopping-cart"></i></span>
-									<span class="title">{$LANG.cartproductdomainuseincart}</span>
+									<span class="title">{lang key='cartproductdomainuseincart'|default:'Use a domain already in my shopping cart'}</span>
 								</span>
 							</label>
 						</div>
@@ -100,7 +100,7 @@
                         <div class="option">
                             <div class="domain-input-group clearfix" id="domainincart">
 								<div class="dark-mode-texts mb-7">
-									<p class="coodiv-text-9 font-weight-light mb-0">{$LANG.cartproductdomainuseincart}</p>
+									<p class="coodiv-text-9 font-weight-light mb-0">{lang key='cartproductdomainuseincart'|default:'Use a domain already in my shopping cart'}</p>
 								</div>
 								<div class="incart__select__domain__option domain__search__input__wrapper incartdomains-select row justify-content-start w-100 position-relative">
 									<div class="domain__search__input__searching select__dropdown__menu__search__wrapper position-relative col">
