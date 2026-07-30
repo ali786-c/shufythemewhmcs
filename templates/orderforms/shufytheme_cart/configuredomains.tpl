@@ -13,18 +13,18 @@ var _localLang = {
 		<div class="row justify-content-start">
 			<div class="col-md-8 col-12">
 				<div class="orderform__cart__header">
-					<h1 class="coodiv-text-5 font-weight-bold mb-0">{$LANG.cartdomainsconfig}</h1>
-					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.reviewDomainAndAddons'}</p>
+					<h1 class="coodiv-text-5 font-weight-bold mb-0">{lang key='cartdomainsconfig'|default:'Domains Configuration'}</h1>
+					<p class="coodiv-text-10 font-weight-300">{lang key='orderForm.reviewDomainAndAddons'|default:'Please review your domain name selections and any addons that are available for them.'}</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="standard__cart__order__steps__wrapper mt-9">
 			<div class="standard__cart__order__steps">
-				<a class="standard__cart__order__steps__item done" href="#"><span class="standard__cart__order__steps__item__number">1</span> <span class="standard__cart__order__steps__item__text">{$LANG.cartproductselection|default:'Product Selection'}</span></a>
-				<a class="standard__cart__order__steps__item current" href="#"><span class="standard__cart__order__steps__item__number">2</span> <span class="standard__cart__order__steps__item__text">{$LANG.cartproductconfig|default:'Product Configuration'}</span></a>
-				<a class="standard__cart__order__steps__item" href="#"><span class="standard__cart__order__steps__item__number">3</span> <span class="standard__cart__order__steps__item__text">{$LANG.cartreviewcheckout|default:'Review & Checkout'}</span></a>
-				<a class="standard__cart__order__steps__item" href="#"><span class="standard__cart__order__steps__item__number">4</span> <span class="standard__cart__order__steps__item__text">{$LANG.checkout|default:'Proceed to Checkout'}</span></a>
+				<a class="standard__cart__order__steps__item done" href="#"><span class="standard__cart__order__steps__item__number">1</span> <span class="standard__cart__order__steps__item__text">{lang key='cartproductselection'|default:'Product Selection'}</span></a>
+				<a class="standard__cart__order__steps__item current" href="#"><span class="standard__cart__order__steps__item__number">2</span> <span class="standard__cart__order__steps__item__text">{lang key='cartproductconfig'|default:'Product Configuration'}</span></a>
+				<a class="standard__cart__order__steps__item" href="#"><span class="standard__cart__order__steps__item__number">3</span> <span class="standard__cart__order__steps__item__text">{lang key='cartreviewcheckout'|default:'Review & Checkout'}</span></a>
+				<a class="standard__cart__order__steps__item" href="#"><span class="standard__cart__order__steps__item__number">4</span> <span class="standard__cart__order__steps__item__text">{lang key='checkout'|default:'Proceed to Checkout'}</span></a>
 			</div>
 		</div>
 	</div>
@@ -62,14 +62,14 @@ var _localLang = {
 							<div class="cart__domains__config__box__header__informations">
 								<h6 class="cart__domains__config__name coodiv-text-6 font-weight-700 mb-0">{$domain.domain}</h6>
 								{if $domain.hosting}
-									<span class="domain__has__hosting"><i class="fal fa-check"></i> {$LANG.cartdomainshashosting}</span>
+									<span class="domain__has__hosting"><i class="fal fa-check"></i> {lang key='cartdomainshashosting'|default:'Has Hosting'}</span>
 								{else}
-									<a class="domain__has__no__hosting" href="{$WEB_ROOT}/cart.php"><i class="fal fa-times"></i> {$LANG.cartdomainsnohosting}</a>
+									<a class="domain__has__no__hosting" href="{$WEB_ROOT}/cart.php"><i class="fal fa-times"></i> {lang key='cartdomainsnohosting'|default:'Has No Hosting - Click to Add'}</a>
 								{/if}
 							</div>
 							<div class="cart__domains__config__box__header__options d-flex align-items-center gap-10">
 								<div class="cart__domains__config__period">
-									<span class="coodiv-text-12">{$LANG.orderregperiod}: {$domain.regperiod} {$LANG.orderyears}</span>
+									<span class="coodiv-text-12">{lang key='orderregperiod'|default:'Registration Period'}: {$domain.regperiod} {lang key='orderyears'|default:'Year(s)'}</span>
 								</div>
 								<button data-toggle="tooltip" data-placement="top" title="{lang key='orderForm.remove'}" type="button" class="btn-remove-from-cart" onclick="removeItem('d','{$num}')">
 									<svg class="options__icons icon__trash">
@@ -88,11 +88,11 @@ var _localLang = {
 													<input type="checkbox" name="dnsmanagement[{$num}]"{if $domain.dnsmanagementselected} checked{/if} />
 												</label>
 												<div class="d-block ml-2">
-													<h6 class="coodiv-text-10 mb-0">{$LANG.domaindnsmanagement}</h6>
-													<span class="coodiv-text-12 font-weight-300">{$domain.dnsmanagementprice} / {$domain.regperiod} {$LANG.orderyears}</span>
+													<h6 class="coodiv-text-10 mb-0">{lang key='domaindnsmanagement'|default:'DNS Management'}</h6>
+													<span class="coodiv-text-12 font-weight-300">{$domain.dnsmanagementprice} / {$domain.regperiod} {lang key='orderyears'|default:'Year(s)'}</span>
 												</div>
 											</div>
-											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{$LANG.domainaddonsdnsmanagementinfo}"><i class="fas fa-info"></i></span>
+											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{lang key='domainaddonsdnsmanagementinfo'|default:'External DNS Hosting can help speed up your website and improve availability with increased redundancy.'}"><i class="fas fa-info"></i></span>
 										</div>
 									</div>
 								{/if}
@@ -105,11 +105,11 @@ var _localLang = {
 													<input type="checkbox" name="idprotection[{$num}]"{if $domain.idprotectionselected} checked{/if} />
 												</label>
 												<div class="d-block ml-2">
-													<h6 class="coodiv-text-10 mb-0">{$LANG.domainidprotection}</h6>
-													<span class="coodiv-text-12 font-weight-300">{$domain.idprotectionprice} / {$domain.regperiod} {$LANG.orderyears}</span>
+													<h6 class="coodiv-text-10 mb-0">{lang key='domainidprotection'|default:'ID Protection'}</h6>
+													<span class="coodiv-text-12 font-weight-300">{$domain.idprotectionprice} / {$domain.regperiod} {lang key='orderyears'|default:'Year(s)'}</span>
 												</div>
 											</div>
-											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{$LANG.domainaddonsidprotectioninfo}"><i class="fas fa-info"></i></span>
+											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{lang key='domainaddonsidprotectioninfo'|default:'Protect your personal information and reduce the amount of spam to your inbox by enabling ID Protection.'}"><i class="fas fa-info"></i></span>
 										</div>
 									</div>
 								{/if}
@@ -122,11 +122,11 @@ var _localLang = {
 													<input type="checkbox" name="emailforwarding[{$num}]"{if $domain.emailforwardingselected} checked{/if} />
 												</label>
 												<div class="d-block ml-2">
-													<h6 class="coodiv-text-10 mb-0">{$LANG.domainemailforwarding}</h6>
-													<span class="coodiv-text-12 font-weight-300">{$domain.emailforwardingprice} / {$domain.regperiod} {$LANG.orderyears}</span>
+													<h6 class="coodiv-text-10 mb-0">{lang key='domainemailforwarding'|default:'Email Forwarding'}</h6>
+													<span class="coodiv-text-12 font-weight-300">{$domain.emailforwardingprice} / {$domain.regperiod} {lang key='orderyears'|default:'Year(s)'}</span>
 												</div>
 											</div>
-											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{$LANG.domainaddonsemailforwardinginfo}"><i class="fas fa-info"></i></span>
+											<span class="cart__domains__config__products__item__know__more" data-toggle="tooltip" data-placement="top" title="{lang key='domainaddonsemailforwardinginfo'|default:'Get emails forwarded to alternate email addresses of your choice so that you can monitor all from a single account.'}"><i class="fas fa-info"></i></span>
 										</div>
 									</div>
 								{/if}
@@ -138,12 +138,12 @@ var _localLang = {
 						{if $domain.eppenabled}
 							<div class="row justify-content-start align-items-center">
 								<div class="col-md-2 col-12">
-									<h6 class="coodiv-text-11">{$LANG.domaineppcode}</h6>
+									<h6 class="coodiv-text-11">{lang key='domaineppcode'|default:'EPP Code'}</h6>
 								</div>
 								<div class="col-md-10 col-12">
 									<div class="form-group">
 										<input type="text" name="epp[{$num}]" id="inputEppcode{$num}" value="{$domain.eppvalue}" class="field d-block w-100" placeholder="" />
-										<span class="coodiv-text-12 font-weight-300 sub-color">{$LANG.domaineppcodedesc}</span>
+										<span class="coodiv-text-12 font-weight-300 sub-color">{lang key='domaineppcodedesc'|default:'Authorization code required for transfer'}</span>
 									</div>
 								</div>
 							</div>
@@ -168,38 +168,38 @@ var _localLang = {
 					<div class="cart__domains__config__box domain__config__namesertver">
 						<div class="row justify-content-start mb-5">
 							<div class="col-md-8 col-12">
-								<h6 class="coodiv-text-7 section__title">{$LANG.domainnameservers}</h6>
-								<p class="coodiv-text-10 font-weight-300">{$LANG.cartnameserversdesc}</p>
+								<h6 class="coodiv-text-7 section__title">{lang key='domainnameservers'|default:'Nameservers'}</h6>
+								<p class="coodiv-text-10 font-weight-300">{lang key='cartnameserversdesc'|default:'If you want to use custom nameservers then enter them below. By default, new domains will use our nameservers.'}</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="inputNs1">{$LANG.domainnameserver1}</label>
+									<label for="inputNs1">{lang key='domainnameserver1'|default:'Nameserver 1'}</label>
 									<input type="text" class="form-control" id="inputNs1" name="domainns1" value="{$domainns1}" />
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="inputNs2">{$LANG.domainnameserver2}</label>
+									<label for="inputNs2">{lang key='domainnameserver2'|default:'Nameserver 2'}</label>
 									<input type="text" class="form-control" id="inputNs2" name="domainns2" value="{$domainns2}" />
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="inputNs3">{$LANG.domainnameserver3}</label>
+									<label for="inputNs3">{lang key='domainnameserver3'|default:'Nameserver 3'}</label>
 									<input type="text" class="form-control" id="inputNs3" name="domainns3" value="{$domainns3}" />
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="inputNs1">{$LANG.domainnameserver4}</label>
+									<label for="inputNs4">{lang key='domainnameserver4'|default:'Nameserver 4'}</label>
 									<input type="text" class="form-control" id="inputNs4" name="domainns4" value="{$domainns4}" />
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
-									<label for="inputNs5">{$LANG.domainnameserver5}</label>
+									<label for="inputNs5">{lang key='domainnameserver5'|default:'Nameserver 5'}</label>
 									<input type="text" class="form-control" id="inputNs5" name="domainns5" value="{$domainns5}" />
 								</div>
 							</div>
@@ -213,13 +213,13 @@ var _localLang = {
 					<div class="buttom__cart__submit__area__container d-flex align-items-center justify-content-between">
 						<div class="">
 						<div class="sticky__content d-flex align-items-center">
-							<div class="coodiv-text-8 font-weight-bold buttom__cart__submit__area__domains__number" id="cartItemCount">{$cartitemcount}</div>
-							<span class="coodiv-text-8 font-weight-bold">{$LANG.orderproduct} <small class="font-weight-300 coodiv-text-11">{$LANG.recommendations.title.addedTo}</small></span>
+							<div class="coodiv-text-8 font-weight-bold buttom__cart__submit__area__domains__number mr-2" id="cartItemCount">{$cartitemcount|default:1}</div>
+							<span class="coodiv-text-8 font-weight-bold">{lang key='orderproduct'|default:'Items'} <small class="font-weight-300 coodiv-text-11">{lang key='recommendations.title.addedTo'|default:'Added to Cart'}</small></span>
 						</div>
 						</div>
 						<div class="d-flex align-items-center">
-						<a class="viewcart-btn coodiv-text-11 font-weight-bold mr-9" href="{$WEB_ROOT}/cart.php?a=view">{$LANG.viewcart}</a>
-						<button type="submit" class="orderform__submit__btn__succses btn btn-primary btn-lg">{$LANG.continue}</button>
+						<a class="viewcart-btn coodiv-text-11 font-weight-bold mr-9" href="{$WEB_ROOT}/cart.php?a=view">{lang key='viewcart'|default:'View Cart'}</a>
+						<button type="submit" class="orderform__submit__btn__succses btn btn-primary btn-lg">{lang key='continue'|default:'Continue'}</button>
 						</div>
 					</div>
                 </div>
@@ -228,10 +228,6 @@ var _localLang = {
         </div>
     </div>
 </div>
-
-
-
-	
 
 <form method="post" action="cart.php">
 	<input type="hidden" name="a" value="remove" />
@@ -248,11 +244,11 @@ var _localLang = {
 				<div class="modal-body pb-18">
 					<div class="d-flex align-items-center justify-content-center flex-column"> 
 						<i class="fal fa-exclamation-triangle coodiv-text-2 text-danger"></i>    
-						<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{lang key='orderForm.removeItem'}</h4>
-						<p class="coodiv-text-11 font-weight-400">{lang key='cartremoveitemconfirm'}</p>
+						<h4 class="coodiv-text-6 font-weight-bold mt-5 mb-0">{lang key='orderForm.removeItem'|default:'Remove Item'}</h4>
+						<p class="coodiv-text-11 font-weight-400">{lang key='cartremoveitemconfirm'|default:'Are you sure you want to remove this item from your cart?'}</p>
 						<div class="d-flex align-items-center gap-5 flex-wrap justify-content-center mt-5">
-							<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{$LANG.no}</button>
-							<button type="submit" class="btn btn-primary btn-sm">{$LANG.yes}, {lang key='orderForm.removeItem'}</button>
+							<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{lang key='no'|default:'No'}</button>
+							<button type="submit" class="btn btn-primary btn-sm">{lang key='yes'|default:'Yes'}, {lang key='orderForm.removeItem'|default:'Remove Item'}</button>
 						</div>
 					</div>
 				</div>
@@ -260,6 +256,5 @@ var _localLang = {
 		</div>
 	</div>
 </form>
-		
 
 {include file="orderforms/standard_cart/recommendations-modal.tpl"}
