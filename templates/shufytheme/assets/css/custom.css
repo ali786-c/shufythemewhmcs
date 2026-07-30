@@ -288,81 +288,6 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     opacity: 1 !important;
 }
 
-/* Card Layout (Pic 1 Match) */
-.cart__choose__cycle__label {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 22px 15px 18px 15px !important;
-    width: 100% !important;
-    position: relative !important;
-}
-
-.cart__choose__cycle__content {
-    margin-bottom: 12px !important;
-    width: 100% !important;
-    text-align: center !important;
-}
-
-.cart__choose__cycle__input {
-    margin-bottom: 8px !important;
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-}
-
-.icheck__control__check__icon {
-    position: static !important; /* Remove absolute positioning */
-    display: inline-flex !important;
-    justify-content: center !important;
-}
-
-/* Setup Fees & Free Domain Badges (Green Badge directly under Selected button) */
-.cycle__setep__fees__wrapper {
-    margin-top: 6px !important;
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    position: static !important;
-}
-
-.cycle__setup__fees__free {
-    background-color: #10b981 !important; /* Bright Green Badge Color */
-    color: #ffffff !important;
-    padding: 4px 12px !important;
-    border-radius: 6px !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    display: inline-block !important;
-    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.25) !important;
-}
-
-.cycle__setup__fees {
-    background-color: #f1f5f9 !important;
-    color: #475569 !important;
-    padding: 4px 12px !important;
-    border-radius: 6px !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-}
-
-.cycle__with__free__domain {
-    background-color: #0284c7 !important; /* Cyan Free Domain Badge */
-    color: #ffffff !important;
-    padding: 4px 12px !important;
-    border-radius: 6px !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    display: inline-block !important;
-    margin-left: 3px !important;
-}
-
-
 #btnCompleteProductConfig,
 .orderform__submit__btn__succses {
     background-color: #0cbed5 !important;
@@ -384,5 +309,53 @@ body.body__dark .buttom__cart__submit__area .viewcart-btn {
     font-size: 16px !important;
     display: inline-block !important;
 }
+
+/* ===================================================
+   🟢 SETUP FEES & FREE SETUP BADGE STYLING FIX
+   =================================================== */
+.cycle__setep__fees__wrapper {
+    display: block !important;
+    margin-top: 4px !important;
+    text-align: center !important;
+}
+
+.cycle__setup__fees__free {
+    background-color: #10b981 !important; /* Vibrant Emerald Green */
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.4px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.cycle__setup__fees {
+    background-color: #64748b !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.cycle__with__free__domain {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    margin-left: 4px !important;
+    visibility: visible !important;
+}
+
 
 
