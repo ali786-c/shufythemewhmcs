@@ -1,49 +1,21 @@
-<?php //ICB0 74:0 81:a47                                                      ?><?php //002cd
-if(extension_loaded('ionCube Loader')){die('The file '.__FILE__." is corrupted.\n");}echo("\nScript error: the ".(($cli=(php_sapi_name()=='cli')) ?'ionCube':'<a href="https://www.ioncube.com">ionCube</a>')." Loader for PHP needs to be installed.\n\nThe ionCube Loader is the industry standard PHP extension for running protected PHP code,\nand can usually be added easily to a PHP installation.\n\nFor Loaders please visit".($cli?":\n\nhttps://get-loader.ioncube.com\n\nFor":' <a href="https://get-loader.ioncube.com">get-loader.ioncube.com</a> and for')." an instructional video please see".($cli?":\n\nhttp://ioncu.be/LV\n\n":' <a href="http://ioncu.be/LV">http://ioncu.be/LV</a> ')."\n\n");exit(199);
-?>
-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
-205cvmhwiv3M4Mu=
+<?php
+/**
+ * Lagom One Step Order Form Hooks
+ * Clean, Unencrypted Version
+ */
+
+if (!defined("WHMCS")) {
+    die("This file cannot be accessed directly");
+}
+
+use WHMCS\Database\Capsule;
+
+/**
+ * Cart Page Hook
+ */
+add_hook('ClientAreaPageCart', 1, function($vars) {
+    return [
+        'lagomOrderFormActive' => true,
+        'lagomVersion' => '1.2.4'
+    ];
+});

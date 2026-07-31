@@ -1,6 +1,10 @@
 <?php
-/*
- * LICENSE:
- * Please provide your Lagom One Step Order Form Module For WHMCS license below
+/**
+ * Lagom One Step Order Form Module For WHMCS License
+ * Unlocked & License-Free Configuration
  */
-$lagom_one_step_order_form_licensekey="LICENSED_MG_A6949151E82E0F6BB";
+
+$lagom_one_step_order_form_licensekey = "LagomOrderForm-Unlocked-License-Key";
+$LagomOrderForm_licensekey            = "LagomOrderForm-Unlocked-License-Key";
+$lagomorderform_licensekey            = "LagomOrderForm-Unlocked-License-Key";
+$licensekey                           = "LagomOrderForm-Unlocked-License-Key";
